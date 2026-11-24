@@ -11,7 +11,7 @@ Only our two accounts can sign in, and after signing in it asks for our day.
 - **Our story:** a timeline and a constellation of the moments that made us, with a photo for each one
 - **Meet us:** a profile for each of us, with Instagram links
 - **Our favourites:** songs, films, shows, food, places and more, plus our playlists
-- **Our songs:** ForeverThing, Sata Janmanchi and our engagement video, playing inside the page
+- **Our songs & videos:** ForeverThing, Sata Janmanchi, our engagement and our wedding, from YouTube or Google Drive, playing inside the page
 - **Best memory of every year:** from 2016 onwards, pinned on a map
 - **Little things, in our words** and **our special places**
 - **Our album:** any photo, any day
@@ -59,6 +59,7 @@ Replace `index.html` with the new version (Add file → Upload files). GitHub Pa
 
 ## Versions
 
+- **v2.5**: Google Drive videos play inside the page
 - **v2.4**: My space, a private area for each of us; private notebook entries
 - **v2.3**: Instagram on our profiles
 - **v2.2**: “How well do you know me?” with a scoreboard
