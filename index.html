@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v2.0 · 24 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v2.4 · 24 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -316,6 +316,85 @@ body.editing .ed-only{display:inline-flex!important}
 .rnote{font-size:14px;color:var(--soft);margin:0}
 .rhow{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--blush)}
 dialog h3{font-size:28px}
+.pf .ig{display:inline-flex;align-items:center;gap:6px;margin-top:6px;min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);color:var(--blush);font-size:14px;text-decoration:none}
+/* my space */
+.mebtn{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 12px 0 4px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:14px}
+.mebtn i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;background:var(--blush);color:#2a1127;overflow:hidden}
+.mebtn i.r{background:var(--red);color:#fff}.mebtn i img{width:100%;height:100%;object-fit:cover}
+.mebar{padding-left:6px}
+dialog.sheet{width:min(720px,100vw);max-width:100vw;height:min(92vh,900px);max-height:100dvh;margin:auto;padding:0}
+.ms{display:flex;flex-direction:column;height:100%;padding:20px;gap:12px}
+.mshead{display:flex;align-items:center;gap:14px}.msid{flex:1}.msid h3{font-size:28px}.msid .hint{margin:2px 0 0;overflow-wrap:anywhere}
+.mshead .av{width:60px;height:60px;font-size:28px}
+.lockline{display:flex;align-items:center;gap:8px;margin:0;padding:10px 14px;border-radius:12px;background:var(--bg);font-size:14px;color:var(--soft)}
+.lockline.warn{background:rgba(226,54,75,.15);color:var(--ink);border:1px solid var(--red)}
+.msbody{flex:1;overflow:auto;display:grid;align-content:start;gap:12px;padding-bottom:12px}
+.msform{display:grid;gap:8px}
+dialog .msbody form{padding:0}
+.msform input,.msform textarea{font:16px Karla,sans-serif;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.msform textarea{min-height:100px;resize:vertical}.msform .btn{justify-self:start}
+.pn{padding:14px 16px;border-radius:16px;background:var(--bg2);border:1px solid var(--line)}
+.pn .meta{font-size:13px;color:var(--soft)}.pn h4{margin:4px 0 0;font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+.pn p{white-space:pre-wrap;margin:6px 0 0}
+.pn .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.pn .acts button{min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:14px}
+.acct{display:grid;gap:10px}.acct .row3{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:12px;background:var(--bg2);font-size:15px;flex-wrap:wrap}
+.acct .row3 span{color:var(--soft)}.acct .btns{display:flex;gap:10px;flex-wrap:wrap}
+.jrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.chk2{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--soft);min-height:44px;cursor:pointer}
+.chk2 input{width:22px;height:22px;accent-color:var(--red)}
+@media(max-width:600px){dialog.sheet{width:100vw;height:100dvh;border-radius:0}.mebtn span{display:none}}
+/* know me */
+.kybody{margin-top:16px}
+.kyprog{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;color:var(--soft)}
+.kyprog .prog{flex:1}
+.kyl{display:grid;gap:10px}
+.kyq{display:grid;gap:6px;padding:14px 16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.kyq label{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.2;color:var(--ink)}
+.kyq input{font:16px Karla,sans-serif;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.kyq.done{border-color:rgba(246,201,193,.45)}
+.kysave{position:sticky;bottom:84px;display:flex;justify-content:center;margin-top:14px}
+.kyg{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px);display:grid;gap:14px;max-width:640px}
+.kyg .q{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,3.4vw,32px);line-height:1.15}
+.kyg input{font:16px Karla,sans-serif;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.ans2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ans2 div{padding:12px 14px;border-radius:14px;background:var(--bg2);border:1px solid var(--line)}
+.ans2 i{display:block;font-style:normal;font-size:12px;font-weight:700;color:var(--soft)}
+.verd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.verd button{min-height:52px;border-radius:14px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-weight:700;font-size:15px}
+.verd .v1{border-color:#7fd1a8}.verd .v0{border-color:var(--red)}
+.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.bd{padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.bd .k{font-size:14px;font-weight:700;color:var(--blush)}
+.bd b{display:block;font-family:"Cormorant Garamond",serif;font-size:48px;line-height:1.05}
+.bd span{font-size:14px;color:var(--soft)}
+.hist{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:6px;font-size:15px}
+.hist li{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:12px;background:var(--bg2)}
+@media(max-width:600px){.board,.ans2{grid-template-columns:minmax(0,1fr)}}
+/* favourites */
+.favbtns{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chiprow{display:flex;gap:8px;overflow-x:auto;padding:4px 0;margin-top:18px;scrollbar-width:none}
+.chiprow.sm{margin-top:6px}
+.chip{flex:none;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-size:15px;white-space:nowrap}
+.chip small{color:var(--soft);margin-left:4px}
+.chip[aria-pressed=true]{background:var(--blush);color:#2a1127;border-color:var(--blush)}.chip[aria-pressed=true] small{color:#6b4a5c}
+.chiprow.sm .chip{min-height:36px;font-size:14px;padding:0 12px}
+.pls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px;margin-top:16px}
+.pl{padding:16px;border-radius:18px;background:linear-gradient(150deg,#4a1d43,var(--card));border:1px solid var(--line);display:grid;gap:10px}
+.pl .k{font-size:13px;font-weight:700;color:var(--blush)}.pl h3{font-size:26px}
+.pl .row2{display:flex;gap:8px;flex-wrap:wrap}.pl .row2 .btn{min-height:44px;text-decoration:none}
+.pl iframe{width:100%;border:0;border-radius:12px;background:#000}
+.pl.add{background:transparent;border-style:dashed;color:var(--soft);text-align:left}
+.favgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px;margin-top:16px}
+.fv{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:18px;background:var(--card);border:1px solid var(--line);text-align:left;color:var(--ink)}
+.fv .top2{display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:700}
+.fv .cat{color:var(--soft)}.fv .wb{color:var(--blush)}.fv .wb.r{color:var(--red)}
+.fv b{font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.1}
+.fv p{margin:0;font-size:15px;color:var(--soft)}
+.fv .both{font-size:13px;font-weight:700;color:var(--red)}
+.fv .acts{display:flex;gap:8px;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+.fv .acts a,.fv .acts button{min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:14px;display:inline-flex;align-items:center;text-decoration:none}
+.pick{margin-top:22px;text-align:center}.pick .jarOut{min-height:1.4em}
 @media(max-width:600px){.fab{right:12px;bottom:12px}.hero{padding-top:72px}}
 </style>
 </head>
@@ -348,7 +427,7 @@ dialog h3{font-size:28px}
   </div>
 </div>
 
-<div class="mebar" id="meBar" hidden><span id="meName"></span><button id="editBtn" type="button" aria-pressed="false">Edit</button><button id="outBtn" type="button">Sign out</button></div>
+<div class="mebar" id="meBar" hidden><button id="meName" type="button" class="mebtn" aria-label="Open my space"></button><button id="editBtn" type="button" aria-pressed="false">Edit</button><button id="outBtn" type="button">Sign out</button></div>
 <button class="fresh" id="fresh" type="button" hidden></button>
 <button class="fab" id="remBtn" type="button" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Remember</button>
 <div class="toast" id="toast" hidden aria-live="polite"></div>
@@ -383,6 +462,18 @@ dialog h3{font-size:28px}
     <h2>Meet us</h2>
     <p class="muted">Tap your own card to fill it in.</p>
     <div class="profiles" id="profiles"></div>
+  </div>
+</section>
+
+<section class="band" id="favs">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Our favourites</h2><p class="muted">Songs, films, food, places: everything we love, in one place.</p></div>
+      <span class="favbtns"><button class="btn fill" id="favAdd">+ Add a favourite</button><button class="ebtn ed-only" data-manage="favCats">Edit categories</button><button class="ebtn ed-only" data-manage="playlists">Edit playlists</button></span></div>
+    <div class="chiprow" id="favCats" role="tablist" aria-label="Category"></div>
+    <div class="chiprow sm" id="favWho" aria-label="Whose"></div>
+    <div class="pls" id="favPlay"></div>
+    <div class="favgrid" id="favGrid"></div>
+    <div class="pick"><button class="btn" id="favPick">Can't decide? Pick one for us</button><p id="favPicked" class="jarOut" aria-live="polite"></p></div>
   </div>
 </section>
 
@@ -468,6 +559,15 @@ dialog h3{font-size:28px}
   </div>
 </section>
 
+<section class="band" id="know">
+  <div class="wrap">
+    <div class="sechead"><div><h2>How well do you know me?</h2><p class="muted">Fill in your own answers first. Then guess each other's, and keep score.</p></div>
+      <button class="ebtn ed-only" data-manage="kyq">Edit questions</button></div>
+    <div class="chiprow" id="kyTabs"></div>
+    <div id="kyBody" class="kybody"></div>
+  </div>
+</section>
+
 <section class="band" id="openwhen">
   <div class="wrap">
     <div class="sechead"><div><h2>Open when…</h2><p class="muted">Letters for the days you need them, Rahi.</p></div>
@@ -523,7 +623,7 @@ dialog h3{font-size:28px}
     <form id="jForm" class="jform">
       <input id="jTitle" maxlength="90" placeholder="Title (optional)" aria-label="Title">
       <textarea id="jText" maxlength="4000" placeholder="Today…" aria-label="Entry" required></textarea>
-      <button class="btn fill" type="submit">Add to our notebook</button>
+      <div class="jrow"><label class="chk2"><input type="checkbox" id="jPriv"> Only me (goes to My space)</label><button class="btn fill" type="submit" id="jGo">Add to our notebook</button></div>
     </form>
     <div class="journal" id="journal"></div>
   </div>
@@ -546,6 +646,10 @@ dialog h3{font-size:28px}
     <div>
       <p><b>Rahi &amp; Sameer · Our Notebook</b></p>
       <p>A private notebook for the two of us, started for our 4th anniversary. Only our two accounts can open it. Tap <b>Edit</b> at the top to change anything, or <b>Remember</b> to add something new.</p>
+      <p class="vh"><b>v2.4</b> · 24 Nov 2026: My space, a private area for each of us (private notes, surprise ideas, account), and private notebook entries.</p>
+      <p class="vh"><b>v2.3</b> · 24 Nov 2026: Instagram on our profiles.</p>
+      <p class="vh"><b>v2.2</b> · 24 Nov 2026: “How well do you know me?” with 26 questions, scores and a scoreboard.</p>
+      <p class="vh"><b>v2.1</b> · 24 Nov 2026: our favourites (songs, films, food, places and more), playlists that play inside the page, “pick one for tonight”.</p>
       <p class="vh"><b>v2.0</b> · 24 Nov 2026: everything editable in the page, the Remember box (types and sorts what you write), album, coming up, this month years ago, backup.</p>
       <p class="vh"><b>v1.2</b> · 24 Nov 2026: our two accounts, full names on profiles.</p>
       <p class="vh"><b>v1.1</b> · 24 Nov 2026: sign-in, passcode, profiles, photos, notebook, songs inside the page.</p>
@@ -556,6 +660,13 @@ dialog h3{font-size:28px}
 </footer>
 
 <!-- dialogs -->
+<dialog id="msDlg" class="sheet"><div class="ms">
+  <div class="mshead"><div class="av" id="msAv"></div><div class="msid"><h3 id="msName"></h3><p class="hint" id="msEmail"></p></div><button class="btn" id="msClose" type="button">Close</button></div>
+  <p class="lockline" id="msLock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="msLockTxt">My space. Only you can see what's in here.</span></p>
+  <div class="chiprow" id="msTabs"></div>
+  <div id="msBody" class="msbody"></div>
+</div></dialog>
+
 <dialog id="fDlg"><form id="fForm" method="dialog">
   <h3 id="fTitle"></h3><p class="hint" id="fHint"></p>
   <div class="ff" id="fFields"></div>
@@ -597,13 +708,13 @@ dialog h3{font-size:28px}
   <div class="row" style="display:flex;gap:10px;justify-content:flex-end"><button class="btn danger" id="lbDel" hidden>Delete</button><button class="btn" id="lbEdit" hidden>Edit caption</button><button class="btn fill" id="lbClose">Close</button></div>
 </div></dialog>
 
-<script type="application/json" id="defaults">{"chapters": [{"id": "school", "date": "2011-06", "when": "2011–12 · 12th grade", "title": "A notebook, an excuse", "text": "It began in our 12th grade classes, when I walked up to you with some reason about exchanging notes. We started talking, and by the end of that year we were close friends.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "universe", "date": "2013-01", "when": "The years apart", "title": "Messages from the universe", "text": "Life sent us down different paths. Yet whenever I travelled, some stranger on a street would remind me of you, and that same day, out of nowhere, you would message or call. We barely spoke, but the universe kept passing notes between us.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dadar", "date": "2016-05", "when": "May 2016 · Shivaji Park, Dadar", "title": "The photoshoot", "text": "Around graduation we started chatting again and planned a photoshoot for you. We met at Shivaji Park, and something changed. We started chatting and meeting all the time.", "place": "Shivaji Park, Dadar", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "sgnp", "date": "2016-06", "when": "2016 · Sanjay Gandhi National Park", "title": "The day it felt real", "text": "Borivali, the forest, a really great day together, and the movies that followed. For the first time it felt like something.", "place": "Sanjay Gandhi National Park", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dating", "date": "2016-08", "when": "23 August 2016", "title": "Officially us", "text": "It had started earlier, but this is the day we made it official, and it was the best thing that ever happened to us. Somewhere in those days we started calling each other Foreverthing.", "place": "", "big": true, "linkLabel": "", "linkUrl": ""}, {"id": "sikkim", "date": "2017-01", "when": "Sikkim & Darjeeling", "title": "Our first trip", "text": "Our first real outing together, and we came back with a bag full of memories.", "place": "Gangtok, Sikkim", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rough", "date": "2019-01", "when": "The rough patches", "title": "What they taught us", "text": "There were hard days too. They taught us how to be mature, in life and in a relationship, and showed each of us how much the other really meant.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "engaged", "date": "2022-02", "when": "24 February 2022", "title": "Engaged", "text": "After all those journeys and wonderful moments, we both felt the time had come to tie the knot.", "place": "", "big": true, "linkLabel": "Watch our engagement video", "linkUrl": "https://www.youtube.com/watch?v=zJG3PEIwEPg"}, {"id": "wedding", "date": "2022-11", "when": "26 November 2022", "title": "Married", "text": "Life changed completely. New responsibilities, a home shared 24/7, discovering little things about each other and accepting every one of them, happily. #TheSaHiJodi was born.", "place": "", "big": true, "linkLabel": "Play Sata Janmanchi", "linkUrl": "https://www.youtube.com/watch?v=wwSCU_Kl3CE"}, {"id": "maldives", "date": "2022-11", "when": "November 2022 · Orchids hotel → the Maldives", "title": "Our first trip abroad", "text": "Our first five-star stay, then our honeymoon and our first international trip together: a small island in the Maldives, and only the two of us, always.", "place": "Maldives", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "goa", "date": "2023-12", "when": "Every December · Goa", "title": "Our tradition", "text": "Some trips are a must. Every December, Goa, and every single time, so much fun.", "place": "Goa", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "malaysia", "date": "2024-11", "when": "November 2024 · Malaysia & Singapore", "title": "Our 2nd anniversary", "text": "We celebrated two years of marriage in Malaysia and Singapore. That night at the Twin Towers in Kuala Lumpur and the view from the Singapore Flyer were incredible. A wonderful trip, planned entirely by my travel planner, my dear wife.", "place": "Petronas Twin Towers, KL", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rajasthan", "date": "2025-01", "when": "Rajasthan", "title": "Another chapter", "text": "Another journey together, and another set of wonderful memories.", "place": "Jaipur", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "europe", "date": "2026-06", "when": "2026 · Germany, France, Switzerland, Austria", "title": "Your 30th, on the Eiffel Tower", "text": "For your 30th birthday we went across Europe, the experience of a lifetime. Your birthday on the Eiffel Tower, watching that serene sunset on it and from it. And Germany was so beautiful, we fell in love with it.", "place": "Eiffel Tower, Paris", "big": true, "linkLabel": "", "linkUrl": ""}], "videos": [{"id": "v0", "title": "ForeverThing", "k": "Our latest song", "url": "https://youtu.be/T1hnTOQs57M", "text": "What we called each other while dating, and the song I made for you, for us. With #TheSaHiJodi in the tagline.", "main": true}, {"id": "v1", "title": "Sata Janmanchi", "k": "Pre-wedding song", "url": "https://www.youtube.com/watch?v=wwSCU_Kl3CE", "text": "A promise to be your partner in every birth, all seven of them, across seven oceans.", "main": false}, {"id": "v2", "title": "Our engagement", "k": "24 February 2022", "url": "https://www.youtube.com/watch?v=zJG3PEIwEPg", "text": "The day we said yes to forever, in front of everyone we love.", "main": false}], "quiz": [{"id": "q0", "q": "Where did we meet the day things changed in May 2016?", "o1": "Marine Drive", "o2": "Shivaji Park, Dadar", "o3": "Juhu Beach", "o4": "Bandra Bandstand", "a": "2"}, {"id": "q1", "q": "What excuse did I use to first talk to you in 12th grade?", "o1": "Asking for a pen", "o2": "A note-book exchange", "o3": "A group project", "o4": "Borrowing your bus pass", "a": "2"}, {"id": "q2", "q": "Which date did we make it official?", "o1": "14 Feb 2016", "o2": "23 Aug 2016", "o3": "26 Nov 2016", "o4": "1 Jan 2017", "a": "2"}, {"id": "q3", "q": "Where was our first trip together?", "o1": "Goa", "o2": "Kerala", "o3": "Sikkim & Darjeeling", "o4": "Rajasthan", "a": "3"}, {"id": "q4", "q": "What did we call each other while dating?", "o1": "Sunshine", "o2": "Foreverthing", "o3": "Jaan", "o4": "Partner-in-crime", "a": "2"}, {"id": "q5", "q": "When did we get engaged?", "o1": "24 Feb 2022", "o2": "26 Nov 2021", "o3": "23 Aug 2021", "o4": "14 Feb 2022", "a": "1"}, {"id": "q6", "q": "What was our wedding hashtag?", "o1": "#RahiKaSameer", "o2": "#SameerWedsRahi", "o3": "#TheSaHiJodi", "o4": "#Foreverthing", "a": "3"}, {"id": "q7", "q": "Sata Janmanchi promises we'll be together for…", "o1": "Seven years", "o2": "Seven births", "o3": "Seven wonders", "o4": "Seven days a week", "a": "2"}, {"id": "q8", "q": "Where did we go for our honeymoon, our first trip abroad?", "o1": "Bali", "o2": "Maldives", "o3": "Switzerland", "o4": "Mauritius", "a": "2"}, {"id": "q9", "q": "Where did we celebrate our 2nd anniversary?", "o1": "Thailand", "o2": "Dubai", "o3": "Malaysia & Singapore", "o4": "Sri Lanka", "a": "3"}, {"id": "q10", "q": "Where were you on your 30th birthday?", "o1": "The Eiffel Tower", "o2": "A Swiss mountain", "o3": "A Goa beach", "o4": "Neuschwanstein Castle", "a": "1"}, {"id": "q11", "q": "Which country did we fall in love with in Europe?", "o1": "Austria", "o2": "Germany", "o3": "Switzerland", "o4": "France", "a": "2"}, {"id": "q12", "q": "Where do we go every December?", "o1": "Kerala", "o2": "Lonavala", "o3": "Goa", "o4": "Rajasthan", "a": "3"}], "likely": [{"id": "l0", "t": "fall asleep halfway through a movie"}, {"id": "l1", "t": "say sorry first after a fight"}, {"id": "l2", "t": "start singing out of nowhere"}, {"id": "l3", "t": "plan our next holiday"}, {"id": "l4", "t": "take 50 photos to get one good one"}, {"id": "l5", "t": "steal the last bite"}, {"id": "l6", "t": "cry at a sad movie"}, {"id": "l7", "t": "lose the keys (again)"}, {"id": "l8", "t": "get hungry first on a trip"}, {"id": "l9", "t": "win an argument"}, {"id": "l10", "t": "remember our anniversary first"}, {"id": "l11", "t": "fall in love all over again today"}], "reasons": [{"id": "r0", "t": "You trust me completely, and let me trust you the same way."}, {"id": "r1", "t": "You have never judged me."}, {"id": "r2", "t": "You stood by me through every up and every down."}, {"id": "r3", "t": "You made my family your own."}, {"id": "r4", "t": "You turned a notebook exchange into a lifetime."}, {"id": "r5", "t": "The universe kept sending me back to you."}, {"id": "r6", "t": "You make a small island feel like the whole world."}, {"id": "r7", "t": "We grew up together through the rough patches."}, {"id": "r8", "t": "Every trip is better because you're in it."}, {"id": "r9", "t": "You accept every little thing about me, happily."}, {"id": "r10", "t": "You chose me, and you keep choosing me."}, {"id": "r11", "t": "You are, and always will be, my Foreverthing."}, {"id": "r12", "t": "You're the best travel planner in the world."}, {"id": "r13", "t": "You turned an Eiffel Tower sunset into my favourite memory."}, {"id": "r14", "t": "Every new country feels like home with you."}, {"id": "r15", "t": "Sata janmanchi: in every birth, it will be you."}, {"id": "r16", "t": "Four years in, it still feels like the beginning."}], "coupons": [{"id": "0", "title": "Breakfast in bed", "text": "Made by me, served with a song."}, {"id": "1", "title": "You pick the movie", "text": "No arguments. No sighing. Promise."}, {"id": "2", "title": "A day planned by you", "text": "I follow, wherever, whatever."}, {"id": "3", "title": "A long ride together", "text": "Just us on the bike, destination: anywhere."}, {"id": "4", "title": "A song about anything", "text": "You choose the topic, I write the song."}, {"id": "5", "title": "You win this argument", "text": "Instantly. No questions asked."}, {"id": "6", "title": "A surprise date", "text": "Planned by me. You just show up."}, {"id": "7", "title": "Chores off", "text": "A full day of rest. I've got everything."}, {"id": "8", "title": "Next trip: my turn", "text": "I plan everything for once. You just pack."}], "dates": [{"id": "d0", "t": "Sunset at Marine Drive with roasted bhutta"}, {"id": "d1", "t": "Go back to Shivaji Park, just the two of us"}, {"id": "d2", "t": "A morning walk at Sanjay Gandhi National Park"}, {"id": "d3", "t": "Cook a dish neither of us has ever tried"}, {"id": "d4", "t": "Recreate our very first date"}, {"id": "d5", "t": "Old photos, chai and stories night"}, {"id": "d6", "t": "A drive to Lonavala, no plan"}, {"id": "d7", "t": "A movie marathon, Rahi picks everything"}, {"id": "d8", "t": "Sameer plays only Rahi's song requests"}, {"id": "d9", "t": "Stargazing on the terrace"}, {"id": "d10", "t": "A street-food crawl through the city"}, {"id": "d11", "t": "Plan our next big trip on a map"}, {"id": "d12", "t": "Watch our engagement video together again"}, {"id": "d13", "t": "Write each other a letter and swap"}, {"id": "d14", "t": "Pick our next country over chai, with a world map"}, {"id": "d15", "t": "Find the best city view in Mumbai, like that night at the Twin Towers"}, {"id": "d16", "t": "A sunset somewhere new, even in our own city"}], "numbers": [{"id": "n0", "n": "7", "label": "countries explored together: Maldives, Malaysia, Singapore, Germany, France, Switzerland, Austria"}, {"id": "n1", "n": "1", "label": "birthday on the Eiffel Tower, at sunset"}, {"id": "n2", "n": "Every", "label": "December in Goa"}, {"id": "n3", "n": "2", "label": "songs written for you (so far)"}, {"id": "n4", "n": "7", "label": "births promised: Sata Janmanchi"}, {"id": "n5", "n": "1", "label": "Foreverthing"}, {"id": "n6", "n": "∞", "label": "reasons to keep going"}], "questions": [{"id": "notice", "q": "The first thing I noticed about you in 12th grade"}, {"id": "dadar", "q": "At Shivaji Park in May 2016, I felt"}, {"id": "spot", "q": "Our usual meeting spot while dating"}, {"id": "film", "q": "The first film we watched together"}, {"id": "food", "q": "Your favourite food or snack"}, {"id": "wedding", "q": "The wedding-day moment I'll never forget"}, {"id": "maldives", "q": "Our best moment in the Maldives"}, {"id": "europe", "q": "My favourite place with you in Europe"}, {"id": "laugh", "q": "When you laugh, you"}, {"id": "calm", "q": "You calm me down by"}], "mapqs": [{"id": "ily", "q": "Where we first said “I love you”"}, {"id": "propose", "q": "Where the proposal happened"}, {"id": "ours", "q": "The place in Mumbai that feels most like ours"}, {"id": "talk", "q": "The trip city we still talk about"}], "openWhen": [{"id": "miss", "label": "you miss me"}, {"id": "stress", "label": "work gets too much"}, {"id": "fight", "label": "we've had a fight"}, {"id": "sleep", "label": "you can't sleep"}, {"id": "laugh", "label": "you need a laugh"}, {"id": "proud", "label": "you're proud of yourself"}, {"id": "low", "label": "you feel low"}, {"id": "anni", "label": "it's our 5th anniversary"}], "places": [{"id": "p0", "name": "Shivaji Park, Dadar", "lat": 19.027, "lng": 72.838, "g": "Mumbai & around"}, {"id": "p1", "name": "Sanjay Gandhi National Park", "lat": 19.23, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p2", "name": "Marine Drive", "lat": 18.944, "lng": 72.823, "g": "Mumbai & around"}, {"id": "p3", "name": "Juhu", "lat": 19.099, "lng": 72.826, "g": "Mumbai & around"}, {"id": "p4", "name": "Bandra", "lat": 19.06, "lng": 72.83, "g": "Mumbai & around"}, {"id": "p5", "name": "Mumbai (elsewhere)", "lat": 19.076, "lng": 72.877, "g": "Mumbai & around"}, {"id": "p6", "name": "Lonavala", "lat": 18.75, "lng": 73.41, "g": "Mumbai & around"}, {"id": "p7", "name": "Alibaug", "lat": 18.64, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p8", "name": "Pune", "lat": 18.52, "lng": 73.86, "g": "Mumbai & around"}, {"id": "p9", "name": "Mahabaleshwar", "lat": 17.92, "lng": 73.66, "g": "Mumbai & around"}, {"id": "p10", "name": "Nashik", "lat": 20.0, "lng": 73.79, "g": "Mumbai & around"}, {"id": "p11", "name": "Goa", "lat": 15.49, "lng": 73.83, "g": "Mumbai & around"}, {"id": "p12", "name": "Gangtok, Sikkim", "lat": 27.33, "lng": 88.61, "g": "India"}, {"id": "p13", "name": "Darjeeling", "lat": 27.04, "lng": 88.26, "g": "India"}, {"id": "p14", "name": "Jaipur", "lat": 26.91, "lng": 75.79, "g": "India"}, {"id": "p15", "name": "Udaipur", "lat": 24.58, "lng": 73.71, "g": "India"}, {"id": "p16", "name": "Jodhpur", "lat": 26.24, "lng": 73.02, "g": "India"}, {"id": "p17", "name": "Jaisalmer", "lat": 26.92, "lng": 70.91, "g": "India"}, {"id": "p18", "name": "Delhi", "lat": 28.61, "lng": 77.21, "g": "India"}, {"id": "p19", "name": "Agra", "lat": 27.18, "lng": 78.01, "g": "India"}, {"id": "p20", "name": "Rishikesh", "lat": 30.09, "lng": 78.27, "g": "India"}, {"id": "p21", "name": "Manali", "lat": 32.24, "lng": 77.19, "g": "India"}, {"id": "p22", "name": "Shimla", "lat": 31.1, "lng": 77.17, "g": "India"}, {"id": "p23", "name": "Leh", "lat": 34.15, "lng": 77.58, "g": "India"}, {"id": "p24", "name": "Varanasi", "lat": 25.32, "lng": 82.97, "g": "India"}, {"id": "p25", "name": "Hyderabad", "lat": 17.39, "lng": 78.49, "g": "India"}, {"id": "p26", "name": "Bengaluru", "lat": 12.97, "lng": 77.59, "g": "India"}, {"id": "p27", "name": "Kochi", "lat": 9.93, "lng": 76.27, "g": "India"}, {"id": "p28", "name": "Munnar", "lat": 10.09, "lng": 77.06, "g": "India"}, {"id": "p29", "name": "Andaman", "lat": 11.62, "lng": 92.73, "g": "India"}, {"id": "p30", "name": "Maldives", "lat": 4.18, "lng": 73.51, "g": "Abroad"}, {"id": "p31", "name": "Dubai", "lat": 25.2, "lng": 55.27, "g": "Abroad"}, {"id": "p32", "name": "Bangkok", "lat": 13.75, "lng": 100.5, "g": "Abroad"}, {"id": "p33", "name": "Kuala Lumpur, Malaysia", "lat": 3.14, "lng": 101.69, "g": "Abroad"}, {"id": "p34", "name": "Petronas Twin Towers, KL", "lat": 3.1579, "lng": 101.7116, "g": "Abroad"}, {"id": "p35", "name": "Singapore", "lat": 1.35, "lng": 103.82, "g": "Abroad"}, {"id": "p36", "name": "Singapore Flyer", "lat": 1.2893, "lng": 103.8631, "g": "Abroad"}, {"id": "p37", "name": "Bali", "lat": -8.34, "lng": 115.09, "g": "Abroad"}, {"id": "p38", "name": "Paris", "lat": 48.86, "lng": 2.35, "g": "Abroad"}, {"id": "p39", "name": "Eiffel Tower, Paris", "lat": 48.858, "lng": 2.2945, "g": "Abroad"}, {"id": "p40", "name": "Germany", "lat": 51.1, "lng": 10.4, "g": "Abroad"}, {"id": "p41", "name": "Switzerland", "lat": 46.8, "lng": 8.2, "g": "Abroad"}, {"id": "p42", "name": "Austria", "lat": 47.5, "lng": 14.55, "g": "Abroad"}, {"id": "p43", "name": "London", "lat": 51.51, "lng": -0.13, "g": "Abroad"}, {"id": "p44", "name": "Interlaken", "lat": 46.69, "lng": 7.86, "g": "Abroad"}, {"id": "p45", "name": "Zurich", "lat": 47.38, "lng": 8.54, "g": "Abroad"}, {"id": "p46", "name": "Amsterdam", "lat": 52.37, "lng": 4.9, "g": "Abroad"}, {"id": "p47", "name": "Rome", "lat": 41.9, "lng": 12.5, "g": "Abroad"}, {"id": "p48", "name": "Venice", "lat": 45.44, "lng": 12.32, "g": "Abroad"}, {"id": "p49", "name": "Florence", "lat": 43.77, "lng": 11.26, "g": "Abroad"}, {"id": "p50", "name": "Barcelona", "lat": 41.39, "lng": 2.17, "g": "Abroad"}, {"id": "p51", "name": "Prague", "lat": 50.08, "lng": 14.44, "g": "Abroad"}, {"id": "p52", "name": "Vienna", "lat": 48.21, "lng": 16.37, "g": "Abroad"}, {"id": "p53", "name": "Budapest", "lat": 47.5, "lng": 19.04, "g": "Abroad"}, {"id": "p54", "name": "Santorini", "lat": 36.39, "lng": 25.46, "g": "Abroad"}], "thenNow": [{"id": "t0", "then": "Making up a reason about notebooks just to talk to you.", "now": "No reason needed. Ever."}, {"id": "t1", "then": "Rare calls that the universe seemed to arrange.", "now": "Yours is the first voice I hear every morning."}, {"id": "t2", "then": "Meeting at Shivaji Park and pretending it was only a photoshoot.", "now": "Home is wherever you are."}, {"id": "t3", "then": "Foreverthing was a nickname.", "now": "Now it's a promise."}], "letter": "You left the home you grew up in and made mine yours. You took my family as your own, took on my name, and accepted everything about me and the people I love. It is one of the biggest steps anyone can take, and I respect you more than I will ever manage to say.\n\nWe have shared everything with complete faith, trust and no judgement. We have held each other through every up and every down, and even the rough patches only showed us how much we mean to each other.\n\nYou are my travel planner and my favourite travel partner. Seven countries in, every new place still feels like home because you are in it.\n\nFour years married, and I would still walk up to you with any excuse about a notebook.", "finale": "Now look up from your phone. I'm right here."}</script>
+<script type="application/json" id="defaults">{"chapters": [{"id": "school", "date": "2011-06", "when": "2011–12 · 12th grade", "title": "A notebook, an excuse", "text": "It began in our 12th grade classes, when I walked up to you with some reason about exchanging notes. We started talking, and by the end of that year we were close friends.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "universe", "date": "2013-01", "when": "The years apart", "title": "Messages from the universe", "text": "Life sent us down different paths. Yet whenever I travelled, some stranger on a street would remind me of you, and that same day, out of nowhere, you would message or call. We barely spoke, but the universe kept passing notes between us.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dadar", "date": "2016-05", "when": "May 2016 · Shivaji Park, Dadar", "title": "The photoshoot", "text": "Around graduation we started chatting again and planned a photoshoot for you. We met at Shivaji Park, and something changed. We started chatting and meeting all the time.", "place": "Shivaji Park, Dadar", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "sgnp", "date": "2016-06", "when": "2016 · Sanjay Gandhi National Park", "title": "The day it felt real", "text": "Borivali, the forest, a really great day together, and the movies that followed. For the first time it felt like something.", "place": "Sanjay Gandhi National Park", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dating", "date": "2016-08", "when": "23 August 2016", "title": "Officially us", "text": "It had started earlier, but this is the day we made it official, and it was the best thing that ever happened to us. Somewhere in those days we started calling each other Foreverthing.", "place": "", "big": true, "linkLabel": "", "linkUrl": ""}, {"id": "sikkim", "date": "2017-01", "when": "Sikkim & Darjeeling", "title": "Our first trip", "text": "Our first real outing together, and we came back with a bag full of memories.", "place": "Gangtok, Sikkim", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rough", "date": "2019-01", "when": "The rough patches", "title": "What they taught us", "text": "There were hard days too. They taught us how to be mature, in life and in a relationship, and showed each of us how much the other really meant.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "engaged", "date": "2022-02", "when": "24 February 2022", "title": "Engaged", "text": "After all those journeys and wonderful moments, we both felt the time had come to tie the knot.", "place": "", "big": true, "linkLabel": "Watch our engagement video", "linkUrl": "https://www.youtube.com/watch?v=zJG3PEIwEPg"}, {"id": "wedding", "date": "2022-11", "when": "26 November 2022", "title": "Married", "text": "Life changed completely. New responsibilities, a home shared 24/7, discovering little things about each other and accepting every one of them, happily. #TheSaHiJodi was born.", "place": "", "big": true, "linkLabel": "Play Sata Janmanchi", "linkUrl": "https://www.youtube.com/watch?v=wwSCU_Kl3CE"}, {"id": "maldives", "date": "2022-11", "when": "November 2022 · Orchids hotel → the Maldives", "title": "Our first trip abroad", "text": "Our first five-star stay, then our honeymoon and our first international trip together: a small island in the Maldives, and only the two of us, always.", "place": "Maldives", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "goa", "date": "2023-12", "when": "Every December · Goa", "title": "Our tradition", "text": "Some trips are a must. Every December, Goa, and every single time, so much fun.", "place": "Goa", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "malaysia", "date": "2024-11", "when": "November 2024 · Malaysia & Singapore", "title": "Our 2nd anniversary", "text": "We celebrated two years of marriage in Malaysia and Singapore. That night at the Twin Towers in Kuala Lumpur and the view from the Singapore Flyer were incredible. A wonderful trip, planned entirely by my travel planner, my dear wife.", "place": "Petronas Twin Towers, KL", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rajasthan", "date": "2025-01", "when": "Rajasthan", "title": "Another chapter", "text": "Another journey together, and another set of wonderful memories.", "place": "Jaipur", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "europe", "date": "2026-06", "when": "2026 · Germany, France, Switzerland, Austria", "title": "Your 30th, on the Eiffel Tower", "text": "For your 30th birthday we went across Europe, the experience of a lifetime. Your birthday on the Eiffel Tower, watching that serene sunset on it and from it. And Germany was so beautiful, we fell in love with it.", "place": "Eiffel Tower, Paris", "big": true, "linkLabel": "", "linkUrl": ""}], "videos": [{"id": "v0", "title": "ForeverThing", "k": "Our latest song", "url": "https://youtu.be/T1hnTOQs57M", "text": "What we called each other while dating, and the song I made for you, for us. With #TheSaHiJodi in the tagline.", "main": true}, {"id": "v1", "title": "Sata Janmanchi", "k": "Pre-wedding song", "url": "https://www.youtube.com/watch?v=wwSCU_Kl3CE", "text": "A promise to be your partner in every birth, all seven of them, across seven oceans.", "main": false}, {"id": "v2", "title": "Our engagement", "k": "24 February 2022", "url": "https://www.youtube.com/watch?v=zJG3PEIwEPg", "text": "The day we said yes to forever, in front of everyone we love.", "main": false}], "quiz": [{"id": "q0", "q": "Where did we meet the day things changed in May 2016?", "o1": "Marine Drive", "o2": "Shivaji Park, Dadar", "o3": "Juhu Beach", "o4": "Bandra Bandstand", "a": "2"}, {"id": "q1", "q": "What excuse did I use to first talk to you in 12th grade?", "o1": "Asking for a pen", "o2": "A note-book exchange", "o3": "A group project", "o4": "Borrowing your bus pass", "a": "2"}, {"id": "q2", "q": "Which date did we make it official?", "o1": "14 Feb 2016", "o2": "23 Aug 2016", "o3": "26 Nov 2016", "o4": "1 Jan 2017", "a": "2"}, {"id": "q3", "q": "Where was our first trip together?", "o1": "Goa", "o2": "Kerala", "o3": "Sikkim & Darjeeling", "o4": "Rajasthan", "a": "3"}, {"id": "q4", "q": "What did we call each other while dating?", "o1": "Sunshine", "o2": "Foreverthing", "o3": "Jaan", "o4": "Partner-in-crime", "a": "2"}, {"id": "q5", "q": "When did we get engaged?", "o1": "24 Feb 2022", "o2": "26 Nov 2021", "o3": "23 Aug 2021", "o4": "14 Feb 2022", "a": "1"}, {"id": "q6", "q": "What was our wedding hashtag?", "o1": "#RahiKaSameer", "o2": "#SameerWedsRahi", "o3": "#TheSaHiJodi", "o4": "#Foreverthing", "a": "3"}, {"id": "q7", "q": "Sata Janmanchi promises we'll be together for…", "o1": "Seven years", "o2": "Seven births", "o3": "Seven wonders", "o4": "Seven days a week", "a": "2"}, {"id": "q8", "q": "Where did we go for our honeymoon, our first trip abroad?", "o1": "Bali", "o2": "Maldives", "o3": "Switzerland", "o4": "Mauritius", "a": "2"}, {"id": "q9", "q": "Where did we celebrate our 2nd anniversary?", "o1": "Thailand", "o2": "Dubai", "o3": "Malaysia & Singapore", "o4": "Sri Lanka", "a": "3"}, {"id": "q10", "q": "Where were you on your 30th birthday?", "o1": "The Eiffel Tower", "o2": "A Swiss mountain", "o3": "A Goa beach", "o4": "Neuschwanstein Castle", "a": "1"}, {"id": "q11", "q": "Which country did we fall in love with in Europe?", "o1": "Austria", "o2": "Germany", "o3": "Switzerland", "o4": "France", "a": "2"}, {"id": "q12", "q": "Where do we go every December?", "o1": "Kerala", "o2": "Lonavala", "o3": "Goa", "o4": "Rajasthan", "a": "3"}], "likely": [{"id": "l0", "t": "fall asleep halfway through a movie"}, {"id": "l1", "t": "say sorry first after a fight"}, {"id": "l2", "t": "start singing out of nowhere"}, {"id": "l3", "t": "plan our next holiday"}, {"id": "l4", "t": "take 50 photos to get one good one"}, {"id": "l5", "t": "steal the last bite"}, {"id": "l6", "t": "cry at a sad movie"}, {"id": "l7", "t": "lose the keys (again)"}, {"id": "l8", "t": "get hungry first on a trip"}, {"id": "l9", "t": "win an argument"}, {"id": "l10", "t": "remember our anniversary first"}, {"id": "l11", "t": "fall in love all over again today"}], "reasons": [{"id": "r0", "t": "You trust me completely, and let me trust you the same way."}, {"id": "r1", "t": "You have never judged me."}, {"id": "r2", "t": "You stood by me through every up and every down."}, {"id": "r3", "t": "You made my family your own."}, {"id": "r4", "t": "You turned a notebook exchange into a lifetime."}, {"id": "r5", "t": "The universe kept sending me back to you."}, {"id": "r6", "t": "You make a small island feel like the whole world."}, {"id": "r7", "t": "We grew up together through the rough patches."}, {"id": "r8", "t": "Every trip is better because you're in it."}, {"id": "r9", "t": "You accept every little thing about me, happily."}, {"id": "r10", "t": "You chose me, and you keep choosing me."}, {"id": "r11", "t": "You are, and always will be, my Foreverthing."}, {"id": "r12", "t": "You're the best travel planner in the world."}, {"id": "r13", "t": "You turned an Eiffel Tower sunset into my favourite memory."}, {"id": "r14", "t": "Every new country feels like home with you."}, {"id": "r15", "t": "Sata janmanchi: in every birth, it will be you."}, {"id": "r16", "t": "Four years in, it still feels like the beginning."}], "coupons": [{"id": "0", "title": "Breakfast in bed", "text": "Made by me, served with a song."}, {"id": "1", "title": "You pick the movie", "text": "No arguments. No sighing. Promise."}, {"id": "2", "title": "A day planned by you", "text": "I follow, wherever, whatever."}, {"id": "3", "title": "A long ride together", "text": "Just us on the bike, destination: anywhere."}, {"id": "4", "title": "A song about anything", "text": "You choose the topic, I write the song."}, {"id": "5", "title": "You win this argument", "text": "Instantly. No questions asked."}, {"id": "6", "title": "A surprise date", "text": "Planned by me. You just show up."}, {"id": "7", "title": "Chores off", "text": "A full day of rest. I've got everything."}, {"id": "8", "title": "Next trip: my turn", "text": "I plan everything for once. You just pack."}], "dates": [{"id": "d0", "t": "Sunset at Marine Drive with roasted bhutta"}, {"id": "d1", "t": "Go back to Shivaji Park, just the two of us"}, {"id": "d2", "t": "A morning walk at Sanjay Gandhi National Park"}, {"id": "d3", "t": "Cook a dish neither of us has ever tried"}, {"id": "d4", "t": "Recreate our very first date"}, {"id": "d5", "t": "Old photos, chai and stories night"}, {"id": "d6", "t": "A drive to Lonavala, no plan"}, {"id": "d7", "t": "A movie marathon, Rahi picks everything"}, {"id": "d8", "t": "Sameer plays only Rahi's song requests"}, {"id": "d9", "t": "Stargazing on the terrace"}, {"id": "d10", "t": "A street-food crawl through the city"}, {"id": "d11", "t": "Plan our next big trip on a map"}, {"id": "d12", "t": "Watch our engagement video together again"}, {"id": "d13", "t": "Write each other a letter and swap"}, {"id": "d14", "t": "Pick our next country over chai, with a world map"}, {"id": "d15", "t": "Find the best city view in Mumbai, like that night at the Twin Towers"}, {"id": "d16", "t": "A sunset somewhere new, even in our own city"}], "numbers": [{"id": "n0", "n": "7", "label": "countries explored together: Maldives, Malaysia, Singapore, Germany, France, Switzerland, Austria"}, {"id": "n1", "n": "1", "label": "birthday on the Eiffel Tower, at sunset"}, {"id": "n2", "n": "Every", "label": "December in Goa"}, {"id": "n3", "n": "2", "label": "songs written for you (so far)"}, {"id": "n4", "n": "7", "label": "births promised: Sata Janmanchi"}, {"id": "n5", "n": "1", "label": "Foreverthing"}, {"id": "n6", "n": "∞", "label": "reasons to keep going"}], "questions": [{"id": "notice", "q": "The first thing I noticed about you in 12th grade"}, {"id": "dadar", "q": "At Shivaji Park in May 2016, I felt"}, {"id": "spot", "q": "Our usual meeting spot while dating"}, {"id": "film", "q": "The first film we watched together"}, {"id": "food", "q": "Your favourite food or snack"}, {"id": "wedding", "q": "The wedding-day moment I'll never forget"}, {"id": "maldives", "q": "Our best moment in the Maldives"}, {"id": "europe", "q": "My favourite place with you in Europe"}, {"id": "laugh", "q": "When you laugh, you"}, {"id": "calm", "q": "You calm me down by"}], "mapqs": [{"id": "ily", "q": "Where we first said “I love you”"}, {"id": "propose", "q": "Where the proposal happened"}, {"id": "ours", "q": "The place in Mumbai that feels most like ours"}, {"id": "talk", "q": "The trip city we still talk about"}], "openWhen": [{"id": "miss", "label": "you miss me"}, {"id": "stress", "label": "work gets too much"}, {"id": "fight", "label": "we've had a fight"}, {"id": "sleep", "label": "you can't sleep"}, {"id": "laugh", "label": "you need a laugh"}, {"id": "proud", "label": "you're proud of yourself"}, {"id": "low", "label": "you feel low"}, {"id": "anni", "label": "it's our 5th anniversary"}], "places": [{"id": "p0", "name": "Shivaji Park, Dadar", "lat": 19.027, "lng": 72.838, "g": "Mumbai & around"}, {"id": "p1", "name": "Sanjay Gandhi National Park", "lat": 19.23, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p2", "name": "Marine Drive", "lat": 18.944, "lng": 72.823, "g": "Mumbai & around"}, {"id": "p3", "name": "Juhu", "lat": 19.099, "lng": 72.826, "g": "Mumbai & around"}, {"id": "p4", "name": "Bandra", "lat": 19.06, "lng": 72.83, "g": "Mumbai & around"}, {"id": "p5", "name": "Mumbai (elsewhere)", "lat": 19.076, "lng": 72.877, "g": "Mumbai & around"}, {"id": "p6", "name": "Lonavala", "lat": 18.75, "lng": 73.41, "g": "Mumbai & around"}, {"id": "p7", "name": "Alibaug", "lat": 18.64, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p8", "name": "Pune", "lat": 18.52, "lng": 73.86, "g": "Mumbai & around"}, {"id": "p9", "name": "Mahabaleshwar", "lat": 17.92, "lng": 73.66, "g": "Mumbai & around"}, {"id": "p10", "name": "Nashik", "lat": 20.0, "lng": 73.79, "g": "Mumbai & around"}, {"id": "p11", "name": "Goa", "lat": 15.49, "lng": 73.83, "g": "Mumbai & around"}, {"id": "p12", "name": "Gangtok, Sikkim", "lat": 27.33, "lng": 88.61, "g": "India"}, {"id": "p13", "name": "Darjeeling", "lat": 27.04, "lng": 88.26, "g": "India"}, {"id": "p14", "name": "Jaipur", "lat": 26.91, "lng": 75.79, "g": "India"}, {"id": "p15", "name": "Udaipur", "lat": 24.58, "lng": 73.71, "g": "India"}, {"id": "p16", "name": "Jodhpur", "lat": 26.24, "lng": 73.02, "g": "India"}, {"id": "p17", "name": "Jaisalmer", "lat": 26.92, "lng": 70.91, "g": "India"}, {"id": "p18", "name": "Delhi", "lat": 28.61, "lng": 77.21, "g": "India"}, {"id": "p19", "name": "Agra", "lat": 27.18, "lng": 78.01, "g": "India"}, {"id": "p20", "name": "Rishikesh", "lat": 30.09, "lng": 78.27, "g": "India"}, {"id": "p21", "name": "Manali", "lat": 32.24, "lng": 77.19, "g": "India"}, {"id": "p22", "name": "Shimla", "lat": 31.1, "lng": 77.17, "g": "India"}, {"id": "p23", "name": "Leh", "lat": 34.15, "lng": 77.58, "g": "India"}, {"id": "p24", "name": "Varanasi", "lat": 25.32, "lng": 82.97, "g": "India"}, {"id": "p25", "name": "Hyderabad", "lat": 17.39, "lng": 78.49, "g": "India"}, {"id": "p26", "name": "Bengaluru", "lat": 12.97, "lng": 77.59, "g": "India"}, {"id": "p27", "name": "Kochi", "lat": 9.93, "lng": 76.27, "g": "India"}, {"id": "p28", "name": "Munnar", "lat": 10.09, "lng": 77.06, "g": "India"}, {"id": "p29", "name": "Andaman", "lat": 11.62, "lng": 92.73, "g": "India"}, {"id": "p30", "name": "Maldives", "lat": 4.18, "lng": 73.51, "g": "Abroad"}, {"id": "p31", "name": "Dubai", "lat": 25.2, "lng": 55.27, "g": "Abroad"}, {"id": "p32", "name": "Bangkok", "lat": 13.75, "lng": 100.5, "g": "Abroad"}, {"id": "p33", "name": "Kuala Lumpur, Malaysia", "lat": 3.14, "lng": 101.69, "g": "Abroad"}, {"id": "p34", "name": "Petronas Twin Towers, KL", "lat": 3.1579, "lng": 101.7116, "g": "Abroad"}, {"id": "p35", "name": "Singapore", "lat": 1.35, "lng": 103.82, "g": "Abroad"}, {"id": "p36", "name": "Singapore Flyer", "lat": 1.2893, "lng": 103.8631, "g": "Abroad"}, {"id": "p37", "name": "Bali", "lat": -8.34, "lng": 115.09, "g": "Abroad"}, {"id": "p38", "name": "Paris", "lat": 48.86, "lng": 2.35, "g": "Abroad"}, {"id": "p39", "name": "Eiffel Tower, Paris", "lat": 48.858, "lng": 2.2945, "g": "Abroad"}, {"id": "p40", "name": "Germany", "lat": 51.1, "lng": 10.4, "g": "Abroad"}, {"id": "p41", "name": "Switzerland", "lat": 46.8, "lng": 8.2, "g": "Abroad"}, {"id": "p42", "name": "Austria", "lat": 47.5, "lng": 14.55, "g": "Abroad"}, {"id": "p43", "name": "London", "lat": 51.51, "lng": -0.13, "g": "Abroad"}, {"id": "p44", "name": "Interlaken", "lat": 46.69, "lng": 7.86, "g": "Abroad"}, {"id": "p45", "name": "Zurich", "lat": 47.38, "lng": 8.54, "g": "Abroad"}, {"id": "p46", "name": "Amsterdam", "lat": 52.37, "lng": 4.9, "g": "Abroad"}, {"id": "p47", "name": "Rome", "lat": 41.9, "lng": 12.5, "g": "Abroad"}, {"id": "p48", "name": "Venice", "lat": 45.44, "lng": 12.32, "g": "Abroad"}, {"id": "p49", "name": "Florence", "lat": 43.77, "lng": 11.26, "g": "Abroad"}, {"id": "p50", "name": "Barcelona", "lat": 41.39, "lng": 2.17, "g": "Abroad"}, {"id": "p51", "name": "Prague", "lat": 50.08, "lng": 14.44, "g": "Abroad"}, {"id": "p52", "name": "Vienna", "lat": 48.21, "lng": 16.37, "g": "Abroad"}, {"id": "p53", "name": "Budapest", "lat": 47.5, "lng": 19.04, "g": "Abroad"}, {"id": "p54", "name": "Santorini", "lat": 36.39, "lng": 25.46, "g": "Abroad"}], "thenNow": [{"id": "t0", "then": "Making up a reason about notebooks just to talk to you.", "now": "No reason needed. Ever."}, {"id": "t1", "then": "Rare calls that the universe seemed to arrange.", "now": "Yours is the first voice I hear every morning."}, {"id": "t2", "then": "Meeting at Shivaji Park and pretending it was only a photoshoot.", "now": "Home is wherever you are."}, {"id": "t3", "then": "Foreverthing was a nickname.", "now": "Now it's a promise."}], "letter": "You left the home you grew up in and made mine yours. You took my family as your own, took on my name, and accepted everything about me and the people I love. It is one of the biggest steps anyone can take, and I respect you more than I will ever manage to say.\n\nWe have shared everything with complete faith, trust and no judgement. We have held each other through every up and every down, and even the rough patches only showed us how much we mean to each other.\n\nYou are my travel planner and my favourite travel partner. Seven countries in, every new place still feels like home because you are in it.\n\nFour years married, and I would still walk up to you with any excuse about a notebook.", "finale": "Now look up from your phone. I'm right here.", "favCats": [{"id": "fc0", "name": "Songs"}, {"id": "fc1", "name": "Movies"}, {"id": "fc2", "name": "Shows"}, {"id": "fc3", "name": "Food"}, {"id": "fc4", "name": "Restaurants"}, {"id": "fc5", "name": "Places"}, {"id": "fc6", "name": "Books"}], "playlists": [{"id": "pl0", "title": "Our favourite songs", "url": "https://music.youtube.com/playlist?list=PLVF9Mt6iqHCFgBCQc7RNXrQpK2xTZy-dZ"}], "kyq": [{"id": "k0", "q": "My comfort food when I've had a bad day?"}, {"id": "k1", "q": "The song I've had on repeat lately?"}, {"id": "k2", "q": "My favourite colour?"}, {"id": "k3", "q": "Window seat or aisle seat?"}, {"id": "k4", "q": "The first thing I do after waking up?"}, {"id": "k5", "q": "What annoys me the most?"}, {"id": "k6", "q": "My guilty-pleasure snack?"}, {"id": "k7", "q": "The thing I always forget?"}, {"id": "k8", "q": "What do I do when I'm stressed?"}, {"id": "k9", "q": "My biggest fear?"}, {"id": "k10", "q": "My dream destination we haven't visited yet?"}, {"id": "k11", "q": "If I could have any job other than mine, what would it be?"}, {"id": "k12", "q": "The one thing I'd save in a fire?"}, {"id": "k13", "q": "What makes me feel most loved?"}, {"id": "k14", "q": "The moment I knew you were the one?"}, {"id": "k15", "q": "My favourite memory of us?"}, {"id": "k16", "q": "The trip I'd repeat in a heartbeat?"}, {"id": "k17", "q": "What I'd change about our wedding day, if anything?"}, {"id": "k18", "q": "Our song, if I could pick only one?"}, {"id": "k19", "q": "Mountains or beaches?"}, {"id": "k20", "q": "A dinner date or a long ride?"}, {"id": "k21", "q": "A surprise party or a quiet day together?"}, {"id": "k22", "q": "Plan everything or go with the flow?"}, {"id": "k23", "q": "Sweet or spicy?"}, {"id": "k24", "q": "My most-used emoji or phrase?"}, {"id": "k25", "q": "My perfect lazy Sunday?"}]}</script>
 <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/dist/echarts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
 
 <script>
 /* ================= the notebook ================= */
-window.__boot = function(loaded){
+window.__boot = function(loaded, privLoaded){
 const $ = s=>document.querySelector(s), $$ = s=>[...document.querySelectorAll(s)];
 const esc = v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const uid = ()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -616,21 +727,26 @@ const MET = 2011, TOGETHER = new Date("2016-08-23T00:00:00+05:30"), MARRIED = ne
 
 /* ---------- state ---------- */
 const DEF = JSON.parse($("#defaults").textContent);
-const STATE = Object.assign({content:null,mem:[],bucket:[],capsule:{},promises:{},redeemed:{},letters:{},qa:{},mapq:{},profiles:{},journal:[],gallery:[]}, loaded||{});
+const STATE = Object.assign({content:null,mem:[],bucket:[],capsule:{},promises:{},redeemed:{},letters:{},qa:{},mapq:{},profiles:{},journal:[],gallery:[],favs:[],kym:{},kyr:[]}, loaded||{});
 let seeded = false;
 if(!STATE.content){ STATE.content = clone(DEF); seeded = true; }
 const C = STATE.content;
 Object.keys(DEF).forEach(k=>{ if(C[k]===undefined) C[k] = clone(DEF[k]); });
 if(Array.isArray(STATE.thenNow)){ C.thenNow = STATE.thenNow.map(t=>Object.assign({id:uid()},t)); delete STATE.thenNow; }
-const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"};
-WHO.forEach(w=>{ STATE.profiles[w] = STATE.profiles[w]||{}; if(!STATE.profiles[w].full) STATE.profiles[w].full = FULL[w]; });
+const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"}, INSTA = {Rahi:"rahi.gadkari",Sameer:"sam.patwardhan"};
+WHO.forEach(w=>{ const p = STATE.profiles[w] = STATE.profiles[w]||{}; if(!p.full) p.full = FULL[w]; if(p.insta===undefined) p.insta = INSTA[w]; });
 
+const PRIV = Object.assign({notes:[],ideas:[]}, privLoaded||{});
 /* ---------- saving ---------- */
 let tTimer=null, pTimer=null;
 const toast = (t,ms=2200)=>{ const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(tTimer); if(ms) tTimer=setTimeout(()=>el.hidden=true,ms); };
 const persist = ()=>{ clearTimeout(pTimer); toast("Saving…",0); pTimer=setTimeout(async()=>{
   try{ await window.FB.save(STATE); toast("Saved ♥"); }catch(e){ toast("Couldn't save. Check your internet and try again.",5000); }
 },600); };
+let ppTimer=null;
+const persistPriv = ()=>{ clearTimeout(ppTimer); toast("Saving…",0); ppTimer=setTimeout(async()=>{
+  try{ await window.FB.savePriv(PRIV); toast("Saved to My space 🔒"); }catch(e){ toast("Couldn't save. Check your internet and try again.",5000); }
+},500); };
 
 /* ---------- places ---------- */
 const PL = ()=>{ const o={}; C.places.forEach(p=>o[p.name]=p); return o; };
@@ -679,7 +795,10 @@ const SCHEMAS = {
   openWhen:{title:"Open-when envelopes",sum:i=>"Open when "+i.label,fields:[["label","Open when…"]]},
   reasons:{title:"Reasons I love you",sum:i=>i.t,fields:[["t","Reason","textarea"]]},
   coupons:{title:"Love coupons",sum:i=>i.title,fields:[["title","Coupon"],["text","The fine print"]]},
-  dates:{title:"Date-jar ideas",sum:i=>i.t,fields:[["t","Date idea"]]}
+  dates:{title:"Date-jar ideas",sum:i=>i.t,fields:[["t","Date idea"]]},
+  kyq:{title:"“Know me” questions",hint:"Each of us answers these about ourselves.",sum:i=>i.q,fields:[["q","Question"]]},
+  favCats:{title:"Favourite categories",hint:"Renaming a category keeps its favourites.",sum:i=>i.name,fields:[["name","Category"]]},
+  playlists:{title:"Our playlists",hint:"Paste a Spotify or YouTube Music playlist link.",sum:i=>i.title,fields:[["title","Name"],["url","Playlist link","url"]],req:["title","url"]}
 };
 const sortCh = ()=>C.chapters.map((c,i)=>[c,i]).sort((a,b)=>(a[0].date||"9999").localeCompare(b[0].date||"9999")||a[1]-b[1]).map(x=>x[0]);
 let curKey = null;
@@ -773,19 +892,20 @@ const renderComing = ()=>{
 
 /* ---------- profiles ---------- */
 let PHOTOS = {};
-const PF = [["full","Full name"],["nick","Nickname"],["bday","Birthday","date"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"],["about","Me, in one line","textarea"]];
+const PF = [["full","Full name"],["nick","Nickname"],["insta","Instagram (@handle or link)"],["bday","Birthday","date"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"],["about","Me, in one line","textarea"]];
+const igHandle = v=>{ const s=String(v||"").trim(); const m = s.match(/instagram\.com\/([A-Za-z0-9._]{1,30})/) || s.match(/^@?([A-Za-z0-9._]{1,30})$/); return m ? m[1] : ""; };
 const renderProfiles = ()=>{
   $("#profiles").innerHTML = WHO.map(w=>{
     const p = STATE.profiles[w]||{}, ph = PHOTOS["profile-"+w], mine = w===ME;
-    const rows = PF.filter(([k])=>!["full","nick","about"].includes(k) && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${esc(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
-    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${esc(p.full||w)}</h3>${p.nick?`<div class="nk">${esc(p.nick)}</div>`:""}</div></div>
+    const rows = PF.filter(([k])=>!["full","nick","about","insta"].includes(k) && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${esc(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
+    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${esc(p.full||w)}</h3>${p.nick?`<div class="nk">${esc(p.nick)}</div>`:""}${igHandle(p.insta)?`<a class="ig" href="https://www.instagram.com/${igHandle(p.insta)}/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@${igHandle(p.insta)}</a>`:""}</div></div>
       ${p.about?`<p class="about">${esc(p.about)}</p>`:""}${rows?`<dl>${rows}</dl>`:""}
       ${mine?`<span class="ed">${rows||p.about?"Edit my profile":"+ Fill in my profile"}</span>`:(rows||p.about?"":`<span class="muted" style="font-size:14px">${w} hasn't filled this in yet.</span>`)}`;
     return mine ? `<button class="pf mine" id="myPf">${inner}</button>` : `<div class="pf">${inner}</div>`;
   }).join("");
 };
 $("#profiles").addEventListener("click",async e=>{
-  if(!e.target.closest("#myPf")) return;
+  if(!e.target.closest("#myPf") || e.target.closest(".ig")) return;
   const r = await form("My profile", PF, STATE.profiles[ME], {req:["full"], hint:"To add or change your photo, tap the round picture on your card."});
   if(!r) return; STATE.profiles[ME] = Object.assign({},STATE.profiles[ME],r); renderProfiles(); renderComing(); persist();
 });
@@ -793,7 +913,7 @@ $("#profiles").addEventListener("click",async e=>{
 const pfPhoto = document.createElement("input"); pfPhoto.type="file"; pfPhoto.accept="image/*"; pfPhoto.hidden=true; document.body.appendChild(pfPhoto);
 $("#profiles").addEventListener("click",e=>{ if(e.target.closest("#myPf .av")){ e.stopImmediatePropagation(); pfPhoto.click(); } },true);
 pfPhoto.addEventListener("change",async()=>{ const f=pfPhoto.files[0]; if(!f) return; toast("Uploading photo…",0);
-  try{ const u=await window.FB.uploadPhoto("profile-"+ME,f); PHOTOS["profile-"+ME]=u; renderProfiles(); toast("Photo saved ♥"); }catch(err){ toast("Couldn't upload that photo. Try again.",4000); } pfPhoto.value=""; });
+  try{ const u=await window.FB.uploadPhoto("profile-"+ME,f); PHOTOS["profile-"+ME]=u; renderProfiles(); renderMeBtn(); toast("Photo saved ♥"); }catch(err){ toast("Couldn't upload that photo. Try again.",4000); } pfPhoto.value=""; });
 
 /* ---------- timeline ---------- */
 const camera = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>';
@@ -978,6 +1098,69 @@ const startLikely = ()=>{
   L.length ? intro() : box.innerHTML=`<div class="k">Who's more likely to…</div><p class="muted">No questions yet.</p>`;
 };
 
+/* ---------- how well do you know me ---------- */
+let kyTab = "mine", kyRound = null;
+const kyMine = ()=>STATE.kym[ME]||{}, kyTheirs = ()=>STATE.kym[OTHER]||{};
+const fmtS = s=>Number.isInteger(s)?s:s.toFixed(1);
+const renderKY = ()=>{
+  const mineN = C.kyq.filter(q=>kyMine()[q.id]).length, theirN = C.kyq.filter(q=>kyTheirs()[q.id]).length;
+  $("#kyTabs").innerHTML = [["mine",`My answers <small>${mineN}/${C.kyq.length}</small>`],["guess",`Guess ${OTHER}'s <small>${theirN}</small>`],["board","Scoreboard"]].map(([k,l])=>`<button class="chip" data-t="${k}" aria-pressed="${kyTab===k}">${l}</button>`).join("");
+  const B = $("#kyBody");
+  if(kyTab==="mine"){
+    B.innerHTML = `<div class="kyprog"><span>${mineN} of ${C.kyq.length} answered</span><div class="prog"><i style="width:${mineN/Math.max(1,C.kyq.length)*100}%"></i></div></div>
+      <p class="hint" style="margin:0 0 12px">Answer about yourself. ${OTHER} won't see these until they guess.</p>
+      <div class="kyl">${C.kyq.map(q=>`<div class="kyq${kyMine()[q.id]?" done":""}"><label for="ky_${esc(q.id)}">${esc(q.q)}</label><input id="ky_${esc(q.id)}" data-q="${esc(q.id)}" maxlength="140" value="${esc(kyMine()[q.id]||"")}" placeholder="My answer"></div>`).join("")}</div>
+      <div class="kysave"><button class="btn fill" id="kySave">Save my answers</button></div>`;
+  } else if(kyTab==="guess"){
+    if(kyRound) return renderGuess();
+    const avail = C.kyq.filter(q=>kyTheirs()[q.id]);
+    B.innerHTML = `<div class="kyg">${avail.length<3 ? `<div class="q">${OTHER} needs to answer a few first</div><p class="muted">${OTHER} has answered ${avail.length} so far. Once they've filled in “My answers”, you can start guessing.</p>`
+      : `<div class="q">How well do you know ${OTHER}?</div><p class="muted">You'll get ${Math.min(10,avail.length)} of ${OTHER}'s ${avail.length} answered questions at random. Type your guess, reveal the answer, then be honest: got it, close, or missed.</p>
+        <div class="row" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn fill" id="kyStart" data-n="${Math.min(10,avail.length)}">Start a round of ${Math.min(10,avail.length)}</button>${avail.length>10?`<button class="btn" id="kyStartAll" data-n="${avail.length}">All ${avail.length}</button>`:""}</div>`}</div>`;
+  } else {
+    const stat = (g,a)=>{ const R=STATE.kyr.filter(r=>r.guesser===g); if(!R.length) return `<div class="bd"><span class="k">${g} knows ${a}</span><b>–</b><span>No rounds yet</span></div>`;
+      const last=R[R.length-1], best=R.reduce((m,r)=>r.score/r.total>m.score/m.total?r:m,R[0]), avg=Math.round(R.reduce((s,r)=>s+r.score/r.total,0)/R.length*100);
+      return `<div class="bd"><span class="k">${g} knows ${a}</span><b>${avg}%</b><span>Last ${fmtS(last.score)}/${last.total} · best ${fmtS(best.score)}/${best.total} · ${R.length} round${R.length>1?"s":""}</span></div>`; };
+    const H = STATE.kyr.slice().reverse().slice(0,12);
+    B.innerHTML = `<div class="board">${stat("Rahi","Sameer")}${stat("Sameer","Rahi")}</div>
+      ${H.length?`<ul class="hist">${H.map(r=>`<li><span>${esc(r.guesser)} guessed ${r.guesser==="Rahi"?"Sameer":"Rahi"} · ${fmtDate(r.at)}</span><b>${fmtS(r.score)}/${r.total}</b></li>`).join("")}</ul>`:""}`;
+  }
+};
+const renderGuess = ()=>{
+  const R = kyRound, it = R.items[R.i], q = C.kyq.find(x=>x.id===it.qid)||{q:"(question removed)"}, B = $("#kyBody");
+  if(R.i>=R.items.length) return;
+  B.innerHTML = `<div class="kyg"><div class="k" style="font-size:14px;font-weight:700;color:var(--blush)">Guessing ${OTHER} · ${R.i+1} of ${R.items.length} · score ${fmtS(R.score)}</div>
+    <div class="prog"><i style="width:${R.i/R.items.length*100}%"></i></div>
+    <p class="hint" style="margin:0">${OTHER} answered this about ${OTHER==="Rahi"?"herself":"himself"}:</p>
+    <div class="q">${esc(q.q)}</div>
+    ${it.revealed ? `<div class="ans2"><div><i>Your guess</i>${esc(it.guess||"(no guess)")}</div><div><i>${OTHER} said</i>${esc(kyTheirs()[it.qid]||"")}</div></div>
+       <div class="verd"><button class="v1" data-v="1">Got it ✓</button><button data-v="0.5">Close ½</button><button class="v0" data-v="0">Missed ✗</button></div>`
+     : `<input id="kyG" maxlength="140" placeholder="My guess" value="${esc(it.guess||"")}"><div class="row" style="display:flex;gap:10px;justify-content:space-between"><button class="btn" id="kyQuit">Stop round</button><button class="btn fill" id="kyReveal">Reveal ${OTHER}'s answer</button></div>`}
+  </div>`;
+  if(!it.revealed) setTimeout(()=>{ const g=$("#kyG"); if(g&&innerWidth>700) g.focus(); },50);
+};
+$("#kyTabs").addEventListener("click",e=>{ const b=e.target.closest("[data-t]"); if(b){ kyTab=b.dataset.t; renderKY(); } });
+$("#kyBody").addEventListener("click",e=>{
+  const t = e.target.closest("button"); if(!t) return;
+  if(t.id==="kySave"){ const m=Object.assign({},kyMine()); $$("#kyBody input[data-q]").forEach(i=>{ const v=i.value.trim(); if(v) m[i.dataset.q]=v; else delete m[i.dataset.q]; }); STATE.kym[ME]=m; renderKY(); persist(); return; }
+  if(t.id==="kyStart"||t.id==="kyStartAll"){ const avail=C.kyq.filter(q=>kyTheirs()[q.id]).map(q=>q.id).sort(()=>Math.random()-.5).slice(0,+t.dataset.n);
+    kyRound={i:0,score:0,items:avail.map(qid=>({qid,guess:"",revealed:false,v:null}))}; renderGuess(); return; }
+  if(!kyRound) return;
+  const it = kyRound.items[kyRound.i];
+  if(t.id==="kyQuit"){ kyRound=null; renderKY(); return; }
+  if(t.id==="kyReveal"){ it.guess=$("#kyG").value.trim(); it.revealed=true; renderGuess(); return; }
+  if(t.dataset.v!=null){ it.v=+t.dataset.v; kyRound.score+=it.v; kyRound.i++;
+    if(kyRound.i>=kyRound.items.length){ const R=kyRound, pct=R.score/R.items.length;
+      STATE.kyr.push({id:uid(),guesser:ME,at:new Date().toISOString(),score:R.score,total:R.items.length,items:R.items.map(x=>({qid:x.qid,guess:x.guess,v:x.v}))}); persist();
+      const msg = pct===1?`Perfect! You know ${OTHER} completely.`:pct>=.7?`You really know ${OTHER}. ♥`:pct>=.4?`Not bad. A few more chai conversations needed.`:`Looks like ${OTHER} still has some surprises for you.`;
+      kyRound=null;
+      $("#kyBody").innerHTML = `<div class="kyg"><div class="k" style="font-size:14px;font-weight:700;color:var(--blush)">Round done</div><div class="q">${fmtS(R.score)} out of ${R.items.length}</div><p class="fb">${msg}</p>
+        <div class="row" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn fill" id="kyAgain">Play again</button><button class="btn" id="kyBoard">See scoreboard</button></div></div>`;
+    } else renderGuess(); return; }
+});
+$("#kyBody").addEventListener("click",e=>{ const t=e.target.closest("#kyAgain,#kyBoard"); if(t&&!kyRound){ kyTab=t.id==="kyBoard"?"board":"guess"; renderKY(); } });
+$("#kyBody").addEventListener("keydown",e=>{ if(e.key==="Enter"&&e.target.id==="kyG"){ e.preventDefault(); $("#kyReveal").click(); } });
+
 /* ---------- open-when letters ---------- */
 const renderLetters = ()=>{
   $("#letters").innerHTML = C.openWhen.map(({id,label})=>{ const has=!!STATE.letters[id];
@@ -1041,13 +1224,115 @@ $("#capsule").addEventListener("click",async e=>{ if(!e.target.closest("button.m
 const renderJ = ()=>{ const J=STATE.journal.slice().sort((a,b)=>b.at.localeCompare(a.at));
   $("#journal").innerHTML = J.length ? J.map(j=>`<article class="je${j.who==="Rahi"?" r":""}"><div class="meta"><span><b>${esc(j.who)}</b> · ${fmtDate(j.at)}</span>${j.who===ME?`<button class="del" data-id="${esc(j.id)}">Delete</button>`:""}</div>${j.title?`<h3>${esc(j.title)}</h3>`:""}<p>${esc(j.text)}</p></article>`).join("") : `<p class="muted">The first page is waiting.</p>`; };
 $("#jForm").addEventListener("submit",e=>{ e.preventDefault(); const t=$("#jText").value.trim(); if(!t) return;
-  STATE.journal.push({id:uid(),at:new Date().toISOString(),who:ME,title:$("#jTitle").value.trim(),text:t}); $("#jTitle").value=""; $("#jText").value=""; renderJ(); persist(); });
+  const entry={id:uid(),at:new Date().toISOString(),who:ME,title:$("#jTitle").value.trim(),text:t};
+  if($("#jPriv").checked){ PRIV.notes.push(entry); persistPriv(); } else { STATE.journal.push(entry); renderJ(); persist(); }
+  $("#jTitle").value=""; $("#jText").value=""; });
+$("#jPriv").addEventListener("change",()=>{ $("#jGo").textContent = $("#jPriv").checked ? "Save to My space" : "Add to our notebook"; });
 $("#journal").addEventListener("click",e=>{ const b=e.target.closest(".del"); if(!b) return; if(!b.dataset.sure){ b.dataset.sure="1"; b.textContent="Tap again to delete"; return; }
   STATE.journal=STATE.journal.filter(j=>j.id!==b.dataset.id); renderJ(); persist(); });
 
+/* ---------- favourites ---------- */
+let favCat = "all", favWho = "all";
+const svc = u=>/spotify\.com/.test(u)?"Spotify":/music\.youtube/.test(u)?"YouTube Music":/youtu/.test(u)?"YouTube":/google\.[a-z.]+\/maps|maps\.app|goo\.gl\/maps/.test(u)?"Maps":/imdb\./.test(u)?"IMDb":/netflix|primevideo|hotstar|jiocinema|sonyliv/.test(u)?"Watch":/zomato|swiggy/.test(u)?"Order":"Open";
+const plEmbed = u=>{ let m=String(u).match(/open\.spotify\.com\/(?:intl-[a-z]+\/)?(playlist|album|track)\/([A-Za-z0-9]+)/); if(m) return {src:`https://open.spotify.com/embed/${m[1]}/${m[2]}`,h:352};
+  m=String(u).match(/[?&]list=([\w-]+)/); if(m) return {src:`https://www.youtube-nocookie.com/embed/videoseries?list=${m[1]}&rel=0&playsinline=1`,h:0}; return null; };
+const catName = id=>(C.favCats.find(c=>c.id===id)||{}).name||"Other";
+const key = f=>f.cat+"|"+f.title.trim().toLowerCase();
+const canEdit = f=>f.who==="Both"||f.by===ME||f.who===ME;
+const favList = ()=>STATE.favs.filter(f=>(favCat==="all"||f.cat===favCat)&&(favWho==="all"||f.who===favWho));
+const renderFavs = ()=>{
+  const F = STATE.favs, n = id=>F.filter(f=>f.cat===id).length;
+  $("#favCats").innerHTML = [["all","All",F.length],...C.favCats.map(c=>[c.id,c.name,n(c.id)])].map(([id,nm,k])=>`<button class="chip" data-c="${esc(id)}" aria-pressed="${favCat===id}">${esc(nm)}<small>${k}</small></button>`).join("");
+  $("#favWho").innerHTML = [["all","Everyone's"],["Both","Ours"],["Rahi","Rahi's"],["Sameer","Sameer's"]].map(([v,l])=>`<button class="chip" data-w="${v}" aria-pressed="${favWho===v}">${l}</button>`).join("");
+  const songsCat = (C.favCats.find(c=>/song|music/i.test(c.name))||{}).id;
+  $("#favPlay").innerHTML = (favCat==="all"||favCat===songsCat) ? C.playlists.map(p=>{ const s=svc(p.url), em=plEmbed(p.url);
+    return `<div class="pl"><span class="k">Playlist · ${s}</span><h3>${esc(p.title)}</h3><div class="pv" data-p="${esc(p.id)}"></div><div class="row2">${em?`<button class="btn fill plPlay" data-p="${esc(p.id)}">Play here</button>`:""}${safeUrl(p.url)?`<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Open in ${s}</a>`:""}</div></div>`; }).join("")
+    + (C.playlists.some(p=>/spotify/.test(p.url)) ? "" : `<button class="pl add" data-manage="playlists"><span class="k">Rahi uses Spotify</span>+ Add our Spotify playlist too</button>`) : "";
+  const pairs = {}; F.forEach(f=>{ if(f.who!=="Both"){ (pairs[key(f)]=pairs[key(f)]||new Set()).add(f.who); } });
+  const L = favList().slice().sort((a,b)=>(b.at||"").localeCompare(a.at||""));
+  $("#favGrid").innerHTML = L.length ? L.map(f=>{ const both = f.who==="Both" || (pairs[key(f)]&&pairs[key(f)].size>1);
+    return `<div class="fv"><div class="top2"><span class="cat">${esc(catName(f.cat))}</span><span class="wb${f.who==="Rahi"?" r":""}">${f.who==="Both"?"Ours":esc(f.who)+"'s"}</span></div>
+      <b>${esc(f.title)}</b>${f.note?`<p>${esc(f.note)}</p>`:""}${both&&f.who!=="Both"?`<span class="both">We both picked this ♥</span>`:""}
+      <div class="acts">${safeUrl(f.link)?`<a href="${esc(f.link)}" target="_blank" rel="noopener">${svc(f.link)} →</a>`:""}${canEdit(f)?`<button data-f="${esc(f.id)}">Edit</button>`:""}</div></div>`; }).join("")
+    : `<p class="muted">${F.length?"Nothing here yet.":"No favourites yet. Add the first one, or tell the Remember box “my favourite film is…”"}</p>`;
+  $("#favPicked").textContent = "";
+};
+const FAVF = ()=>[["title","What is it?"],["cat","Category","select",C.favCats.map(c=>[c.id,c.name])],["note","Why we love it, or any details","textarea"],["link","Link (Spotify, YouTube, Maps…, optional)","url"],["who","Whose favourite?","select",[["Both","Both of ours"],[ME,"Just mine"]]]];
+const editFav = async id=>{
+  const i = STATE.favs.findIndex(f=>f.id===id), f = STATE.favs[i] || {cat: favCat!=="all"?favCat:(C.favCats[0]||{}).id, who:"Both"};
+  if(!C.favCats.length) return toast("Add a category first (Edit → Edit categories)");
+  const r = await form(i>=0?"Edit favourite":"New favourite", FAVF(), f, {del:i>=0});
+  if(!r) return; if(r==="delete") STATE.favs.splice(i,1);
+  else if(i>=0) STATE.favs[i] = Object.assign({},f,r); else STATE.favs.push(Object.assign({id:uid(),by:ME,at:new Date().toISOString()},r));
+  renderFavs(); persist();
+};
+$("#favAdd").addEventListener("click",()=>editFav(null));
+$("#favGrid").addEventListener("click",e=>{ const b=e.target.closest("[data-f]"); if(b) editFav(b.dataset.f); });
+$("#favCats").addEventListener("click",e=>{ const b=e.target.closest("[data-c]"); if(b){ favCat=b.dataset.c; renderFavs(); } });
+$("#favWho").addEventListener("click",e=>{ const b=e.target.closest("[data-w]"); if(b){ favWho=b.dataset.w; renderFavs(); } });
+$("#favPlay").addEventListener("click",e=>{ const b=e.target.closest(".plPlay"); if(!b) return; const p=C.playlists.find(x=>x.id===b.dataset.p), em=plEmbed(p.url); if(!em) return;
+  const box=document.querySelector(`.pv[data-p="${CSS.escape(p.id)}"]`); box.innerHTML = `<iframe src="${em.src}" ${em.h?`height="${em.h}"`:'style="aspect-ratio:16/9"'} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="${esc(p.title)}"></iframe>`; b.remove(); });
+$("#favPick").addEventListener("click",()=>{ const L=favList(); if(!L.length){ $("#favPicked").textContent="Add a few favourites first."; return; }
+  const f=L[Math.floor(Math.random()*L.length)]; $("#favPicked").textContent = `${f.title}${favCat==="all"?" ("+catName(f.cat)+")":""}`; });
+
+/* ---------- My space (private to each of us) ---------- */
+let msTab = "notes";
+const msDlg = $("#msDlg");
+const avHTML = ()=>PHOTOS["profile-"+ME]?`<img src="${PHOTOS["profile-"+ME]}" alt="">`:ME[0];
+const renderMeBtn = ()=>{ $("#meName").innerHTML = `<i class="${ME==="Rahi"?"r":""}">${avHTML()}</i><span>Hi, ${esc(ME)}</span>`; };
+const renderMS = ()=>{
+  const p = STATE.profiles[ME]||{};
+  $("#msAv").className = "av"+(ME==="Rahi"?" r":""); $("#msAv").innerHTML = avHTML();
+  $("#msName").textContent = p.full||ME; $("#msEmail").textContent = window.FB.email();
+  $("#msTabs").innerHTML = [["notes",`Private notes <small>${PRIV.notes.length}</small>`],["ideas",`Surprise ideas <small>${PRIV.ideas.filter(i=>!i.done).length}</small>`],["acct","Account"]].map(([k,l])=>`<button class="chip" data-t="${k}" aria-pressed="${msTab===k}">${l}</button>`).join("");
+  const B = $("#msBody");
+  if(msTab==="notes"){
+    const N = PRIV.notes.slice().sort((a,b)=>b.at.localeCompare(a.at));
+    B.innerHTML = `<form class="msform" id="pnForm"><input id="pnTitle" maxlength="90" placeholder="Title (optional)"><textarea id="pnText" maxlength="4000" placeholder="Just for me…" required></textarea><button class="btn fill" type="submit">Save privately</button></form>
+      ${N.map(n=>`<div class="pn"><div class="meta">${fmtDate(n.at)}</div>${n.title?`<h4>${esc(n.title)}</h4>`:""}<p>${esc(n.text)}</p>
+        <div class="acts"><button data-a="edit" data-id="${esc(n.id)}">Edit</button><button data-a="share" data-id="${esc(n.id)}">Share with ${OTHER}</button><button data-a="del" data-id="${esc(n.id)}">Delete</button></div></div>`).join("") || `<p class="muted">Thoughts, drafts, things you're not ready to share. Write them here, then share any of them with ${OTHER} whenever you like.</p>`}`;
+  } else if(msTab==="ideas"){
+    B.innerHTML = `<p class="hint" style="margin:0">Gift ideas, surprise plans, things ${OTHER} mentioned wanting. ${OTHER} will never see this list.</p>
+      <form class="msform" id="idForm" style="grid-template-columns:minmax(0,1fr) auto"><input id="idText" maxlength="140" placeholder="e.g. That blue scarf she saw in Vienna"><button class="btn fill" type="submit">Add</button></form>
+      <ul class="bucket" style="margin:0">${PRIV.ideas.map((x,i)=>`<li class="${x.done?"done":""}"><label><input type="checkbox" data-i="${i}" ${x.done?"checked":""}><span>${esc(x.text)}</span></label><small>${x.done?"done "+fmtDate(x.done):"added "+fmtDate(x.at)}</small><button class="x" data-i="${i}" aria-label="Remove">×</button></li>`).join("") || `<li class="emptyli">No ideas yet.</li>`}</ul>`;
+  } else {
+    const prov = window.FB.providers();
+    B.innerHTML = `<div class="acct">
+      <div class="row3"><span>Signed in as</span><b style="overflow-wrap:anywhere">${esc(window.FB.email())}</b></div>
+      <div class="row3"><span>Sign-in method</span><b>${prov.includes("google.com")?"Google":""}${prov.includes("google.com")&&prov.includes("password")?" + ":""}${prov.includes("password")?"Email & password":""}</b></div>
+      <div class="row3"><span>In My space</span><b>${PRIV.notes.length} notes · ${PRIV.ideas.length} ideas</b></div>
+      <div class="btns"><button class="btn" id="msProfile">Edit my profile</button>${prov.includes("password")?`<button class="btn" id="msPw">Change my password</button>`:""}<button class="btn" id="msBackup">Download my private backup</button><button class="btn danger" id="msOut">Sign out</button></div>
+      <p class="hint" id="msMsg"></p></div>`;
+  }
+};
+$("#meName").addEventListener("click",()=>{ renderMS(); openDlg(msDlg); });
+$("#msClose").addEventListener("click",()=>msDlg.close());
+$("#msTabs").addEventListener("click",e=>{ const b=e.target.closest("[data-t]"); if(b){ msTab=b.dataset.t; renderMS(); } });
+$("#msBody").addEventListener("submit",e=>{
+  e.preventDefault();
+  if(e.target.id==="pnForm"){ const t=$("#pnText").value.trim(); if(!t) return; PRIV.notes.push({id:uid(),at:new Date().toISOString(),who:ME,title:$("#pnTitle").value.trim(),text:t}); renderMS(); persistPriv(); }
+  if(e.target.id==="idForm"){ const t=$("#idText").value.trim(); if(!t) return; PRIV.ideas.push({text:t,at:new Date().toISOString(),done:null}); renderMS(); persistPriv(); }
+});
+$("#msBody").addEventListener("change",e=>{ const i=e.target.dataset.i; if(i==null||msTab!=="ideas") return; PRIV.ideas[i].done=e.target.checked?new Date().toISOString():null; renderMS(); persistPriv(); });
+$("#msBody").addEventListener("click",async e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  if(msTab==="ideas" && b.classList.contains("x")){ if(b.dataset.sure){ PRIV.ideas.splice(+b.dataset.i,1); renderMS(); persistPriv(); } else { b.dataset.sure="1"; b.textContent="Remove?"; } return; }
+  if(b.dataset.a){ const i=PRIV.notes.findIndex(n=>n.id===b.dataset.id), n=PRIV.notes[i]; if(i<0) return;
+    if(b.dataset.a==="del"){ if(b.dataset.sure){ PRIV.notes.splice(i,1); renderMS(); persistPriv(); } else { b.dataset.sure="1"; b.textContent="Tap again to delete"; } return; }
+    if(b.dataset.a==="share"){ if(!b.dataset.sure){ b.dataset.sure="1"; b.textContent=`Move to our notebook?`; return; }
+      STATE.journal.push({id:n.id,at:new Date().toISOString(),who:ME,title:n.title,text:n.text}); PRIV.notes.splice(i,1); renderMS(); renderJ(); persist(); persistPriv(); toast(`Shared with ${OTHER} ♥`); return; }
+    if(b.dataset.a==="edit"){ msDlg.close(); const r=await form("Edit private note",[["title","Title"],["text","Note","textarea"]],n,{req:["text"]}); if(r){ Object.assign(n,r); persistPriv(); } renderMS(); openDlg(msDlg); return; }
+  }
+  if(b.id==="msProfile"){ msDlg.close(); document.querySelector("#myPf h3").click(); return; }
+  if(b.id==="msPw"){ window.FB.resetPw().then(()=>$("#msMsg").textContent=`A link to set a new password has been sent to ${window.FB.email()}.`).catch(()=>$("#msMsg").textContent="Couldn't send the email. Try again later."); return; }
+  if(b.id==="msBackup"){ const blob=new Blob([JSON.stringify(PRIV,null,2)],{type:"application/json"}), a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`my-space-${ME.toLowerCase()}-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); return; }
+  if(b.id==="msOut"){ window.FB.signOut(); return; }
+});
+window.FB.isPrivate().then(ok=>{ if(!ok){ $("#msLock").classList.add("warn"); $("#msLockTxt").textContent = `Not private yet: the Firestore rules still let ${OTHER} read this. Update the rules to make My space private.`; } }).catch(()=>{});
+
 /* ---------- Remember: type anything, it gets sorted ---------- */
-const TYPES = [["chapter","A chapter in our story"],["memory","My best memory of a year"],["journal","A notebook entry"],["reason","A reason I love you"],["bucket","A bucket-list dream"],["date","A date idea"]];
-const SHOW = {chapter:["title","text","year","month","place"],memory:["title","text","year","place"],journal:["title","text"],reason:["text"],bucket:["title"],date:["title"]};
+const TYPES = [["chapter","A chapter in our story"],["memory","My best memory of a year"],["journal","A notebook entry"],["reason","A reason I love you"],["bucket","A bucket-list dream"],["date","A date idea"],["favourite","One of our favourites"],["private","A private note (only me)"]];
+const SHOW = {chapter:["title","text","year","month","place"],memory:["title","text","year","place"],journal:["title","text"],reason:["text"],bucket:["title"],date:["title"],favourite:["title","text","cat"],private:["title","text"]};
 const MON = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
 const ALIAS = {"eiffel":"Eiffel Tower, Paris","twin tower":"Petronas Twin Towers, KL","petronas":"Petronas Twin Towers, KL","flyer":"Singapore Flyer","national park":"Sanjay Gandhi National Park","sgnp":"Sanjay Gandhi National Park","borivali":"Sanjay Gandhi National Park","shivaji park":"Shivaji Park, Dadar","dadar":"Shivaji Park, Dadar","sikkim":"Gangtok, Sikkim","gangtok":"Gangtok, Sikkim","kuala lumpur":"Kuala Lumpur, Malaysia","malaysia":"Kuala Lumpur, Malaysia","rajasthan":"Jaipur","mumbai":"Mumbai (elsewhere)","bombay":"Mumbai (elsewhere)"};
 const localSort = txt=>{
@@ -1058,7 +1343,9 @@ const localSort = txt=>{
   C.places.forEach(p=>{ [p.name, p.name.split(",")[0]].forEach(n=>{ const k=n.toLowerCase(); if(k.length>2 && low.includes(k) && k.length>best){ best=k.length; place=p.name; } }); });
   Object.entries(ALIAS).forEach(([k,v])=>{ if(low.includes(k) && k.length>best && C.places.some(p=>p.name===v)){ best=k.length; place=v; } });
   let type = "journal";
-  if(/\b(bucket|someday|some day|one day|wish we|want to (go|visit|see|try|do)|dream of|before we turn)\b/.test(low)) type="bucket";
+  if(/\b(private|only me|just for me|note to self|secret|don'?t tell)\b/.test(low)) type="private";
+  else if(/\b(favou?rite|fav|faves?)\b/.test(low)) type="favourite";
+  else if(/\b(bucket|someday|some day|one day|wish we|want to (go|visit|see|try|do)|dream of|before we turn)\b/.test(low)) type="bucket";
   else if(/\b(date idea|we should try|let'?s try|next weekend|date night)\b/.test(low)) type="date";
   else if(/^(i love (you|how|that|the way)|love (how|that|the way)|you always|you make|you are|you're|reason)/.test(low)) type="reason";
   else if(year && year<new Date().getFullYear()+1 && /\b(first|engag|married|wedding|trip|travel|birthday|anniversary|moved|propos|holiday|vacation|honeymoon|went to|visited)\b/.test(low)) type="chapter";
@@ -1069,7 +1356,14 @@ const localSort = txt=>{
   let words = first.split(" "); let title = words.slice(0,8).join(" ") + (words.length>8?"…":"");
   title = title.charAt(0).toUpperCase()+title.slice(1);
   const text = body.split(/([.!?]\s+)/).map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join("");
-  return {type,title,text,year,month,place};
+  let cat = null;
+  if(type==="favourite"){
+    const CK = [[/\b(song|songs|track|album|singer|band|music|playlist)\b/,"song|music"],[/\b(movie|movies|film|films)\b/,"movie|film"],[/\b(series|show|shows|season|web ?series)\b/,"show"],[/\b(book|books|novel|author)\b/,"book"],[/\b(restaurant|cafe|café|dhaba|hotel)\b/,"restaurant"],[/\b(food|dish|eat|snack|dessert|sweet|drink|chai|coffee)\b/,"food"],[/\b(place|city|beach|country|spot)\b/,"place"]];
+    for(const [re,nm] of CK){ if(re.test(low)){ const c=C.favCats.find(c=>new RegExp(nm,"i").test(c.name)); if(c){ cat=c.id; break; } } }
+    const m = body.match(/fav(?:ou?rite)?s?\s+(?:[a-z ]{0,20}?)\s*(?:is|are|=|:|-)\s+(.+)/i);
+    if(m){ title = m[1].split(/[.!?]\s|\n|,\s*because|\s+because/i)[0].trim(); title = title.charAt(0).toUpperCase()+title.slice(1); }
+  }
+  return {type,title,text,year,month,place,cat};
 };
 let rRes=null, rNew=null;
 const rDlg = $("#rDlg");
@@ -1086,9 +1380,10 @@ const rFieldsHTML = ()=>{
     fieldHTML(["text","The story","textarea"],r.text,"rf_"),
     fieldHTML(["year","Year","select",[["","Not sure"],...yrs]],r.year?String(r.year):"","rf_"),
     fieldHTML(["month","Month","select",[["","Not sure"],...MONTHS.map((m,i)=>[String(i+1),m])]],r.month?String(r.month):"","rf_"),
-    `<label>Place<select id="rf_place">${popts}</select></label>`
+    `<label>Place<select id="rf_place">${popts}</select></label>`,
+    fieldHTML(["cat","Category","select",C.favCats.map(c=>[c.id,c.name])],r.cat||((C.favCats[0]||{}).id),"rf_")
   ].join("");
-  const vis = ()=>{ const t=$("#rf_type").value; ["title","text","year","month","place"].forEach(k=>$("#rf_"+k).closest("label").hidden=!SHOW[t].includes(k));
+  const vis = ()=>{ const t=$("#rf_type").value; ["title","text","year","month","place","cat"].forEach(k=>$("#rf_"+k).closest("label").hidden=!SHOW[t].includes(k));
     const y=+$("#rf_year").value; $("#rNote").textContent = t==="memory" && y && STATE.mem.some(m=>m.year===y&&m.who===ME) ? `This replaces your current best memory of ${y}.` : t==="memory"&&!y ? "Pick the year for this memory." : ""; };
   $("#rf_type").addEventListener("change",vis); $("#rf_year").addEventListener("change",vis); vis();
 };
@@ -1097,8 +1392,9 @@ $("#rSort").addEventListener("click",async()=>{
   const btn=$("#rSort"); btn.disabled=true; btn.textContent="Sorting…";
   let how="Quick sort"; rNew=null; rRes=null;
   if(window.AI){ try{
-    const a = await window.AI.sort(txt,{me:ME,today:new Date().toISOString().slice(0,10),places:C.places.map(p=>p.name)});
-    if(a && TYPES.some(t=>t[0]===a.type)){ rRes={type:a.type,title:a.title||"",text:a.text||txt,year:a.year||null,month:a.month||null,place:null};
+    const a = await window.AI.sort(txt,{me:ME,today:new Date().toISOString().slice(0,10),places:C.places.map(p=>p.name),cats:C.favCats.map(c=>c.name)});
+    if(a && TYPES.some(t=>t[0]===a.type)){ rRes={type:a.type,title:a.title||"",text:a.text||txt,year:a.year||null,month:a.month||null,place:null,cat:null};
+      if(a.category){ const c=C.favCats.find(c=>c.name.toLowerCase()===String(a.category).toLowerCase()); if(c) rRes.cat=c.id; }
       if(a.place){ const hit=C.places.find(p=>p.name.toLowerCase()===String(a.place).toLowerCase()); if(hit) rRes.place=hit.name; else if(typeof a.lat==="number"&&typeof a.lng==="number") rNew={name:String(a.place).slice(0,60),lat:a.lat,lng:a.lng}; }
       how="Smart sort · typos fixed"; }
   }catch(e){ console.warn("AI sort failed",e); } }
@@ -1119,6 +1415,8 @@ $("#rForm").addEventListener("submit",e=>{
   else if(t==="reason"){ C.reasons.push({id:uid(),t:text||title}); where="#reasonBtn"; }
   else if(t==="bucket"){ STATE.bucket.push({text:(text||title).slice(0,120),who:"Both of us",done:null}); where="#next"; }
   else if(t==="date"){ C.dates.push({id:uid(),t:title||text}); where="#gifts"; }
+  else if(t==="private"){ if(!text&&!title) return; PRIV.notes.push({id:uid(),at:new Date().toISOString(),who:ME,title,text:text||title}); rDlg.close(); $("#rText").value=""; persistPriv(); return; }
+  else if(t==="favourite"){ if(!title) return toast("What's the favourite? Add a title"); const cat=g("cat"); STATE.favs.push({id:uid(),cat,title,note:text&&text!==title?text:"",link:"",who:ME,by:ME,at:new Date().toISOString()}); favCat="all"; favWho="all"; where="#favs"; }
   rDlg.close(); $("#rText").value=""; renderAll(); persist(); toast("Remembered ♥ · "+TYPES.find(x=>x[0]===t)[1]);
   setTimeout(()=>{ const el=document.querySelector(where); if(el) el.scrollIntoView({block:"center"}); },300);
 });
@@ -1137,10 +1435,10 @@ const finIO=new IntersectionObserver(es=>{ if(showered||!es[0].isIntersecting) r
 finIO.observe(fin);
 
 /* ---------- render everything ---------- */
-function renderAll(){ renderHero(); renderComing(); renderProfiles(); renderTimeline(); drawSky(); renderVideos(); renderLetter(); renderNums(); renderYears(); drawMap(); renderQA(); renderAlbum(); renderTN(); startQuiz(); startLikely(); renderLetters(); renderCoupons(); renderBucket(); renderNext(); renderJ(); }
-renderAll();
+function renderAll(){ renderHero(); renderComing(); renderProfiles(); renderFavs(); renderTimeline(); drawSky(); renderVideos(); renderLetter(); renderNums(); renderYears(); drawMap(); renderQA(); renderAlbum(); renderTN(); startQuiz(); startLikely(); renderKY(); renderLetters(); renderCoupons(); renderBucket(); renderNext(); renderJ(); }
+renderAll(); renderMeBtn();
 $("#verTxt").textContent = window.VERSION||"";
-window.__applyPhotos = map=>{ Object.assign(PHOTOS,map||{}); renderProfiles(); renderTimeline(); renderAlbum(); };
+window.__applyPhotos = map=>{ Object.assign(PHOTOS,map||{}); renderMeBtn(); renderProfiles(); renderTimeline(); renderAlbum(); };
 window.__chapterIds = ()=>C.chapters.map(c=>c.id);
 if(seeded) persist();
 };
@@ -1151,7 +1449,7 @@ if(seeded) persist();
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
 /* ================= setup ================= */
-window.VERSION = "v2.0";
+window.VERSION = "v2.4";
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCoaeb4-3GQuV1gHo_511I-2t1O7MGY4QA",
   authDomain: "thesahijodi-61f8b.firebaseapp.com",
@@ -1182,7 +1480,7 @@ let booted = false;
 if(!window.firebase){ msg("Couldn't reach the sign-in service. Check your internet."); }
 else {
   firebase.initializeApp(window.FIREBASE_CONFIG);
-  const auth=firebase.auth(), db=firebase.firestore(), ref=db.collection("couples").doc("foreverthing");
+  const auth=firebase.auth(), db=firebase.firestore(), ref=db.collection("couples").doc("foreverthing"), privCol=db.collection("private");
   let myEmail="", lastJson="";
   q("#gBtn").addEventListener("click",()=>{ const pr=new firebase.auth.GoogleAuthProvider(); pr.setCustomParameters({prompt:"select_account"});
     auth.signInWithPopup(pr).catch(e=>{ if(/popup-blocked|operation-not-supported/.test(e.code||"")) auth.signInWithRedirect(pr); else msg(nice(e)); }); });
@@ -1209,7 +1507,13 @@ else {
     save: async state=>{ const j=JSON.stringify(state); await ref.set({json:j,at:Date.now(),by:myEmail}); lastJson=j; },
     uploadPhoto: async (id,file)=>{ const data=await compress(file); await ref.collection("photos").doc(id).set({data,at:Date.now(),by:myEmail}); return data; },
     getPhotos: async ids=>{ const o={}; await Promise.all(ids.map(id=>ref.collection("photos").doc(id).get().then(d=>{ if(d.exists&&okImg(d.data().data)) o[id]=d.data().data; }).catch(()=>{}))); return o; },
-    deletePhoto: id=>ref.collection("photos").doc(id).delete()
+    deletePhoto: id=>ref.collection("photos").doc(id).delete(),
+    savePriv: async p=>{ await privCol.doc(myEmail).set({json:JSON.stringify(p),at:Date.now()}); },
+    isPrivate: async ()=>{ const other=Object.keys(PEOPLE).find(e=>e!==myEmail); try{ await privCol.doc(other).get(); return false; }catch(e){ return /permission/i.test((e&&(e.code||e.message))||""); } },
+    resetPw: ()=>auth.sendPasswordResetEmail(myEmail),
+    email: ()=>myEmail,
+    providers: ()=>((auth.currentUser&&auth.currentUser.providerData)||[]).map(p=>p.providerId),
+    signOut: ()=>auth.signOut()
   };
 
   auth.onAuthStateChanged(async u=>{
@@ -1219,15 +1523,16 @@ else {
     myEmail=em; window.ME=who; msg("Opening our notebook…");
     let loaded=null;
     try{ const d=await ref.get(); const j=d.exists&&d.data().json; if(j){ lastJson=j; loaded=JSON.parse(j); } }catch(e){ msg(nice(e)); return; }
+    let priv=null; try{ const p=await privCol.doc(em).get(); if(p.exists&&p.data().json) priv=JSON.parse(p.data().json); }catch(e){}
     q("#loginBox").hidden=true; q("#codeBox").hidden=false;
     q("#codeHi").textContent = who==="Rahi"?"Hi, my Foreverthing":"Hi, "+who;
     setTimeout(()=>q("#code").focus(),100);
     await new Promise(res=>{ q("#codeBox").addEventListener("submit",e=>{ e.preventDefault();
       if(q("#code").value.trim()===PASSCODE){ res(); return; }
       const f=q("#codeBox"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); q("#code").value=""; }); });
-    q("#meName").textContent="Hi, "+who; q("#meBar").hidden=false; q("#remBtn").hidden=false;
+    q("#meBar").hidden=false; q("#remBtn").hidden=false;
     q("#lock").classList.add("gone"); booted=true;
-    window.__boot(loaded);
+    window.__boot(loaded, priv);
     window.FB.getPhotos([...window.__chapterIds(),"profile-Rahi","profile-Sameer"]).then(window.__applyPhotos).catch(()=>{});
     ref.onSnapshot(d=>{ if(!d.exists||d.metadata.hasPendingWrites) return; const x=d.data();
       if(x.json&&x.json!==lastJson&&x.by!==myEmail){ q("#fresh").textContent=`${PEOPLE[x.by]||"Someone"} added something new · Tap to see it`; q("#fresh").hidden=false; } });
@@ -1245,8 +1550,8 @@ try{
   const model = getGenerativeModel(getAI(app,{backend:new GoogleAIBackend()}),{model:window.AI_MODEL,generationConfig:{responseMimeType:"application/json",temperature:0.2}});
   window.AI = { sort: async (text,ctx)=>{
     const prompt = `You sort notes for a private notebook shared by a married couple, Rahi and Sameer (together since 23 Aug 2016, married 26 Nov 2022). The note below was written by ${ctx.me}. Today is ${ctx.today}.
-Return only JSON: {"type": "chapter"|"memory"|"journal"|"reason"|"bucket"|"date", "title": string (max 8 words), "text": string, "year": number or null, "month": number 1-12 or null, "place": string or null, "lat": number or null, "lng": number or null}
-Types: chapter = a milestone or trip in their story; memory = a favourite moment from a particular past year; journal = an everyday note, or something about today; reason = why ${ctx.me} loves their partner; bucket = something they want to do in future; date = an idea for a date.
+Return only JSON: {"type": "chapter"|"memory"|"journal"|"reason"|"bucket"|"date"|"favourite"|"private", "category": string or null, "title": string (max 8 words), "text": string, "year": number or null, "month": number 1-12 or null, "place": string or null, "lat": number or null, "lng": number or null}
+Types: chapter = a milestone or trip in their story; memory = a favourite moment from a particular past year; journal = an everyday note, or something about today; reason = why ${ctx.me} loves their partner; bucket = something they want to do in future; date = an idea for a date; private = something the writer wants to keep to themselves, or a surprise or gift idea for their partner; favourite = a favourite song, film, food, place or similar. For favourite, "title" is the thing itself (e.g. the song or dish name) and "category" is one of: ${ctx.cats.join(", ")}.
 "text": the note rewritten with spelling, typos and grammar fixed, keeping the writer's own voice and first person, and adding nothing new. "title": short and warm.
 "place": if the note names a place, use the exact matching name from this list when one fits: ${ctx.places.join("; ")}. Otherwise give the place's common name with its latitude and longitude. null if no place.
 Note: """${text}"""`;
