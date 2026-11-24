@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v2.4 · 24 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v2.5 · 24 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -487,8 +487,8 @@ dialog .msbody form{padding:0}
 
 <section class="band song" id="song">
   <div class="wrap">
-    <div class="sechead"><div><h2>Our songs</h2><p class="muted">Every one of these is a piece of us.</p></div>
-      <button class="ebtn ed-only" data-manage="videos">Edit songs</button></div>
+    <div class="sechead"><div><h2>Our songs &amp; videos</h2><p class="muted">Every one of these is a piece of us.</p></div>
+      <button class="ebtn ed-only" data-manage="videos">+ Add or edit videos</button></div>
     <div class="vids" id="vids"></div>
   </div>
 </section>
@@ -646,6 +646,7 @@ dialog .msbody form{padding:0}
     <div>
       <p><b>Rahi &amp; Sameer · Our Notebook</b></p>
       <p>A private notebook for the two of us, started for our 4th anniversary. Only our two accounts can open it. Tap <b>Edit</b> at the top to change anything, or <b>Remember</b> to add something new.</p>
+      <p class="vh"><b>v2.5</b> · 24 Nov 2026: Google Drive videos play inside the page, like YouTube ones (engagement, wedding).</p>
       <p class="vh"><b>v2.4</b> · 24 Nov 2026: My space, a private area for each of us (private notes, surprise ideas, account), and private notebook entries.</p>
       <p class="vh"><b>v2.3</b> · 24 Nov 2026: Instagram on our profiles.</p>
       <p class="vh"><b>v2.2</b> · 24 Nov 2026: “How well do you know me?” with 26 questions, scores and a scoreboard.</p>
@@ -784,7 +785,7 @@ const form = (title,fields,vals={},o={})=>new Promise(res=>{
 /* ---------- list manager (edit mode) ---------- */
 const SCHEMAS = {
   chapters:{title:"Story chapters",sorted:true,sum:i=>`${i.date||"No date"} · ${i.title}`,fields:[["title","Title"],["date","Month & year (for the order)","month"],["when","Date line shown (e.g. “May 2016 · Shivaji Park”)"],["text","The story","textarea"],["place","Pin on the map","place"],["big","A big moment (red star)","check"],["linkLabel","Button text (optional)"],["linkUrl","Button link (optional)","url"]]},
-  videos:{title:"Our songs",sum:i=>i.title,fields:[["title","Title"],["k","Small label (e.g. Pre-wedding song)"],["url","YouTube link","url"],["text","About it","textarea"],["main","Highlight this one","check"]],req:["title","url"]},
+  videos:{title:"Our songs & videos",hint:"Paste a YouTube or Google Drive link. For a Drive video, set its sharing so both of us can open it.",sum:i=>`${i.title} · ${driveId(i.url)?"Google Drive":"YouTube"}`,fields:[["title","Title"],["k","Small label (e.g. Our wedding · 26 Nov 2022)"],["url","YouTube or Google Drive link","url"],["text","About it","textarea"],["main","Highlight this one","check"]],req:["title","url"]},
   numbers:{title:"Us, in numbers",hint:"Years married, together and since 12th grade are counted automatically.",sum:i=>`${i.n} · ${i.label}`,fields:[["n","Number or word"],["label","What it counts"]]},
   places:{title:"Places list",hint:"For a new place: in Google Maps, long-press the spot and copy the two numbers it shows (latitude, longitude).",sum:i=>`${i.name} · ${i.g||""}`,fields:[["name","Name"],["lat","Latitude","num"],["lng","Longitude","num"],["g","Group","select",["Mumbai & around","India","Abroad","Added by us"]]],req:["name","lat","lng"]},
   questions:{title:"Little-things questions",sum:i=>i.q,fields:[["q","Question (we both answer it)"]]},
@@ -939,17 +940,21 @@ $("#timeline").addEventListener("change",async e=>{
 
 /* ---------- songs ---------- */
 const playIco = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const driveId = h=>(String(h||"").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]{20,})/)||[])[1];
 const ytId = h=>(String(h||"").match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/)||[])[1];
 const renderVideos = ()=>{
-  $("#vids").innerHTML = C.videos.map(v=>{ const id = ytId(v.url); return `
+  $("#vids").innerHTML = C.videos.map(v=>{ const y = ytId(v.url), d = !y && driveId(v.url);
+    const thumb = y ? `https://i.ytimg.com/vi/${y}/hqdefault.jpg` : d ? `https://drive.google.com/thumbnail?id=${d}&sz=w800` : "";
+    return `
   <div class="vid${v.main?' main':''}">
-    ${id?`<button class="yt" data-v="${id}" aria-label="Play ${esc(v.title)}" style="background-image:url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)"><span class="play">${playIco}</span></button>`:""}
+    ${y||d?`<button class="yt" data-${y?"v":"d"}="${y||d}" aria-label="Play ${esc(v.title)}" style="background-image:url(${thumb})"><span class="play">${playIco}</span></button>`:""}
     <div><div class="k">${esc(v.k)}</div><h3>${esc(v.title)}</h3></div>
-    <p>${esc(v.text)}</p>${safeUrl(v.url)?`<a class="go" href="${esc(v.url)}" target="_blank" rel="noopener">Open on YouTube →</a>`:""}
+    <p>${esc(v.text)}</p>${safeUrl(v.url)?`<a class="go" href="${esc(v.url)}" target="_blank" rel="noopener">Open in ${d?"Google Drive":"YouTube"} →</a>`:""}
   </div>`; }).join("");
 };
 $("#vids").addEventListener("click",e=>{ const b=e.target.closest(".yt"); if(!b||b.querySelector("iframe")) return;
-  b.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>`; });
+  const src = b.dataset.v ? `https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0&playsinline=1` : `https://drive.google.com/file/d/${b.dataset.d}/preview`;
+  b.innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>`; });
 $("#finalPlay").addEventListener("click",()=>{ const b=document.querySelector(".vid.main .yt")||document.querySelector(".yt"); if(b) setTimeout(()=>b.click(),400); });
 
 /* ---------- letter + finale ---------- */
@@ -1449,7 +1454,7 @@ if(seeded) persist();
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
 /* ================= setup ================= */
-window.VERSION = "v2.4";
+window.VERSION = "v2.5";
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCoaeb4-3GQuV1gHo_511I-2t1O7MGY4QA",
   authDomain: "thesahijodi-61f8b.firebaseapp.com",
