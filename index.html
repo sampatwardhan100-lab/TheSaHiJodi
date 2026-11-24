@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v1.1 · 24 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v1.2 · 24 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -338,6 +338,7 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
   <form id="pForm" method="dialog">
     <h3 id="pTitle">Your profile</h3>
     <label>Photo<input id="pPhoto" type="file" accept="image/*"></label>
+    <label>Full name<input id="p_full" maxlength="60"></label>
     <label>Nickname<input id="p_nick" maxlength="40"></label>
     <label>Birthday<input id="p_bday" type="date"></label>
     <label>Favourite food<input id="p_food" maxlength="60"></label>
@@ -542,10 +543,11 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
 <footer>
   <p style="margin:0">Made with all my love · 26.11.2022 → forever · #TheSaHiJodi</p>
   <details class="about">
-    <summary>About · <span class="ver">v1.1</span></summary>
+    <summary>About · <span class="ver">v1.2</span></summary>
     <div>
-      <p><b>Rahi &amp; Sameer · Our Notebook</b>, version <span class="ver">v1.1</span></p>
+      <p><b>Rahi &amp; Sameer · Our Notebook</b>, version <span class="ver">v1.2</span></p>
       <p>A private notebook for the two of us, started for our 4th anniversary on 26 November 2026. Only our two accounts can open it.</p>
+      <p class="vh"><b>v1.2</b> · 24 Nov 2026: our two accounts added, full names on our profiles.</p>
       <p class="vh"><b>v1.1</b> · 24 Nov 2026: Google and email sign-in, create account, our-day passcode, profiles, chapter photos, our notebook, songs playing inside the page.</p>
       <p class="vh"><b>v1.0</b> · 22 Nov 2026: our story, the sky, songs, letter, games, yearly memories and map, love coupons, date jar, open-when letters, bucket list, promises, time capsule.</p>
     </div>
@@ -1173,13 +1175,15 @@ $("#timeline").addEventListener("change",async e=>{
 });
 
 /* profiles */
-const PF = [["nick","Nickname"],["bday","Birthday"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"]];
+const PF = [["full","Full name"],["nick","Nickname"],["bday","Birthday"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"]];
 const ME = window.ME;
+const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"};
+["Rahi","Sameer"].forEach(w=>{ STATE.profiles[w] = STATE.profiles[w]||{}; if(!STATE.profiles[w].full) STATE.profiles[w].full = FULL[w]; });
 function renderProfiles(){
   $("#profiles").innerHTML = ["Rahi","Sameer"].map(w=>{
     const p = STATE.profiles[w]||{}, ph = PHOTOS["profile-"+w], mine = w===ME;
-    const rows = PF.filter(([k])=>k!=="nick" && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${escH(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
-    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${w}</h3>${p.nick?`<div class="nk">${escH(p.nick)}</div>`:""}</div></div>
+    const rows = PF.filter(([k])=>k!=="nick" && k!=="full" && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${escH(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
+    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${escH(p.full||w)}</h3>${p.nick?`<div class="nk">${escH(p.nick)}</div>`:""}</div></div>
       ${p.about?`<p class="about">${escH(p.about)}</p>`:""}${rows?`<dl>${rows}</dl>`:""}
       ${mine?`<span class="ed">${rows||p.about?"Edit my profile":"+ Fill in my profile"}</span>`:(rows||p.about?"":`<span class="muted" style="font-size:14px">${w} hasn't filled this in yet.</span>`)}`;
     return mine ? `<button class="pf mine" id="myPf">${inner}</button>` : `<div class="pf">${inner}</div>`;
@@ -1243,10 +1247,10 @@ const FIREBASE_CONFIG = {
 /* The only two people who can open the notebook (lowercase emails) */
 /* Our day: asked after sign-in */
 const PASSCODE = "2611";
-const VERSION = "v1.1";
+const VERSION = "v1.2";
 const PEOPLE = {
-  "sameer@example.com": "Sameer",
-  "rahi@example.com": "Rahi"
+  "sampatwardhan100@gmail.com": "Sameer",
+  "rahigadkari1@gmail.com": "Rahi"
 };
 /* ====================================================== */
 
