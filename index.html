@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v1.2 · 24 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v2.0 · 24 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1d0b1b">
 <title>Rahi &amp; Sameer · Our Notebook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,9 +80,6 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 .ph .ph-empty svg{display:block;margin:0 auto 8px;opacity:.6}
 .ch:nth-child(even) .ph{order:-1}
 
-/* places */
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.chips span{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2)}
 
 /* song */
 .song{background:var(--bg2)}
@@ -139,7 +137,6 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 .mem span.t{font-size:15px;color:var(--soft)}
 .mem .pl{font-size:13px;color:var(--soft)}
 .mem.empty{border-style:dashed;background:transparent;color:var(--soft);justify-content:center;align-items:flex-start}
-#saveNote{font-size:14px;color:var(--soft);min-height:1.4em;margin-top:10px}
 dialog{border:1px solid var(--line);border-radius:22px;background:var(--card);color:var(--ink);padding:0;width:min(520px,94vw)}
 dialog::backdrop{background:rgba(10,3,10,.7)}
 dialog form{display:grid;gap:12px;padding:22px}
@@ -276,6 +273,50 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
 .about summary::-webkit-details-marker{display:none}
 .about div{padding:16px 18px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink)}
 .about p{margin:0 0 10px}.about .vh{color:var(--soft);font-size:14px}.about .vh:last-child{margin:0}
+
+/* ===== v2 ===== */
+[hidden]{display:none!important}
+.ed-only{display:none!important}
+body.editing .ed-only{display:inline-flex!important}
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ebtn{min-height:40px;padding:0 14px;border-radius:999px;border:1px dashed var(--blush);background:transparent;color:var(--blush);font-size:14px;font-weight:700;align-items:center}
+.mebar .on{background:var(--blush);color:#2a1127;border-color:var(--blush)}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:60;padding:10px 18px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);pointer-events:none}
+.fab{position:fixed;right:16px;bottom:16px;z-index:45;min-height:56px;padding:0 22px 0 18px;border-radius:999px;border:0;background:var(--red);color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.fresh{bottom:84px}
+/* coming up */
+.upnext{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;margin-top:6px}
+.up1{flex:0 0 auto;min-width:170px;padding:14px 16px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.up1 b{display:block;font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1;color:var(--blush)}
+.up1 span{font-size:14px;color:var(--soft)}
+.otd{margin-top:16px;padding:16px 18px;border-radius:18px;background:linear-gradient(150deg,#4a1d43,var(--card));border:1px solid var(--line)}
+.otd p{margin:4px 0 0}.otd .k{font-size:13px;font-weight:700;color:var(--blush)}
+/* chapter edit */
+.chEdit{margin-top:14px;min-height:40px}
+/* album */
+.album{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:10px;margin-top:18px}
+.al{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card);padding:0;cursor:pointer}
+.al img{width:100%;height:100%;object-fit:cover;display:block}
+.al span{position:absolute;inset:auto 0 0 0;padding:16px 8px 6px;font-size:12px;color:#fff;text-align:left;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.upbig{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.upbig input{position:absolute;width:1px;height:1px;opacity:0}
+#lbImg{width:100%;max-height:70vh;object-fit:contain;border-radius:12px;background:#000}
+/* manager */
+.mlist{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-height:55vh;overflow:auto}
+.mlist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+.mlist .s{font-size:15px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.mlist .b{display:flex;gap:4px}
+.mlist button{min-width:40px;min-height:40px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:14px}
+.ff{display:grid;gap:12px;max-height:62vh;overflow:auto;padding-right:2px}
+.ff .chk{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.ff .chk input{width:22px;height:22px;accent-color:var(--red)}
+.hint{font-size:14px;color:var(--soft);margin:0}
+/* remember */
+#rText{min-height:150px}
+.rnote{font-size:14px;color:var(--soft);margin:0}
+.rhow{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--blush)}
+dialog h3{font-size:28px}
+@media(max-width:600px){.fab{right:12px;bottom:12px}.hero{padding-top:72px}}
 </style>
 </head>
 <body>
@@ -306,13 +347,16 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
     <p id="lockMsg" class="lmsg" aria-live="polite"></p>
   </div>
 </div>
-<div class="mebar" id="meBar" hidden><span id="meName"></span><button id="outBtn" type="button">Sign out</button></div>
+
+<div class="mebar" id="meBar" hidden><span id="meName"></span><button id="editBtn" type="button" aria-pressed="false">Edit</button><button id="outBtn" type="button">Sign out</button></div>
 <button class="fresh" id="fresh" type="button" hidden></button>
+<button class="fab" id="remBtn" type="button" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Remember</button>
+<div class="toast" id="toast" hidden aria-live="polite"></div>
 
 <header class="hero band">
   <div>
     <h1 class="names script">Rahi &amp; Sameer</h1>
-    <p class="sub">Four years married. Ten years together. Fifteen since a borrowed notebook.</p>
+    <p class="sub" id="heroSub"></p>
     <p class="tag">#TheSaHiJodi</p>
   </div>
   <div class="sky" id="sky"><svg id="skySvg" aria-label="Our story as a constellation"></svg></div>
@@ -320,13 +364,21 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
     <div class="stats">
       <div class="stat"><b id="dMarried">0</b><span>days married</span></div>
       <div class="stat"><b id="dTogether">0</b><span>days together</span></div>
-      <div class="stat"><b id="yKnown">15</b><span>years since 12th grade</span></div>
+      <div class="stat"><b id="yKnown">0</b><span>years since 12th grade</span></div>
     </div>
     <p class="center" id="tick"></p>
   </div>
 </header>
 
-<section class="band" id="us">
+<section class="band" id="coming">
+  <div class="wrap">
+    <h3>Coming up</h3>
+    <div class="upnext" id="upnext"></div>
+    <div id="otd"></div>
+  </div>
+</section>
+
+<section class="band" id="us" style="background:var(--bg2)">
   <div class="wrap">
     <h2>Meet us</h2>
     <p class="muted">Tap your own card to fill it in.</p>
@@ -334,91 +386,18 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
   </div>
 </section>
 
-<dialog id="pDlg">
-  <form id="pForm" method="dialog">
-    <h3 id="pTitle">Your profile</h3>
-    <label>Photo<input id="pPhoto" type="file" accept="image/*"></label>
-    <label>Full name<input id="p_full" maxlength="60"></label>
-    <label>Nickname<input id="p_nick" maxlength="40"></label>
-    <label>Birthday<input id="p_bday" type="date"></label>
-    <label>Favourite food<input id="p_food" maxlength="60"></label>
-    <label>Dream destination<input id="p_dest" maxlength="60"></label>
-    <label>Favourite song<input id="p_song" maxlength="80"></label>
-    <label>Me, in one line<textarea id="p_about" maxlength="300"></textarea></label>
-    <div class="row"><button type="button" class="btn" id="pCancel">Cancel</button><button type="submit" class="btn fill">Save</button></div>
-  </form>
-</dialog>
-
 <section class="band" id="story">
   <div class="wrap">
-    <h2>How the universe wrote us</h2>
-    <p class="muted">Every star up there is one of these moments.</p>
+    <div class="sechead"><div><h2>How the universe wrote us</h2><p class="muted">Every star up there is one of these moments.</p></div>
+      <button class="ebtn ed-only" data-manage="chapters">+ Add or edit chapters</button></div>
     <div class="tl" id="timeline"></div>
-    <h3>Places that hold us</h3>
-    <div class="chips" id="places"></div>
   </div>
 </section>
-
-<section class="band" id="numbers">
-  <div class="wrap">
-    <h2>Us, in numbers</h2>
-    <div class="nums" id="nums"></div>
-  </div>
-</section>
-
-<section class="band" id="memories" style="background:var(--bg2)">
-  <div class="wrap">
-    <h2>Best memory of every year</h2>
-    <p class="muted">One memory each, every year since 2016. Every memory becomes a pin on our map.</p>
-    <div class="mapwrap">
-      <div class="mapbar"><button id="vMumbai" aria-pressed="false">Mumbai</button><button id="vIndia" aria-pressed="true">India</button><button id="vWorld" aria-pressed="false">World</button></div>
-      <div id="map" role="img" aria-label="Map of our memories"></div>
-    </div>
-    <div class="legend"><span><i style="background:#e2364b"></i>Rahi's memories</span><span><i style="background:#f6c9c1"></i>Sameer's memories</span><span><i style="background:#ffffff"></i>Our special places</span><span><i style="background:#8a6a88"></i>Places from our story</span></div>
-    <div id="years"></div>
-    <p id="saveNote" aria-live="polite"></p>
-  </div>
-</section>
-
-<section class="band" id="little">
-  <div class="wrap">
-    <h2>Little things, in our words</h2>
-    <p class="muted">Both of us answer. A word or two is enough. Tap a box to fill it in.</p>
-    <div class="qa" id="qa"></div>
-    <h3 style="margin-top:40px">Our special places</h3>
-    <p class="muted">These become white pins on our map.</p>
-    <div class="mqs" id="mapqa"></div>
-  </div>
-</section>
-
-<section class="band" id="thennow">
-  <div class="wrap">
-    <h2>Then vs now</h2>
-    <p class="muted">Tap any card to change it, or add your own.</p>
-    <div class="tns" id="tn"></div>
-    <button class="btn" id="tnAdd" style="margin-top:16px">+ Add one</button>
-  </div>
-</section>
-
-<dialog id="memDlg">
-  <form id="memForm" method="dialog">
-    <h3 id="dlgTitle">Best memory</h3>
-    <label>The memory, in a few words<input id="fTitle" maxlength="70" required placeholder="e.g. First sunset together"></label>
-    <label>Tell the story<textarea id="fText" maxlength="600" placeholder="What happened, what you felt, what made it the best"></textarea></label>
-    <label>Where was it?<select id="fPlace" required></select></label>
-    <label>Exact spot (optional)<input id="fSpot" maxlength="60" placeholder="e.g. Kanchenjunga viewpoint"></label>
-    <div class="row">
-      <button type="button" class="btn danger" id="fDel" hidden>Delete</button>
-      <button type="button" class="btn" id="fCancel">Cancel</button>
-      <button type="submit" class="btn fill">Save memory</button>
-    </div>
-  </form>
-</dialog>
 
 <section class="band song" id="song">
   <div class="wrap">
-    <h2>Our songs</h2>
-    <p class="muted">Every one of these is a piece of us. Tap to play.</p>
+    <div class="sechead"><div><h2>Our songs</h2><p class="muted">Every one of these is a piece of us.</p></div>
+      <button class="ebtn ed-only" data-manage="videos">Edit songs</button></div>
     <div class="vids" id="vids"></div>
   </div>
 </section>
@@ -426,18 +405,73 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
 <section class="band" id="letter">
   <div class="letter">
     <h2 style="margin-bottom:22px">To you, Rahi</h2>
-    <p>You left the home you grew up in and made mine yours. You took my family as your own, took on my name, and accepted everything about me and the people I love. It is one of the biggest steps anyone can take, and I respect you more than I will ever manage to say.</p>
-    <p>We have shared everything with complete faith, trust and no judgement. We have held each other through every up and every down, and even the rough patches only showed us how much we mean to each other.</p>
-    <p>You are my travel planner and my favourite travel partner. Seven countries in, every new place still feels like home because you are in it.</p>
-    <p>Four years married, and I would still walk up to you with any excuse about a notebook.</p>
+    <div id="letterBody"></div>
     <p class="sign">Sameer</p>
+    <button class="ebtn ed-only" id="letterEdit">Edit letter</button>
   </div>
 </section>
 
-<section class="band" id="openwhen" style="background:var(--bg2)">
+<section class="band" id="numbers">
   <div class="wrap">
-    <h2>Open when…</h2>
-    <p class="muted">Letters for the days you need them, Rahi. Open one whenever it's that kind of day.</p>
+    <div class="sechead"><h2>Us, in numbers</h2><button class="ebtn ed-only" data-manage="numbers">Edit numbers</button></div>
+    <div class="nums" id="nums"></div>
+  </div>
+</section>
+
+<section class="band" id="memories" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Best memory of every year</h2><p class="muted">One memory each, every year since 2016. Each one becomes a pin on our map.</p></div>
+      <button class="ebtn ed-only" data-manage="places">Edit places list</button></div>
+    <div class="mapwrap">
+      <div class="mapbar"><button id="vMumbai" aria-pressed="false">Mumbai</button><button id="vIndia" aria-pressed="true">India</button><button id="vWorld" aria-pressed="false">World</button></div>
+      <div id="map" role="img" aria-label="Map of our memories"></div>
+    </div>
+    <div class="legend"><span><i style="background:#e2364b"></i>Rahi's memories</span><span><i style="background:#f6c9c1"></i>Sameer's memories</span><span><i style="background:#ffffff"></i>Our special places</span><span><i style="background:#8a6a88"></i>Story chapters</span></div>
+    <div id="years"></div>
+  </div>
+</section>
+
+<section class="band" id="little">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Little things, in our words</h2><p class="muted">We each answer in our own box. A word or two is enough.</p></div>
+      <button class="ebtn ed-only" data-manage="questions">Edit questions</button></div>
+    <div class="qa" id="qa"></div>
+    <div class="sechead" style="margin-top:40px"><div><h3>Our special places</h3><p class="muted">These become white pins on our map.</p></div>
+      <button class="ebtn ed-only" data-manage="mapqs">Edit place questions</button></div>
+    <div class="mqs" id="mapqa"></div>
+  </div>
+</section>
+
+<section class="band" id="album" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Our album</h2><p class="muted">Any photo, any day. Only the two of us can see these.</p></div>
+      <label class="btn fill upbig"><span id="alUpTxt">+ Add photos</span><input type="file" id="alUp" accept="image/*" multiple></label></div>
+    <div class="album" id="albumGrid"></div>
+  </div>
+</section>
+
+<section class="band" id="thennow">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Then vs now</h2></div><button class="ebtn ed-only" data-manage="thenNow">+ Add or edit</button></div>
+    <div class="tns" id="tn"></div>
+  </div>
+</section>
+
+<section class="band" id="play" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Play together</h2><p class="muted">Sit close, share one phone.</p></div>
+      <span><button class="ebtn ed-only" data-manage="quiz">Edit quiz</button> <button class="ebtn ed-only" data-manage="likely">Edit “who's more likely”</button></span></div>
+    <div class="games">
+      <div class="game" id="quiz"></div>
+      <div class="game" id="likely"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="openwhen">
+  <div class="wrap">
+    <div class="sechead"><div><h2>Open when…</h2><p class="muted">Letters for the days you need them, Rahi.</p></div>
+      <button class="ebtn ed-only" data-manage="openWhen">Edit envelopes</button></div>
     <div class="letters" id="letters"></div>
   </div>
 </section>
@@ -447,28 +481,18 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
     <h2>Reasons I love you</h2>
     <div class="reason" id="reason" aria-live="polite">Tap the button. There are more where this came from.</div>
     <button class="btn fill" id="reasonBtn">Tell me another</button>
-  </div>
-</section>
-
-<section class="band" id="play">
-  <div class="wrap">
-    <h2>Play together</h2>
-    <p class="muted">Two little games for the two of us. Sit close, share one phone.</p>
-    <div class="games">
-      <div class="game" id="quiz"></div>
-      <div class="game" id="likely"></div>
-    </div>
+    <p><button class="ebtn ed-only" data-manage="reasons">Edit reasons</button></p>
   </div>
 </section>
 
 <section class="band" id="gifts">
   <div class="wrap">
-    <h2>Love coupons</h2>
-    <p class="muted">Yours to redeem, Rahi. Each one works once, so choose wisely.</p>
+    <div class="sechead"><div><h2>Love coupons</h2><p class="muted">Yours to redeem, Rahi. Each one works once.</p></div>
+      <button class="ebtn ed-only" data-manage="coupons">Edit coupons</button></div>
     <div class="coupons" id="coupons"></div>
     <div class="jarbox">
       <div id="jar" aria-hidden="true"><svg viewBox="0 0 120 150" width="110"><rect x="30" y="6" width="60" height="16" rx="5" fill="#e2364b"/><path d="M26 26h68c6 0 10 4 10 10v92c0 10-8 16-18 16H34c-10 0-18-6-18-16V36c0-6 4-10 10-10z" fill="rgba(246,201,193,.18)" stroke="#f6c9c1" stroke-width="2"/><g fill="#f6c9c1"><rect x="34" y="104" width="22" height="14" rx="3" transform="rotate(-12 45 111)"/><rect x="60" y="110" width="22" height="14" rx="3" transform="rotate(10 71 117)"/><rect x="44" y="84" width="22" height="14" rx="3" transform="rotate(6 55 91)" fill="#e2364b"/><rect x="66" y="90" width="20" height="13" rx="3" transform="rotate(-8 76 96)"/><rect x="38" y="124" width="22" height="13" rx="3"/></g></svg></div>
-      <div><h3>The date jar</h3><p id="jarOut" class="jarOut" aria-live="polite">Shake it for this weekend's date.</p><button class="btn fill" id="jarBtn">Shake the jar</button></div>
+      <div><h3>The date jar</h3><p id="jarOut" class="jarOut" aria-live="polite">Shake it for this weekend's date.</p><button class="btn fill" id="jarBtn">Shake the jar</button> <button class="ebtn ed-only" data-manage="dates">Edit ideas</button></div>
     </div>
   </div>
 </section>
@@ -476,7 +500,7 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
 <section class="band" id="next" style="background:var(--bg2)">
   <div class="wrap">
     <h2>Our next chapter</h2>
-    <h3 style="margin-top:28px">Bucket list for the next five years</h3>
+    <h3 style="margin-top:28px">Bucket list</h3>
     <form id="bForm" class="bform">
       <input id="bText" maxlength="90" placeholder="A place, a dream, a goal…" aria-label="Bucket list item">
       <select id="bWho" aria-label="Whose idea"><option>Both of us</option><option>Rahi</option><option>Sameer</option></select>
@@ -484,44 +508,18 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
     </form>
     <p id="bCount" class="muted" style="margin:10px 0 0"></p>
     <ul class="bucket" id="bucket"></ul>
-
-    <h3 style="margin-top:40px">Promises for year five</h3>
+    <h3 style="margin-top:40px">Promises for the year ahead</h3>
     <div class="pair" id="promises"></div>
-
     <h3 style="margin-top:40px">Time capsule</h3>
     <p class="muted" id="capWhen"></p>
     <div class="pair" id="capsule"></div>
-    <p id="saveNote2" aria-live="polite" class="muted" style="font-size:14px;min-height:1.4em"></p>
   </div>
 </section>
-
-<dialog id="txtDlg">
-  <form id="txtForm" method="dialog">
-    <h3 id="tTitle"></h3>
-    <p id="tHint" class="muted" style="margin:0"></p>
-    <label id="tL1"><span></span><input id="t1" maxlength="160"></label>
-    <label id="tL3">Where?<select id="t3"></select></label>
-    <label id="tL2"><span></span><textarea id="t2" maxlength="2000"></textarea></label>
-    <div class="row">
-      <button type="button" class="btn danger" id="tDel">Delete</button>
-      <button type="button" class="btn" id="tCancel">Cancel</button>
-      <button type="submit" class="btn fill">Save</button>
-    </div>
-  </form>
-</dialog>
-<dialog id="readDlg">
-  <div style="padding:26px;display:grid;gap:14px">
-    <p class="k" style="margin:0;color:var(--blush);font-weight:700;font-size:14px">A letter from Sameer</p>
-    <h3 id="rTitle"></h3>
-    <p id="rBody" style="white-space:pre-wrap;font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;margin:0"></p>
-    <div class="row" style="display:flex;gap:10px;justify-content:flex-end"><button class="btn" id="rEdit">Edit</button><button class="btn fill" id="rClose">Close</button></div>
-  </div>
-</dialog>
 
 <section class="band" id="notebook">
   <div class="wrap">
     <h2>Our notebook</h2>
-    <p class="muted">For every day after the 26th. A moment, a plan, a thank-you, a silly thing that happened.</p>
+    <p class="muted">A moment, a plan, a thank-you, a silly thing that happened today.</p>
     <form id="jForm" class="jform">
       <input id="jTitle" maxlength="90" placeholder="Title (optional)" aria-label="Title">
       <textarea id="jText" maxlength="4000" placeholder="Today…" aria-label="Entry" required></textarea>
@@ -533,700 +531,618 @@ footer{padding:28px;text-align:center;font-size:14px;color:var(--soft)}
 
 <section class="finale band" id="finale">
   <div>
-    <p class="muted">26 November 2026</p>
-    <div class="script">Happy 4th anniversary,<br>my Foreverthing</div>
+    <p class="muted" id="finDate"></p>
+    <div class="script">Happy anniversary,<br>my Foreverthing</div>
     <p class="tag" style="font-size:20px">#TheSaHiJodi</p>
     <p id="reveal"></p>
-    <a class="btn" id="finalPlay" style="margin-top:14px;text-decoration:none" href="#song">Play ForeverThing once more</a>
+    <a class="btn" id="finalPlay" style="margin-top:14px;text-decoration:none" href="#song">Play our song once more</a>
   </div>
 </section>
+
 <footer>
   <p style="margin:0">Made with all my love · 26.11.2022 → forever · #TheSaHiJodi</p>
   <details class="about">
-    <summary>About · <span class="ver">v1.2</span></summary>
+    <summary>About · <span id="verTxt"></span></summary>
     <div>
-      <p><b>Rahi &amp; Sameer · Our Notebook</b>, version <span class="ver">v1.2</span></p>
-      <p>A private notebook for the two of us, started for our 4th anniversary on 26 November 2026. Only our two accounts can open it.</p>
-      <p class="vh"><b>v1.2</b> · 24 Nov 2026: our two accounts added, full names on our profiles.</p>
-      <p class="vh"><b>v1.1</b> · 24 Nov 2026: Google and email sign-in, create account, our-day passcode, profiles, chapter photos, our notebook, songs playing inside the page.</p>
-      <p class="vh"><b>v1.0</b> · 22 Nov 2026: our story, the sky, songs, letter, games, yearly memories and map, love coupons, date jar, open-when letters, bucket list, promises, time capsule.</p>
+      <p><b>Rahi &amp; Sameer · Our Notebook</b></p>
+      <p>A private notebook for the two of us, started for our 4th anniversary. Only our two accounts can open it. Tap <b>Edit</b> at the top to change anything, or <b>Remember</b> to add something new.</p>
+      <p class="vh"><b>v2.0</b> · 24 Nov 2026: everything editable in the page, the Remember box (types and sorts what you write), album, coming up, this month years ago, backup.</p>
+      <p class="vh"><b>v1.2</b> · 24 Nov 2026: our two accounts, full names on profiles.</p>
+      <p class="vh"><b>v1.1</b> · 24 Nov 2026: sign-in, passcode, profiles, photos, notebook, songs inside the page.</p>
+      <p class="vh"><b>v1.0</b> · 22 Nov 2026: the first anniversary page.</p>
+      <p style="margin:12px 0 0"><button class="btn" id="backupBtn" type="button">Download a backup</button></p>
     </div>
   </details>
 </footer>
 
-<script type="application/json" id="memdata">[]</script>
+<!-- dialogs -->
+<dialog id="fDlg"><form id="fForm" method="dialog">
+  <h3 id="fTitle"></h3><p class="hint" id="fHint"></p>
+  <div class="ff" id="fFields"></div>
+  <div class="row"><button type="button" class="btn danger" id="fDel">Delete</button><button type="button" class="btn" id="fCancel">Cancel</button><button type="submit" class="btn fill">Save</button></div>
+</form></dialog>
+
+<dialog id="mDlg"><div style="padding:22px;display:grid;gap:12px">
+  <h3 id="mTitle"></h3><p class="hint" id="mHint"></p>
+  <ul class="mlist" id="mList"></ul>
+  <div class="row" style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap"><button class="btn" id="mClose" type="button">Done</button><button class="btn fill" id="mAdd" type="button">+ Add</button></div>
+</div></dialog>
+
+<dialog id="rDlg"><form id="rForm" method="dialog">
+  <div id="rStep1" style="display:grid;gap:12px">
+    <h3>Remember something</h3>
+    <p class="hint">Type it the way you'd say it. Typos are fine. I'll work out where it goes and fill in the details.</p>
+    <textarea id="rText" maxlength="3000" placeholder="e.g. March 2019 we went to Coorg and got caught in the rain at Abbey Falls, best day"></textarea>
+    <div class="row"><button type="button" class="btn" id="rCancel">Cancel</button><button type="button" class="btn fill" id="rSort">Sort it</button></div>
+  </div>
+  <div id="rStep2" hidden style="display:grid;gap:12px">
+    <h3>Here's what I got</h3>
+    <span class="rhow" id="rHow"></span>
+    <div class="ff" id="rFields"></div>
+    <p class="rnote" id="rNote"></p>
+    <div class="row"><button type="button" class="btn" id="rBack">Back</button><button type="submit" class="btn fill">Save it</button></div>
+  </div>
+</form></dialog>
+
+<dialog id="readDlg"><div style="padding:26px;display:grid;gap:14px">
+  <p style="margin:0;color:var(--blush);font-weight:700;font-size:14px">A letter from Sameer</p>
+  <h3 id="rdTitle"></h3>
+  <p id="rdBody" style="white-space:pre-wrap;font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;margin:0"></p>
+  <div class="row" style="display:flex;gap:10px;justify-content:flex-end"><button class="btn" id="rdEdit" hidden>Edit</button><button class="btn fill" id="rdClose">Close</button></div>
+</div></dialog>
+
+<dialog id="lbDlg"><div style="padding:16px;display:grid;gap:10px">
+  <img id="lbImg" alt="">
+  <p id="lbCap" style="margin:0"></p><p id="lbMeta" class="hint"></p>
+  <div class="row" style="display:flex;gap:10px;justify-content:flex-end"><button class="btn danger" id="lbDel" hidden>Delete</button><button class="btn" id="lbEdit" hidden>Edit caption</button><button class="btn fill" id="lbClose">Close</button></div>
+</div></dialog>
+
+<script type="application/json" id="defaults">{"chapters": [{"id": "school", "date": "2011-06", "when": "2011–12 · 12th grade", "title": "A notebook, an excuse", "text": "It began in our 12th grade classes, when I walked up to you with some reason about exchanging notes. We started talking, and by the end of that year we were close friends.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "universe", "date": "2013-01", "when": "The years apart", "title": "Messages from the universe", "text": "Life sent us down different paths. Yet whenever I travelled, some stranger on a street would remind me of you, and that same day, out of nowhere, you would message or call. We barely spoke, but the universe kept passing notes between us.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dadar", "date": "2016-05", "when": "May 2016 · Shivaji Park, Dadar", "title": "The photoshoot", "text": "Around graduation we started chatting again and planned a photoshoot for you. We met at Shivaji Park, and something changed. We started chatting and meeting all the time.", "place": "Shivaji Park, Dadar", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "sgnp", "date": "2016-06", "when": "2016 · Sanjay Gandhi National Park", "title": "The day it felt real", "text": "Borivali, the forest, a really great day together, and the movies that followed. For the first time it felt like something.", "place": "Sanjay Gandhi National Park", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "dating", "date": "2016-08", "when": "23 August 2016", "title": "Officially us", "text": "It had started earlier, but this is the day we made it official, and it was the best thing that ever happened to us. Somewhere in those days we started calling each other Foreverthing.", "place": "", "big": true, "linkLabel": "", "linkUrl": ""}, {"id": "sikkim", "date": "2017-01", "when": "Sikkim & Darjeeling", "title": "Our first trip", "text": "Our first real outing together, and we came back with a bag full of memories.", "place": "Gangtok, Sikkim", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rough", "date": "2019-01", "when": "The rough patches", "title": "What they taught us", "text": "There were hard days too. They taught us how to be mature, in life and in a relationship, and showed each of us how much the other really meant.", "place": "", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "engaged", "date": "2022-02", "when": "24 February 2022", "title": "Engaged", "text": "After all those journeys and wonderful moments, we both felt the time had come to tie the knot.", "place": "", "big": true, "linkLabel": "Watch our engagement video", "linkUrl": "https://www.youtube.com/watch?v=zJG3PEIwEPg"}, {"id": "wedding", "date": "2022-11", "when": "26 November 2022", "title": "Married", "text": "Life changed completely. New responsibilities, a home shared 24/7, discovering little things about each other and accepting every one of them, happily. #TheSaHiJodi was born.", "place": "", "big": true, "linkLabel": "Play Sata Janmanchi", "linkUrl": "https://www.youtube.com/watch?v=wwSCU_Kl3CE"}, {"id": "maldives", "date": "2022-11", "when": "November 2022 · Orchids hotel → the Maldives", "title": "Our first trip abroad", "text": "Our first five-star stay, then our honeymoon and our first international trip together: a small island in the Maldives, and only the two of us, always.", "place": "Maldives", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "goa", "date": "2023-12", "when": "Every December · Goa", "title": "Our tradition", "text": "Some trips are a must. Every December, Goa, and every single time, so much fun.", "place": "Goa", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "malaysia", "date": "2024-11", "when": "November 2024 · Malaysia & Singapore", "title": "Our 2nd anniversary", "text": "We celebrated two years of marriage in Malaysia and Singapore. That night at the Twin Towers in Kuala Lumpur and the view from the Singapore Flyer were incredible. A wonderful trip, planned entirely by my travel planner, my dear wife.", "place": "Petronas Twin Towers, KL", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "rajasthan", "date": "2025-01", "when": "Rajasthan", "title": "Another chapter", "text": "Another journey together, and another set of wonderful memories.", "place": "Jaipur", "big": false, "linkLabel": "", "linkUrl": ""}, {"id": "europe", "date": "2026-06", "when": "2026 · Germany, France, Switzerland, Austria", "title": "Your 30th, on the Eiffel Tower", "text": "For your 30th birthday we went across Europe, the experience of a lifetime. Your birthday on the Eiffel Tower, watching that serene sunset on it and from it. And Germany was so beautiful, we fell in love with it.", "place": "Eiffel Tower, Paris", "big": true, "linkLabel": "", "linkUrl": ""}], "videos": [{"id": "v0", "title": "ForeverThing", "k": "Our latest song", "url": "https://youtu.be/T1hnTOQs57M", "text": "What we called each other while dating, and the song I made for you, for us. With #TheSaHiJodi in the tagline.", "main": true}, {"id": "v1", "title": "Sata Janmanchi", "k": "Pre-wedding song", "url": "https://www.youtube.com/watch?v=wwSCU_Kl3CE", "text": "A promise to be your partner in every birth, all seven of them, across seven oceans.", "main": false}, {"id": "v2", "title": "Our engagement", "k": "24 February 2022", "url": "https://www.youtube.com/watch?v=zJG3PEIwEPg", "text": "The day we said yes to forever, in front of everyone we love.", "main": false}], "quiz": [{"id": "q0", "q": "Where did we meet the day things changed in May 2016?", "o1": "Marine Drive", "o2": "Shivaji Park, Dadar", "o3": "Juhu Beach", "o4": "Bandra Bandstand", "a": "2"}, {"id": "q1", "q": "What excuse did I use to first talk to you in 12th grade?", "o1": "Asking for a pen", "o2": "A note-book exchange", "o3": "A group project", "o4": "Borrowing your bus pass", "a": "2"}, {"id": "q2", "q": "Which date did we make it official?", "o1": "14 Feb 2016", "o2": "23 Aug 2016", "o3": "26 Nov 2016", "o4": "1 Jan 2017", "a": "2"}, {"id": "q3", "q": "Where was our first trip together?", "o1": "Goa", "o2": "Kerala", "o3": "Sikkim & Darjeeling", "o4": "Rajasthan", "a": "3"}, {"id": "q4", "q": "What did we call each other while dating?", "o1": "Sunshine", "o2": "Foreverthing", "o3": "Jaan", "o4": "Partner-in-crime", "a": "2"}, {"id": "q5", "q": "When did we get engaged?", "o1": "24 Feb 2022", "o2": "26 Nov 2021", "o3": "23 Aug 2021", "o4": "14 Feb 2022", "a": "1"}, {"id": "q6", "q": "What was our wedding hashtag?", "o1": "#RahiKaSameer", "o2": "#SameerWedsRahi", "o3": "#TheSaHiJodi", "o4": "#Foreverthing", "a": "3"}, {"id": "q7", "q": "Sata Janmanchi promises we'll be together for…", "o1": "Seven years", "o2": "Seven births", "o3": "Seven wonders", "o4": "Seven days a week", "a": "2"}, {"id": "q8", "q": "Where did we go for our honeymoon, our first trip abroad?", "o1": "Bali", "o2": "Maldives", "o3": "Switzerland", "o4": "Mauritius", "a": "2"}, {"id": "q9", "q": "Where did we celebrate our 2nd anniversary?", "o1": "Thailand", "o2": "Dubai", "o3": "Malaysia & Singapore", "o4": "Sri Lanka", "a": "3"}, {"id": "q10", "q": "Where were you on your 30th birthday?", "o1": "The Eiffel Tower", "o2": "A Swiss mountain", "o3": "A Goa beach", "o4": "Neuschwanstein Castle", "a": "1"}, {"id": "q11", "q": "Which country did we fall in love with in Europe?", "o1": "Austria", "o2": "Germany", "o3": "Switzerland", "o4": "France", "a": "2"}, {"id": "q12", "q": "Where do we go every December?", "o1": "Kerala", "o2": "Lonavala", "o3": "Goa", "o4": "Rajasthan", "a": "3"}], "likely": [{"id": "l0", "t": "fall asleep halfway through a movie"}, {"id": "l1", "t": "say sorry first after a fight"}, {"id": "l2", "t": "start singing out of nowhere"}, {"id": "l3", "t": "plan our next holiday"}, {"id": "l4", "t": "take 50 photos to get one good one"}, {"id": "l5", "t": "steal the last bite"}, {"id": "l6", "t": "cry at a sad movie"}, {"id": "l7", "t": "lose the keys (again)"}, {"id": "l8", "t": "get hungry first on a trip"}, {"id": "l9", "t": "win an argument"}, {"id": "l10", "t": "remember our anniversary first"}, {"id": "l11", "t": "fall in love all over again today"}], "reasons": [{"id": "r0", "t": "You trust me completely, and let me trust you the same way."}, {"id": "r1", "t": "You have never judged me."}, {"id": "r2", "t": "You stood by me through every up and every down."}, {"id": "r3", "t": "You made my family your own."}, {"id": "r4", "t": "You turned a notebook exchange into a lifetime."}, {"id": "r5", "t": "The universe kept sending me back to you."}, {"id": "r6", "t": "You make a small island feel like the whole world."}, {"id": "r7", "t": "We grew up together through the rough patches."}, {"id": "r8", "t": "Every trip is better because you're in it."}, {"id": "r9", "t": "You accept every little thing about me, happily."}, {"id": "r10", "t": "You chose me, and you keep choosing me."}, {"id": "r11", "t": "You are, and always will be, my Foreverthing."}, {"id": "r12", "t": "You're the best travel planner in the world."}, {"id": "r13", "t": "You turned an Eiffel Tower sunset into my favourite memory."}, {"id": "r14", "t": "Every new country feels like home with you."}, {"id": "r15", "t": "Sata janmanchi: in every birth, it will be you."}, {"id": "r16", "t": "Four years in, it still feels like the beginning."}], "coupons": [{"id": "0", "title": "Breakfast in bed", "text": "Made by me, served with a song."}, {"id": "1", "title": "You pick the movie", "text": "No arguments. No sighing. Promise."}, {"id": "2", "title": "A day planned by you", "text": "I follow, wherever, whatever."}, {"id": "3", "title": "A long ride together", "text": "Just us on the bike, destination: anywhere."}, {"id": "4", "title": "A song about anything", "text": "You choose the topic, I write the song."}, {"id": "5", "title": "You win this argument", "text": "Instantly. No questions asked."}, {"id": "6", "title": "A surprise date", "text": "Planned by me. You just show up."}, {"id": "7", "title": "Chores off", "text": "A full day of rest. I've got everything."}, {"id": "8", "title": "Next trip: my turn", "text": "I plan everything for once. You just pack."}], "dates": [{"id": "d0", "t": "Sunset at Marine Drive with roasted bhutta"}, {"id": "d1", "t": "Go back to Shivaji Park, just the two of us"}, {"id": "d2", "t": "A morning walk at Sanjay Gandhi National Park"}, {"id": "d3", "t": "Cook a dish neither of us has ever tried"}, {"id": "d4", "t": "Recreate our very first date"}, {"id": "d5", "t": "Old photos, chai and stories night"}, {"id": "d6", "t": "A drive to Lonavala, no plan"}, {"id": "d7", "t": "A movie marathon, Rahi picks everything"}, {"id": "d8", "t": "Sameer plays only Rahi's song requests"}, {"id": "d9", "t": "Stargazing on the terrace"}, {"id": "d10", "t": "A street-food crawl through the city"}, {"id": "d11", "t": "Plan our next big trip on a map"}, {"id": "d12", "t": "Watch our engagement video together again"}, {"id": "d13", "t": "Write each other a letter and swap"}, {"id": "d14", "t": "Pick our next country over chai, with a world map"}, {"id": "d15", "t": "Find the best city view in Mumbai, like that night at the Twin Towers"}, {"id": "d16", "t": "A sunset somewhere new, even in our own city"}], "numbers": [{"id": "n0", "n": "7", "label": "countries explored together: Maldives, Malaysia, Singapore, Germany, France, Switzerland, Austria"}, {"id": "n1", "n": "1", "label": "birthday on the Eiffel Tower, at sunset"}, {"id": "n2", "n": "Every", "label": "December in Goa"}, {"id": "n3", "n": "2", "label": "songs written for you (so far)"}, {"id": "n4", "n": "7", "label": "births promised: Sata Janmanchi"}, {"id": "n5", "n": "1", "label": "Foreverthing"}, {"id": "n6", "n": "∞", "label": "reasons to keep going"}], "questions": [{"id": "notice", "q": "The first thing I noticed about you in 12th grade"}, {"id": "dadar", "q": "At Shivaji Park in May 2016, I felt"}, {"id": "spot", "q": "Our usual meeting spot while dating"}, {"id": "film", "q": "The first film we watched together"}, {"id": "food", "q": "Your favourite food or snack"}, {"id": "wedding", "q": "The wedding-day moment I'll never forget"}, {"id": "maldives", "q": "Our best moment in the Maldives"}, {"id": "europe", "q": "My favourite place with you in Europe"}, {"id": "laugh", "q": "When you laugh, you"}, {"id": "calm", "q": "You calm me down by"}], "mapqs": [{"id": "ily", "q": "Where we first said “I love you”"}, {"id": "propose", "q": "Where the proposal happened"}, {"id": "ours", "q": "The place in Mumbai that feels most like ours"}, {"id": "talk", "q": "The trip city we still talk about"}], "openWhen": [{"id": "miss", "label": "you miss me"}, {"id": "stress", "label": "work gets too much"}, {"id": "fight", "label": "we've had a fight"}, {"id": "sleep", "label": "you can't sleep"}, {"id": "laugh", "label": "you need a laugh"}, {"id": "proud", "label": "you're proud of yourself"}, {"id": "low", "label": "you feel low"}, {"id": "anni", "label": "it's our 5th anniversary"}], "places": [{"id": "p0", "name": "Shivaji Park, Dadar", "lat": 19.027, "lng": 72.838, "g": "Mumbai & around"}, {"id": "p1", "name": "Sanjay Gandhi National Park", "lat": 19.23, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p2", "name": "Marine Drive", "lat": 18.944, "lng": 72.823, "g": "Mumbai & around"}, {"id": "p3", "name": "Juhu", "lat": 19.099, "lng": 72.826, "g": "Mumbai & around"}, {"id": "p4", "name": "Bandra", "lat": 19.06, "lng": 72.83, "g": "Mumbai & around"}, {"id": "p5", "name": "Mumbai (elsewhere)", "lat": 19.076, "lng": 72.877, "g": "Mumbai & around"}, {"id": "p6", "name": "Lonavala", "lat": 18.75, "lng": 73.41, "g": "Mumbai & around"}, {"id": "p7", "name": "Alibaug", "lat": 18.64, "lng": 72.87, "g": "Mumbai & around"}, {"id": "p8", "name": "Pune", "lat": 18.52, "lng": 73.86, "g": "Mumbai & around"}, {"id": "p9", "name": "Mahabaleshwar", "lat": 17.92, "lng": 73.66, "g": "Mumbai & around"}, {"id": "p10", "name": "Nashik", "lat": 20.0, "lng": 73.79, "g": "Mumbai & around"}, {"id": "p11", "name": "Goa", "lat": 15.49, "lng": 73.83, "g": "Mumbai & around"}, {"id": "p12", "name": "Gangtok, Sikkim", "lat": 27.33, "lng": 88.61, "g": "India"}, {"id": "p13", "name": "Darjeeling", "lat": 27.04, "lng": 88.26, "g": "India"}, {"id": "p14", "name": "Jaipur", "lat": 26.91, "lng": 75.79, "g": "India"}, {"id": "p15", "name": "Udaipur", "lat": 24.58, "lng": 73.71, "g": "India"}, {"id": "p16", "name": "Jodhpur", "lat": 26.24, "lng": 73.02, "g": "India"}, {"id": "p17", "name": "Jaisalmer", "lat": 26.92, "lng": 70.91, "g": "India"}, {"id": "p18", "name": "Delhi", "lat": 28.61, "lng": 77.21, "g": "India"}, {"id": "p19", "name": "Agra", "lat": 27.18, "lng": 78.01, "g": "India"}, {"id": "p20", "name": "Rishikesh", "lat": 30.09, "lng": 78.27, "g": "India"}, {"id": "p21", "name": "Manali", "lat": 32.24, "lng": 77.19, "g": "India"}, {"id": "p22", "name": "Shimla", "lat": 31.1, "lng": 77.17, "g": "India"}, {"id": "p23", "name": "Leh", "lat": 34.15, "lng": 77.58, "g": "India"}, {"id": "p24", "name": "Varanasi", "lat": 25.32, "lng": 82.97, "g": "India"}, {"id": "p25", "name": "Hyderabad", "lat": 17.39, "lng": 78.49, "g": "India"}, {"id": "p26", "name": "Bengaluru", "lat": 12.97, "lng": 77.59, "g": "India"}, {"id": "p27", "name": "Kochi", "lat": 9.93, "lng": 76.27, "g": "India"}, {"id": "p28", "name": "Munnar", "lat": 10.09, "lng": 77.06, "g": "India"}, {"id": "p29", "name": "Andaman", "lat": 11.62, "lng": 92.73, "g": "India"}, {"id": "p30", "name": "Maldives", "lat": 4.18, "lng": 73.51, "g": "Abroad"}, {"id": "p31", "name": "Dubai", "lat": 25.2, "lng": 55.27, "g": "Abroad"}, {"id": "p32", "name": "Bangkok", "lat": 13.75, "lng": 100.5, "g": "Abroad"}, {"id": "p33", "name": "Kuala Lumpur, Malaysia", "lat": 3.14, "lng": 101.69, "g": "Abroad"}, {"id": "p34", "name": "Petronas Twin Towers, KL", "lat": 3.1579, "lng": 101.7116, "g": "Abroad"}, {"id": "p35", "name": "Singapore", "lat": 1.35, "lng": 103.82, "g": "Abroad"}, {"id": "p36", "name": "Singapore Flyer", "lat": 1.2893, "lng": 103.8631, "g": "Abroad"}, {"id": "p37", "name": "Bali", "lat": -8.34, "lng": 115.09, "g": "Abroad"}, {"id": "p38", "name": "Paris", "lat": 48.86, "lng": 2.35, "g": "Abroad"}, {"id": "p39", "name": "Eiffel Tower, Paris", "lat": 48.858, "lng": 2.2945, "g": "Abroad"}, {"id": "p40", "name": "Germany", "lat": 51.1, "lng": 10.4, "g": "Abroad"}, {"id": "p41", "name": "Switzerland", "lat": 46.8, "lng": 8.2, "g": "Abroad"}, {"id": "p42", "name": "Austria", "lat": 47.5, "lng": 14.55, "g": "Abroad"}, {"id": "p43", "name": "London", "lat": 51.51, "lng": -0.13, "g": "Abroad"}, {"id": "p44", "name": "Interlaken", "lat": 46.69, "lng": 7.86, "g": "Abroad"}, {"id": "p45", "name": "Zurich", "lat": 47.38, "lng": 8.54, "g": "Abroad"}, {"id": "p46", "name": "Amsterdam", "lat": 52.37, "lng": 4.9, "g": "Abroad"}, {"id": "p47", "name": "Rome", "lat": 41.9, "lng": 12.5, "g": "Abroad"}, {"id": "p48", "name": "Venice", "lat": 45.44, "lng": 12.32, "g": "Abroad"}, {"id": "p49", "name": "Florence", "lat": 43.77, "lng": 11.26, "g": "Abroad"}, {"id": "p50", "name": "Barcelona", "lat": 41.39, "lng": 2.17, "g": "Abroad"}, {"id": "p51", "name": "Prague", "lat": 50.08, "lng": 14.44, "g": "Abroad"}, {"id": "p52", "name": "Vienna", "lat": 48.21, "lng": 16.37, "g": "Abroad"}, {"id": "p53", "name": "Budapest", "lat": 47.5, "lng": 19.04, "g": "Abroad"}, {"id": "p54", "name": "Santorini", "lat": 36.39, "lng": 25.46, "g": "Abroad"}], "thenNow": [{"id": "t0", "then": "Making up a reason about notebooks just to talk to you.", "now": "No reason needed. Ever."}, {"id": "t1", "then": "Rare calls that the universe seemed to arrange.", "now": "Yours is the first voice I hear every morning."}, {"id": "t2", "then": "Meeting at Shivaji Park and pretending it was only a photoshoot.", "now": "Home is wherever you are."}, {"id": "t3", "then": "Foreverthing was a nickname.", "now": "Now it's a promise."}], "letter": "You left the home you grew up in and made mine yours. You took my family as your own, took on my name, and accepted everything about me and the people I love. It is one of the biggest steps anyone can take, and I respect you more than I will ever manage to say.\n\nWe have shared everything with complete faith, trust and no judgement. We have held each other through every up and every down, and even the rough patches only showed us how much we mean to each other.\n\nYou are my travel planner and my favourite travel partner. Seven countries in, every new place still feels like home because you are in it.\n\nFour years married, and I would still walk up to you with any excuse about a notebook.", "finale": "Now look up from your phone. I'm right here."}</script>
 <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/dist/echarts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+
 <script>
-window.__boot = function(){
-/* ===== EDIT HERE ===== */
-const CONFIG = {
-  reveal: "Now look up from your phone. I'm right here.",
-  married: "2022-11-26T00:00:00+05:30",
-  together: "2016-08-23T00:00:00+05:30"
+/* ================= the notebook ================= */
+window.__boot = function(loaded){
+const $ = s=>document.querySelector(s), $$ = s=>[...document.querySelectorAll(s)];
+const esc = v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid = ()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const clone = o=>JSON.parse(JSON.stringify(o));
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const fmtDate = d=>new Date(d).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
+const ME = window.ME, OTHER = ME==="Rahi"?"Sameer":"Rahi";
+const WHO = ["Rahi","Sameer"];
+const MET = 2011, TOGETHER = new Date("2016-08-23T00:00:00+05:30"), MARRIED = new Date("2022-11-26T00:00:00+05:30");
+
+/* ---------- state ---------- */
+const DEF = JSON.parse($("#defaults").textContent);
+const STATE = Object.assign({content:null,mem:[],bucket:[],capsule:{},promises:{},redeemed:{},letters:{},qa:{},mapq:{},profiles:{},journal:[],gallery:[]}, loaded||{});
+let seeded = false;
+if(!STATE.content){ STATE.content = clone(DEF); seeded = true; }
+const C = STATE.content;
+Object.keys(DEF).forEach(k=>{ if(C[k]===undefined) C[k] = clone(DEF[k]); });
+if(Array.isArray(STATE.thenNow)){ C.thenNow = STATE.thenNow.map(t=>Object.assign({id:uid()},t)); delete STATE.thenNow; }
+const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"};
+WHO.forEach(w=>{ STATE.profiles[w] = STATE.profiles[w]||{}; if(!STATE.profiles[w].full) STATE.profiles[w].full = FULL[w]; });
+
+/* ---------- saving ---------- */
+let tTimer=null, pTimer=null;
+const toast = (t,ms=2200)=>{ const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(tTimer); if(ms) tTimer=setTimeout(()=>el.hidden=true,ms); };
+const persist = ()=>{ clearTimeout(pTimer); toast("Saving…",0); pTimer=setTimeout(async()=>{
+  try{ await window.FB.save(STATE); toast("Saved ♥"); }catch(e){ toast("Couldn't save. Check your internet and try again.",5000); }
+},600); };
+
+/* ---------- places ---------- */
+const PL = ()=>{ const o={}; C.places.forEach(p=>o[p.name]=p); return o; };
+const placeOptions = (sel)=>{
+  const groups = {}; C.places.forEach(p=>{ (groups[p.g||"Added by us"] = groups[p.g||"Added by us"]||[]).push(p); });
+  return `<option value="">No place</option>` + Object.entries(groups).map(([g,ps])=>`<optgroup label="${esc(g)}">${ps.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(p=>`<option${p.name===sel?" selected":""}>${esc(p.name)}</option>`).join("")}</optgroup>`).join("");
 };
-const CHAPTERS = [
-  {id:"school",when:"2011–12 · 12th grade",title:"A notebook, an excuse",photo:"photos/school.jpg",
-   text:"It began in our 12th grade classes, when I walked up to you with some reason about exchanging notes. We started talking, and by the end of that year we were close friends."},
-  {id:"universe",when:"The years apart",title:"Messages from the universe",photo:"photos/apart.jpg",
-   text:"Life sent us down different paths. Yet whenever I travelled, some stranger on a street would remind me of you, and that same day, out of nowhere, you would message or call. We barely spoke, but the universe kept passing notes between us."},
-  {id:"dadar",when:"May 2016 · Shivaji Park, Dadar",title:"The photoshoot",photo:"photos/shivaji-park.jpg",
-   text:"Around graduation we started chatting again and planned a photoshoot for you. We met at Shivaji Park, and something changed. We started chatting and meeting all the time."},
-  {id:"sgnp",when:"2016 · Sanjay Gandhi National Park",title:"The day it felt real",photo:"photos/sgnp.jpg",
-   text:"Borivali, the forest, a really great day together, and the movies that followed. For the first time it felt like something."},
-  {id:"dating",when:"23 August 2016",title:"Officially us",photo:"photos/dating.jpg",big:true,
-   text:"It had started earlier, but this is the day we made it official, and it was the best thing that ever happened to us. Somewhere in those days we started calling each other Foreverthing."},
-  {id:"sikkim",when:"Sikkim & Darjeeling",title:"Our first trip",photo:"photos/sikkim.jpg",
-   text:"Our first real outing together, and we came back with a bag full of memories."},
-  {id:"rough",when:"The rough patches",title:"What they taught us",photo:"photos/together.jpg",
-   text:"There were hard days too. They taught us how to be mature, in life and in a relationship, and showed each of us how much the other really meant."},
-  {id:"engaged",when:"24 February 2022",title:"Engaged",photo:"photos/engagement.jpg",big:true,
-   text:"After all those journeys and wonderful moments, we both felt the time had come to tie the knot.",link:{href:"https://www.youtube.com/watch?v=zJG3PEIwEPg",label:"Watch our engagement video"}},
-  {id:"wedding",when:"26 November 2022",title:"Married",photo:"photos/wedding.jpg",big:true,
-   text:"Life changed completely. New responsibilities, a home shared 24/7, discovering little things about each other and accepting every one of them, happily. #TheSaHiJodi was born.",link:{href:"https://www.youtube.com/watch?v=wwSCU_Kl3CE",label:"Play Sata Janmanchi"}},
-  {id:"maldives",when:"November 2022 · Orchids hotel → the Maldives",title:"Our first trip abroad",photo:"photos/maldives.jpg",
-   text:"Our first five-star stay, then our honeymoon and our first international trip together: a small island in the Maldives, and only the two of us, always."},
-  {id:"goa",when:"Every December · Goa",title:"Our tradition",photo:"photos/goa.jpg",
-   text:"Some trips are a must. Every December, Goa, and every single time, so much fun."},
-  {id:"rajasthan",when:"Rajasthan",title:"Another chapter",photo:"photos/rajasthan.jpg",
-   text:"Another journey together, and another set of wonderful memories."},
-  {id:"malaysia",when:"November 2024 · Malaysia & Singapore",title:"Our 2nd anniversary",photo:"photos/malaysia.jpg",
-   text:"We celebrated two years of marriage in Malaysia and Singapore. That night at the Twin Towers in Kuala Lumpur and the view from the Singapore Flyer were incredible. A wonderful trip, planned entirely by my travel planner, my dear wife."},
-  {id:"europe",when:"2026 · Germany, France, Switzerland, Austria",title:"Your 30th, on the Eiffel Tower",photo:"photos/europe.jpg",big:true,
-   text:"For your 30th birthday we went across Europe, the experience of a lifetime. Your birthday on the Eiffel Tower, watching that serene sunset on it and from it. And Germany was so beautiful, we fell in love with it."}
-];
-const VIDEOS = [
-  {main:true,k:"Our latest song",title:"ForeverThing",href:"https://youtu.be/T1hnTOQs57M",
-   text:"What we called each other while dating, and the song I made for you, for us. With #TheSaHiJodi in the tagline."},
-  {k:"Pre-wedding song",title:"Sata Janmanchi",href:"https://www.youtube.com/watch?v=wwSCU_Kl3CE",
-   text:"A promise to be your partner in every birth, all seven of them, across seven oceans."},
-  {k:"24 February 2022",title:"Our engagement",href:"https://www.youtube.com/watch?v=zJG3PEIwEPg",
-   text:"The day we said yes to forever, in front of everyone we love."}
-];
-const QUIZ = [
-  {q:"Where did we meet the day things changed in May 2016?",o:["Marine Drive","Shivaji Park, Dadar","Juhu Beach","Bandra Bandstand"],a:1},
-  {q:"What excuse did I use to first talk to you in 12th grade?",o:["Asking for a pen","A note-book exchange","A group project","Borrowing your bus pass"],a:1},
-  {q:"Which date did we make it official?",o:["14 Feb 2016","23 Aug 2016","26 Nov 2016","1 Jan 2017"],a:1},
-  {q:"Where was our first trip together?",o:["Goa","Kerala","Sikkim & Darjeeling","Rajasthan"],a:2},
-  {q:"What did we call each other while dating?",o:["Sunshine","Foreverthing","Jaan","Partner-in-crime"],a:1},
-  {q:"When did we get engaged?",o:["24 Feb 2022","26 Nov 2021","23 Aug 2021","14 Feb 2022"],a:0},
-  {q:"What was our wedding hashtag?",o:["#RahiKaSameer","#SameerWedsRahi","#TheSaHiJodi","#Foreverthing"],a:2},
-  {q:"Sata Janmanchi promises we'll be together for…",o:["Seven years","Seven births","Seven wonders","Seven days a week"],a:1},
-  {q:"Where did we go for our honeymoon, our first trip abroad?",o:["Bali","Maldives","Switzerland","Mauritius"],a:1},
-  {q:"Where did we celebrate our 2nd anniversary?",o:["Thailand","Dubai","Malaysia & Singapore","Sri Lanka"],a:2},
-  {q:"Where were you on your 30th birthday?",o:["The Eiffel Tower","A Swiss mountain","A Goa beach","Neuschwanstein Castle"],a:0},
-  {q:"Which country did we fall in love with in Europe?",o:["Austria","Germany","Switzerland","France"],a:1},
-  {q:"Where do we go every December?",o:["Kerala","Lonavala","Goa","Rajasthan"],a:2}
-];
-const LIKELY = [
-  "fall asleep halfway through a movie",
-  "say sorry first after a fight",
-  "start singing out of nowhere",
-  "plan our next holiday",
-  "take 50 photos to get one good one",
-  "steal the last bite",
-  "cry at a sad movie",
-  "lose the keys (again)",
-  "get hungry first on a trip",
-  "win an argument",
-  "remember our anniversary first",
-  "fall in love all over again today"
-];
-const PLACES = ["Shivaji Park, Dadar","Sanjay Gandhi National Park","Sikkim","Darjeeling","Orchids hotel","Maldives","Goa","Rajasthan","Malaysia","Singapore","Germany","France","Switzerland","Austria","Eiffel Tower"];
-const REASONS = [
-  "You trust me completely, and let me trust you the same way.",
-  "You have never judged me.",
-  "You stood by me through every up and every down.",
-  "You made my family your own.",
-  "You turned a notebook exchange into a lifetime.",
-  "The universe kept sending me back to you.",
-  "You make a small island feel like the whole world.",
-  "We grew up together through the rough patches.",
-  "Every trip is better because you're in it.",
-  "You accept every little thing about me, happily.",
-  "You chose me, and you keep choosing me.",
-  "You are, and always will be, my Foreverthing.",
-  "You're the best travel planner in the world.",
-  "You turned an Eiffel Tower sunset into my favourite memory.",
-  "Every new country feels like home with you.",
-  "Sata janmanchi: in every birth, it will be you.",
-  "Four years in, it still feels like the beginning."
-];
-/* ===================== */
 
-const $ = s => document.querySelector(s);
+/* ---------- generic form dialog ---------- */
+const fDlg = $("#fDlg");
+const openDlg = d=>{ try{ d.showModal(); }catch(e){ d.setAttribute("open",""); } };
+const fieldHTML = (f,v,pre)=>{
+  const [k,label,type="text",opts] = f, id = pre+k; v = v??"";
+  if(type==="textarea") return `<label>${label}<textarea id="${id}" maxlength="4000">${esc(v)}</textarea></label>`;
+  if(type==="check") return `<label class="chk"><input type="checkbox" id="${id}"${v?" checked":""}>${label}</label>`;
+  if(type==="select") return `<label>${label}<select id="${id}">${opts.map(o=>{ const [val,lab]=Array.isArray(o)?o:[o,o]; return `<option value="${esc(val)}"${String(val)===String(v)?" selected":""}>${esc(lab)}</option>`; }).join("")}</select></label>`;
+  if(type==="place") return `<label>${label}<select id="${id}">${placeOptions(v)}</select></label>`;
+  const t = {month:"month",url:"url",num:"number",date:"date"}[type]||"text";
+  return `<label>${label}<input id="${id}" type="${t}"${t==="number"?' step="any"':""} value="${esc(v)}" maxlength="300"></label>`;
+};
+const readField = (f,pre)=>{ const [k,,type] = f, el = $("#"+pre+k); if(type==="check") return el.checked; if(type==="num") return el.value===""?null:parseFloat(el.value); return el.value.trim(); };
+const form = (title,fields,vals={},o={})=>new Promise(res=>{
+  $("#fTitle").textContent = title; $("#fHint").textContent = o.hint||""; $("#fHint").hidden = !o.hint;
+  $("#fFields").innerHTML = fields.map(f=>fieldHTML(f,vals[f[0]],"ff_")).join("");
+  $("#fDel").hidden = !o.del;
+  const done = v=>{ fDlg.close(); off(); res(v); };
+  const sub = e=>{ e.preventDefault(); const out={}; fields.forEach(f=>out[f[0]]=readField(f,"ff_"));
+    const req = o.req||[fields[0][0]]; if(req.some(k=>out[k]===""||out[k]==null)){ toast("Please fill in “"+fields.find(f=>f[0]===req.find(k=>out[k]===""||out[k]==null))[1]+"”"); return; } done(out); };
+  const can = ()=>done(null), del = ()=>{ if(o.confirmDel===false || $("#fDel").dataset.sure){ delete $("#fDel").dataset.sure; $("#fDel").textContent="Delete"; done("delete"); } else { $("#fDel").dataset.sure="1"; $("#fDel").textContent="Tap again to delete"; } };
+  const off = ()=>{ $("#fForm").removeEventListener("submit",sub); $("#fCancel").removeEventListener("click",can); $("#fDel").removeEventListener("click",del); delete $("#fDel").dataset.sure; $("#fDel").textContent="Delete"; };
+  $("#fForm").addEventListener("submit",sub); $("#fCancel").addEventListener("click",can); $("#fDel").addEventListener("click",del);
+  openDlg(fDlg); setTimeout(()=>{ const first=$("#fFields input,#fFields textarea,#fFields select"); if(first && innerWidth>700) first.focus(); },50);
+});
 
-/* timeline */
-const camera = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>';
-$("#timeline").innerHTML = CHAPTERS.map(c=>`
-  <article class="ch${c.big?' big':''}" id="ch-${c.id}">
-    <div><div class="when">${c.when}</div><h3>${c.title}</h3><p>${c.text}</p>${c.link?`<a class="btn" target="_blank" rel="noopener" style="margin-top:16px;text-decoration:none" href="${c.link.href}">${c.link.label}</a>`:""}</div>
-    <div class="ph" data-id="${c.id}"><div class="ph-empty"><div>${camera}${c.title}</div></div>
-      <label class="up"><span>Add photo</span><input type="file" accept="image/*" data-id="${c.id}"></label></div>
-  </article>`).join("");
-$("#places").innerHTML = PLACES.map(p=>`<span>${p}</span>`).join("");
+/* ---------- list manager (edit mode) ---------- */
+const SCHEMAS = {
+  chapters:{title:"Story chapters",sorted:true,sum:i=>`${i.date||"No date"} · ${i.title}`,fields:[["title","Title"],["date","Month & year (for the order)","month"],["when","Date line shown (e.g. “May 2016 · Shivaji Park”)"],["text","The story","textarea"],["place","Pin on the map","place"],["big","A big moment (red star)","check"],["linkLabel","Button text (optional)"],["linkUrl","Button link (optional)","url"]]},
+  videos:{title:"Our songs",sum:i=>i.title,fields:[["title","Title"],["k","Small label (e.g. Pre-wedding song)"],["url","YouTube link","url"],["text","About it","textarea"],["main","Highlight this one","check"]],req:["title","url"]},
+  numbers:{title:"Us, in numbers",hint:"Years married, together and since 12th grade are counted automatically.",sum:i=>`${i.n} · ${i.label}`,fields:[["n","Number or word"],["label","What it counts"]]},
+  places:{title:"Places list",hint:"For a new place: in Google Maps, long-press the spot and copy the two numbers it shows (latitude, longitude).",sum:i=>`${i.name} · ${i.g||""}`,fields:[["name","Name"],["lat","Latitude","num"],["lng","Longitude","num"],["g","Group","select",["Mumbai & around","India","Abroad","Added by us"]]],req:["name","lat","lng"]},
+  questions:{title:"Little-things questions",sum:i=>i.q,fields:[["q","Question (we both answer it)"]]},
+  mapqs:{title:"Special-place questions",sum:i=>i.q,fields:[["q","Place question"]]},
+  thenNow:{title:"Then vs now",sum:i=>`${i.then} → ${i.now}`,fields:[["then","Then","textarea"],["now","Now","textarea"]],req:["then","now"]},
+  quiz:{title:"Quiz questions",sum:i=>i.q,fields:[["q","Question"],["o1","Option 1"],["o2","Option 2"],["o3","Option 3"],["o4","Option 4"],["a","Correct answer","select",[["1","Option 1"],["2","Option 2"],["3","Option 3"],["4","Option 4"]]]],req:["q","o1","o2"]},
+  likely:{title:"Who's more likely to…",sum:i=>"…"+i.t,fields:[["t","Who's more likely to…"]]},
+  openWhen:{title:"Open-when envelopes",sum:i=>"Open when "+i.label,fields:[["label","Open when…"]]},
+  reasons:{title:"Reasons I love you",sum:i=>i.t,fields:[["t","Reason","textarea"]]},
+  coupons:{title:"Love coupons",sum:i=>i.title,fields:[["title","Coupon"],["text","The fine print"]]},
+  dates:{title:"Date-jar ideas",sum:i=>i.t,fields:[["t","Date idea"]]}
+};
+const sortCh = ()=>C.chapters.map((c,i)=>[c,i]).sort((a,b)=>(a[0].date||"9999").localeCompare(b[0].date||"9999")||a[1]-b[1]).map(x=>x[0]);
+let curKey = null;
+const mList = ()=>{
+  const S = SCHEMAS[curKey], arr = S.sorted ? sortCh() : C[curKey];
+  $("#mList").innerHTML = arr.length ? arr.map(it=>`<li data-id="${esc(it.id)}"><span class="s">${esc(S.sum(it))}</span><span class="b">${S.sorted?"":`<button data-a="up" aria-label="Move up">↑</button><button data-a="down" aria-label="Move down">↓</button>`}<button data-a="edit">Edit</button></span></li>`).join("") : `<li><span class="s muted">Nothing here yet.</span></li>`;
+};
+const editItem = async id=>{
+  const S = SCHEMAS[curKey], arr = C[curKey], i = arr.findIndex(x=>x.id===id), it = i>=0 ? arr[i] : {};
+  $("#mDlg").close();
+  const r = await form((i>=0?"Edit · ":"New · ")+S.title, S.fields, it, {del:i>=0, req:S.req, hint:S.hint});
+  if(r==="delete") arr.splice(i,1);
+  else if(r){ if(i>=0) arr[i] = Object.assign({},it,r); else arr.push(Object.assign({id:uid()},r)); }
+  if(r){ if(curKey==="videos" && r!=="delete" && r.main) arr.forEach(v=>{ if(v.id!==(it.id||arr[arr.length-1].id)) v.main=false; }); renderAll(); persist(); }
+  mList(); openDlg($("#mDlg"));
+};
+const manage = key=>{ curKey = key; const S=SCHEMAS[key]; $("#mTitle").textContent = S.title; $("#mHint").textContent = S.hint||""; $("#mHint").hidden = !S.hint; mList(); openDlg($("#mDlg")); };
+$("#mList").addEventListener("click",e=>{
+  const b = e.target.closest("button[data-a]"); if(!b) return; const id = b.closest("li").dataset.id, arr = C[curKey], i = arr.findIndex(x=>x.id===id);
+  if(b.dataset.a==="edit") return editItem(id);
+  const j = b.dataset.a==="up" ? i-1 : i+1; if(j<0||j>=arr.length) return;
+  [arr[i],arr[j]] = [arr[j],arr[i]]; mList(); renderAll(); persist();
+});
+$("#mAdd").addEventListener("click",()=>editItem(null));
+$("#mClose").addEventListener("click",()=>$("#mDlg").close());
+document.addEventListener("click",e=>{ const b=e.target.closest("[data-manage]"); if(b) manage(b.dataset.manage); });
+
+/* edit mode */
+$("#editBtn").addEventListener("click",()=>{ const on = document.body.classList.toggle("editing"); $("#editBtn").classList.toggle("on",on); $("#editBtn").setAttribute("aria-pressed",on); $("#editBtn").textContent = on?"Done editing":"Edit"; if(on) toast("Edit mode: look for the dashed buttons",3000); });
+
+/* ---------- hero ---------- */
+const WORDS = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty"];
+const yrsSince = d=>{ const n=new Date(); let y=n.getFullYear()-d.getFullYear(); if(n.getMonth()<d.getMonth()||(n.getMonth()===d.getMonth()&&n.getDate()<d.getDate())) y--; return y; };
+const word = n=>WORDS[n]||String(n);
+const renderHero = ()=>{
+  const m=yrsSince(MARRIED), t=yrsSince(TOGETHER), k=new Date().getFullYear()-MET;
+  $("#heroSub").textContent = `${word(m)} years married. ${word(t)} years together. ${word(k)} since a borrowed notebook.`;
+  $("#finDate").textContent = new Date().toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
+};
+const fmtN = n=>n.toLocaleString("en-IN"), pad2 = n=>String(n).padStart(2,"0");
+const tick = ()=>{
+  const now = new Date(), ms = now-MARRIED, d = Math.floor(ms/864e5), r = ms%864e5;
+  $("#dMarried").textContent = fmtN(d); $("#dTogether").textContent = fmtN(Math.floor((now-TOGETHER)/864e5)); $("#yKnown").textContent = now.getFullYear()-MET;
+  $("#tick").textContent = `${fmtN(d)} days, ${pad2(Math.floor(r/36e5))}h ${pad2(Math.floor(r/6e4)%60)}m ${pad2(Math.floor(r/1e3)%60)}s since “I do”`;
+};
+tick(); const clock = setInterval(tick,1000);
 
 /* constellation */
 const svg = $("#skySvg");
 const drawSky = ()=>{
   const W = svg.clientWidth, H = svg.clientHeight; if(!W||!H) return;
-  let seed = 26112022; const rnd = ()=> (seed = (seed*16807)%2147483647)/2147483647;
-  let dust = "";
-  const n = Math.round(W*H/2600);
-  for(let i=0;i<n;i++){ dust += `<circle cx="${rnd()*W}" cy="${rnd()*H}" r="${(rnd()*1.1+.3).toFixed(2)}" fill="#f6c9c1" opacity="${(rnd()*.5+.15).toFixed(2)}"/>`; }
-  const pad = Math.min(48, W*.06);
-  const pts = CHAPTERS.map((c,i)=>{
-    const t = i/(CHAPTERS.length-1);
-    const x = pad + t*(W-2*pad);
-    const y = H*.55 - Math.sin(t*Math.PI*1.15)*H*.32 + (i%2? H*.07 : -H*.03);
-    return {x,y,c};
-  });
+  const CH = sortCh(); if(!CH.length){ svg.innerHTML=""; return; }
+  let seed = 26112022; const rnd = ()=>(seed=(seed*16807)%2147483647)/2147483647;
+  let dust = ""; for(let i=0,n=Math.round(W*H/2600);i<n;i++) dust += `<circle cx="${rnd()*W}" cy="${rnd()*H}" r="${(rnd()*1.1+.3).toFixed(2)}" fill="#f6c9c1" opacity="${(rnd()*.5+.15).toFixed(2)}"/>`;
+  const pad = Math.min(48,W*.06);
+  const pts = CH.map((c,i)=>{ const t = CH.length>1 ? i/(CH.length-1) : .5; return {x:pad+t*(W-2*pad), y:H*.55-Math.sin(t*Math.PI*1.15)*H*.32+(i%2?H*.07:-H*.03), c}; });
   const path = pts.map((p,i)=>(i?"L":"M")+p.x.toFixed(1)+" "+p.y.toFixed(1)).join(" ");
-  const small = W < 520;
-  const labels = {school:"2011",dating:"2016",wedding:"2022",europe:"Today"};
-  const stars = pts.map(p=>{
-    const r = p.c.big ? 6 : 4, col = p.c.big ? "#e2364b" : "#f6c9c1";
-    const lab = labels[p.c.id] && !(small && p.c.id==="dating") ? `<text class="lbl" x="${p.x}" y="${p.y+24}" text-anchor="${p.c.id==='school'?'start':p.c.id==='europe'?'end':'middle'}">${labels[p.c.id]}</text>` : "";
-    return `<g class="st" data-id="${p.c.id}" tabindex="0" role="link" aria-label="${p.c.title}">
-      <circle cx="${p.x}" cy="${p.y}" r="${r*3}" fill="${col}" opacity=".12"/>
-      <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${col}"/>
-      <circle cx="${p.x}" cy="${p.y}" r="22" fill="transparent"/>${lab}</g>`;
+  let lastX = -999;
+  const stars = pts.map((p,i)=>{
+    const r = p.c.big?6:4, col = p.c.big?"#e2364b":"#f6c9c1";
+    const isLast = i===pts.length-1, want = i===0 || isLast || p.c.big;
+    let lab = "";
+    if(want && p.x-lastX>54 && (W>=520 || i===0 || isLast)){
+      lastX = p.x; const txt = isLast ? "Today" : (p.c.date||"").slice(0,4);
+      if(txt) lab = `<text class="lbl" x="${p.x}" y="${p.y+24}" text-anchor="${i===0?"start":isLast?"end":"middle"}">${esc(txt)}</text>`;
+    }
+    return `<g class="st" data-id="${esc(p.c.id)}" tabindex="0" role="link" aria-label="${esc(p.c.title)}"><circle cx="${p.x}" cy="${p.y}" r="${r*3}" fill="${col}" opacity=".12"/><circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${col}"/><circle cx="${p.x}" cy="${p.y}" r="22" fill="transparent"/>${lab}</g>`;
   }).join("");
   svg.innerHTML = dust + `<path d="${path}" fill="none" stroke="#f6c9c1" stroke-opacity=".4" stroke-width="1" stroke-dasharray="3 5"/>` + stars;
 };
 const skyRO = new ResizeObserver(drawSky); skyRO.observe($("#sky"));
-const go = id => { const el = document.getElementById("ch-"+id); if(el) el.scrollIntoView({block:"start"}); };
-svg.addEventListener("click",e=>{ const g=e.target.closest(".st"); if(g) go(g.dataset.id); });
-svg.addEventListener("keydown",e=>{ const g=e.target.closest(".st"); if(g && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); go(g.dataset.id); } });
+const goCh = id=>{ const el=document.getElementById("ch-"+id); if(el) el.scrollIntoView({block:"start"}); };
+svg.addEventListener("click",e=>{ const g=e.target.closest(".st"); if(g) goCh(g.dataset.id); });
+svg.addEventListener("keydown",e=>{ const g=e.target.closest(".st"); if(g&&(e.key==="Enter"||e.key===" ")){ e.preventDefault(); goCh(g.dataset.id); } });
 
-/* counters */
-const m0 = new Date(CONFIG.married), t0 = new Date(CONFIG.together);
-const fmt = n => n.toLocaleString("en-IN");
-const pad2 = n => String(n).padStart(2,"0");
-const tick = ()=>{
-  const now = new Date();
-  const ms = now - m0, d = Math.floor(ms/864e5);
-  $("#dMarried").textContent = fmt(d);
-  $("#dTogether").textContent = fmt(Math.floor((now - t0)/864e5));
-  $("#yKnown").textContent = now.getFullYear() - 2011;
-  const r = ms % 864e5;
-  $("#tick").textContent = `${fmt(d)} days, ${pad2(Math.floor(r/36e5))}h ${pad2(Math.floor(r/6e4)%60)}m ${pad2(Math.floor(r/1e3)%60)}s since “I do”`;
-};
-tick(); const clock = setInterval(tick,1000);
-
-/* songs */
-const playIco = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-const ytId = h => (h.match(/(?:youtu\.be\/|v=)([\w-]{11})/)||[])[1];
-$("#vids").innerHTML = VIDEOS.map(v=>{ const id = ytId(v.href); return `
-  <div class="vid${v.main?' main':''}">
-    <button class="yt" data-v="${id}" aria-label="Play ${v.title}" style="background-image:url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)"><span class="play">${playIco}</span></button>
-    <div><div class="k">${v.k}</div><h3>${v.title}</h3></div>
-    <p>${v.text}</p><a class="go" href="${v.href}" target="_blank" rel="noopener">Open on YouTube →</a>
-  </div>`; }).join("");
-$("#vids").addEventListener("click",e=>{
-  const b = e.target.closest(".yt"); if(!b || b.querySelector("iframe")) return;
-  b.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>`;
-});
-$("#finalPlay").addEventListener("click",()=>{ const b = document.querySelector(".vid.main .yt"); if(b) setTimeout(()=>b.click(),400); });
-
-/* quiz */
-{
-  const box = $("#quiz"); let qi=0, score=0;
-  const end = ()=>{
-    const msg = score===QUIZ.length ? "Perfect. You remember everything, Foreverthing." : score>=QUIZ.length-2 ? "So close! Our story clearly lives in your heart." : "Doesn't matter. We'll keep making memories to remember.";
-    box.innerHTML = `<div class="k">How well do you remember us?</div><div class="q">${score} out of ${QUIZ.length}</div><p class="fb">${msg}</p><div class="row"><button class="btn fill" id="qAgain">Play again</button></div>`;
-    $("#qAgain").addEventListener("click",()=>{qi=0;score=0;show();});
-  };
-  const show = ()=>{
-    const it = QUIZ[qi];
-    box.innerHTML = `<div class="k">How well do you remember us? · ${qi+1} of ${QUIZ.length}</div>
-      <div class="prog"><i style="width:${qi/QUIZ.length*100}%"></i></div>
-      <div class="q">${it.q}</div>
-      <div class="opts">${it.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")}</div>
-      <p class="fb" aria-live="polite"></p>
-      <div class="row"><button class="btn" id="qNext" hidden>Next</button></div>`;
-    box.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
-      const i=+b.dataset.i, right = i===it.a;
-      if(right) score++;
-      box.querySelectorAll(".opt").forEach(x=>{ x.disabled=true; if(+x.dataset.i===it.a) x.classList.add("ok"); });
-      if(!right) b.classList.add("no");
-      box.querySelector(".fb").textContent = right ? "Yes! ♥" : "Not quite. Now you'll never forget it.";
-      const n=$("#qNext"); n.hidden=false; n.textContent = qi===QUIZ.length-1 ? "See score" : "Next"; n.focus();
-      n.addEventListener("click",()=>{ qi++; qi<QUIZ.length ? show() : end(); });
-    }));
-  };
-  show();
-}
-
-/* who's more likely */
-{
-  const box = $("#likely"); let li=0, agree=0, picks={}, order=[];
-  const P = ["Rahi","Sameer","Both of us"];
-  const start = ()=>{ order = LIKELY.map((_,i)=>i).sort(()=>Math.random()-.5).slice(0,8); li=0; agree=0; ask("Rahi"); };
-  const intro = ()=>{
-    box.innerHTML = `<div class="k">Who's more likely to…</div><div class="q">Answer secretly, then see if we agree.</div>
-      <p class="fb">Rahi picks first, then passes the phone to Sameer. No peeking!</p>
-      <div class="row"><button class="btn fill" id="lStart">Let's play</button></div>`;
-    $("#lStart").addEventListener("click",start);
-  };
-  const ask = who=>{
-    const t = LIKELY[order[li]];
-    box.innerHTML = `<div class="k">Who's more likely to… · ${li+1} of ${order.length}</div>
-      <div class="prog"><i style="width:${li/order.length*100}%"></i></div>
-      <p class="turn">${who}'s turn${who==="Sameer"?" (Rahi, look away!)":""}</p>
-      <div class="q">…${t}?</div>
-      <div class="who">${P.map(p=>`<button class="opt" data-p="${p}">${p}</button>`).join("")}</div>`;
-    box.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{
-      picks[who]=b.dataset.p;
-      who==="Rahi" ? handoff() : reveal(t);
-    }));
-  };
-  const handoff = ()=>{
-    box.innerHTML = `<div class="k">Who's more likely to…</div><div class="q">Locked in. Pass the phone to Sameer.</div>
-      <div class="row"><button class="btn fill" id="lGo">I'm Sameer, show me</button></div>`;
-    $("#lGo").addEventListener("click",()=>ask("Sameer"));
-  };
-  const reveal = t=>{
-    const same = picks.Rahi===picks.Sameer; if(same) agree++;
-    box.innerHTML = `<div class="k">Who's more likely to… · ${li+1} of ${order.length}</div>
-      <div class="q">…${t}?</div>
-      <p>Rahi said <b>${picks.Rahi}</b>. Sameer said <b>${picks.Sameer}</b>.</p>
-      <p class="fb">${same ? "Same answer. Of course. ♥" : "Ooh, we disagree. Time to argue it out!"}</p>
-      <div class="row"><button class="btn fill" id="lNext">${li===order.length-1?"See result":"Next one"}</button></div>`;
-    $("#lNext").addEventListener("click",()=>{ li++; li<order.length ? ask("Rahi") : done(); });
-  };
-  const done = ()=>{
-    const msg = agree>=6 ? "Two minds, one Foreverthing." : agree>=3 ? "Different enough to keep things interesting." : "Opposites attract. Clearly.";
-    box.innerHTML = `<div class="k">Who's more likely to…</div><div class="q">We agreed on ${agree} of ${order.length}</div>
-      <p class="fb">${msg}</p><div class="row"><button class="btn fill" id="lAgain">New round</button></div>`;
-    $("#lAgain").addEventListener("click",start);
-  };
-  intro();
-}
-
-/* shared state */
-const escH = v => String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const STATE = (()=>{
-  let d = {}; try{ d = JSON.parse($("#memdata").textContent)||{}; }catch(e){}
-  if(Array.isArray(d)) d = {mem:d};
-  return Object.assign({mem:[],bucket:[],capsule:{},promises:{},redeemed:{},letters:{},thenNow:null,qa:{},mapq:{},profiles:{},journal:[]},d);
-})();
-let pTimer = null;
-const persist = ()=>{ clearTimeout(pTimer); $("#saveNote2").textContent = $("#saveNote").textContent = "Saving…"; pTimer = setTimeout(doPersist,600); };
-const setNote = t=>{ $("#saveNote").textContent = t; $("#saveNote2").textContent = t; };
-const keepLocal = msg=>{ try{ localStorage.setItem("rs-state",JSON.stringify(STATE)); }catch(e){} setNote(msg); };
-const doPersist = async ()=>{
-  try{ await window.FB.save(STATE); setNote("Saved ♥"); }
-  catch(e){ setNote("Couldn't save. Check your internet and try that again."); }
+/* ---------- coming up + this month ---------- */
+const renderComing = ()=>{
+  const now = new Date(); now.setHours(0,0,0,0);
+  const nextOf = (m,d)=>{ let t = new Date(now.getFullYear(),m,d); if(t<now) t = new Date(now.getFullYear()+1,m,d); return t; };
+  const ev = [[nextOf(10,26),"our wedding anniversary"],[nextOf(7,23),"the day we became official"]];
+  WHO.forEach(w=>{ const b=STATE.profiles[w].bday; if(b){ const [,mm,dd]=b.split("-").map(Number); ev.push([nextOf(mm-1,dd),w+"'s birthday"]); } });
+  ev.sort((a,b)=>a[0]-b[0]);
+  $("#upnext").innerHTML = ev.map(([d,l])=>{ const n=Math.round((d-now)/864e5); return `<div class="up1"><b>${n===0?"Today!":n===1?"Tomorrow":n+" days"}</b><span>to ${esc(l)}</span></div>`; }).join("");
+  const mm = pad2(now.getMonth()+1), md = mm+"-"+pad2(now.getDate()), y = now.getFullYear();
+  const items = [
+    ...C.chapters.filter(c=>c.date && c.date.slice(5,7)===mm && +c.date.slice(0,4)<y).map(c=>`<p>${c.date.slice(0,4)}: ${esc(c.title)}</p>`),
+    ...STATE.journal.filter(j=>j.at.slice(5,10)===md && +j.at.slice(0,4)<y).map(j=>`<p>${j.at.slice(0,4)}, ${esc(j.who)} wrote: ${esc(j.title||j.text.slice(0,80))}</p>`)
+  ];
+  $("#otd").innerHTML = items.length ? `<div class="otd"><span class="k">This month, years ago</span>${items.join("")}</div>` : "";
 };
 
-/* generic text dialog */
-const tDlg = $("#txtDlg");
-const ask = o => new Promise(res=>{
-  $("#tTitle").textContent = o.title;
-  $("#tHint").textContent = o.hint||""; $("#tHint").hidden = !o.hint;
-  $("#tL1").hidden = !o.l1; $("#tL1 span").textContent = o.l1||""; $("#t1").value = o.v1||""; $("#t1").required = !!o.l1 && !o.place;
-  $("#tL2").hidden = !o.l2; $("#tL2 span").textContent = o.l2||""; $("#t2").value = o.v2||"";
-  $("#tDel").hidden = !o.del;
-  $("#tL3").hidden = !o.place; $("#t3").required = !!o.place; if(o.place){ if(!$("#t3").options.length) $("#t3").innerHTML = $("#fPlace").innerHTML; $("#t3").value = o.v3||""; }
-  const done = v=>{ tDlg.close(); cleanup(); res(v); };
-  const onSub = e=>{ e.preventDefault(); const v1=$("#t1").value.trim(), v2=$("#t2").value.trim(), v3=$("#t3").value; if(o.place){ if(!v3) return; done({v1,v2,v3}); return; } if(o.l1 && !v1) return; if(!o.l1 && !v2) return; done({v1,v2}); };
-  const onCan = ()=>done(null), onDel = ()=>done("delete");
-  const cleanup = ()=>{ $("#txtForm").removeEventListener("submit",onSub); $("#tCancel").removeEventListener("click",onCan); $("#tDel").removeEventListener("click",onDel); };
-  $("#txtForm").addEventListener("submit",onSub); $("#tCancel").addEventListener("click",onCan); $("#tDel").addEventListener("click",onDel);
-  try{ tDlg.showModal(); }catch(e){ tDlg.setAttribute("open",""); }
-  setTimeout(()=>(o.l1?$("#t1"):$("#t2")).focus(),50);
-});
-const fmtDate = d => new Date(d).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"});
-
-/* little answers: definitions */
-const QA = [
-  ["notice","The first thing I noticed about you in 12th grade"],
-  ["dadar","At Shivaji Park in May 2016, I felt"],
-  ["spot","Our usual meeting spot while dating"],
-  ["film","The first film we watched together"],
-  ["food","Your favourite food or snack"],
-  ["wedding","The wedding-day moment I'll never forget"],
-  ["maldives","Our best moment in the Maldives"],
-  ["europe","My favourite place with you in Europe"],
-  ["laugh","When you laugh, you"],
-  ["calm","You calm me down by"]
-];
-const MAPQ = [
-  ["ily","Where we first said “I love you”"],
-  ["propose","Where the proposal happened"],
-  ["ours","The place in Mumbai that feels most like ours"],
-  ["talk","The trip city we still talk about"]
-];
-let redrawMap = ()=>{};
-
-/* memories */
-{
-  const PLACE_GROUPS = {
-    "Mumbai & around":[["Shivaji Park, Dadar",19.027,72.838],["Sanjay Gandhi National Park",19.23,72.87],["Marine Drive",18.944,72.823],["Juhu",19.099,72.826],["Bandra",19.06,72.83],["Mumbai (elsewhere)",19.076,72.877],["Lonavala",18.75,73.41],["Alibaug",18.64,72.87],["Pune",18.52,73.86],["Mahabaleshwar",17.92,73.66],["Nashik",20.0,73.79],["Goa",15.49,73.83]],
-    "India":[["Gangtok, Sikkim",27.33,88.61],["Darjeeling",27.04,88.26],["Jaipur",26.91,75.79],["Udaipur",24.58,73.71],["Jodhpur",26.24,73.02],["Jaisalmer",26.92,70.91],["Delhi",28.61,77.21],["Agra",27.18,78.01],["Rishikesh",30.09,78.27],["Manali",32.24,77.19],["Shimla",31.1,77.17],["Leh",34.15,77.58],["Varanasi",25.32,82.97],["Hyderabad",17.39,78.49],["Bengaluru",12.97,77.59],["Kochi",9.93,76.27],["Munnar",10.09,77.06],["Andaman",11.62,92.73]],
-    "Abroad":[["Maldives",4.18,73.51],["Dubai",25.2,55.27],["Bangkok",13.75,100.5],["Kuala Lumpur, Malaysia",3.14,101.69],["Petronas Twin Towers, KL",3.1579,101.7116],["Singapore",1.35,103.82],["Singapore Flyer",1.2893,103.8631],["Bali",-8.34,115.09],["Paris",48.86,2.35],["Eiffel Tower, Paris",48.858,2.2945],["Germany",51.1,10.4],["Switzerland",46.8,8.2],["Austria",47.5,14.55],["London",51.51,-0.13],["Interlaken",46.69,7.86],["Zurich",47.38,8.54],["Amsterdam",52.37,4.9],["Rome",41.9,12.5],["Venice",45.44,12.32],["Florence",43.77,11.26],["Barcelona",41.39,2.17],["Prague",50.08,14.44],["Vienna",48.21,16.37],["Budapest",47.5,19.04],["Santorini",36.39,25.46]]
-  };
-  const PL = {}; Object.values(PLACE_GROUPS).flat().forEach(p=>PL[p[0]]=p);
-  const STORY_PINS = ["Shivaji Park, Dadar","Sanjay Gandhi National Park","Gangtok, Sikkim","Darjeeling","Maldives","Goa","Jaipur","Petronas Twin Towers, KL","Singapore Flyer","Eiffel Tower, Paris","Germany","Switzerland","Austria"];
-  const esc = v => String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const YEARS = []; for(let y=2016;y<=new Date().getFullYear();y++) YEARS.push(y);
-  let MEM = STATE.mem;
-
-  $("#fPlace").innerHTML = '<option value="">Choose a place…</option>' + Object.entries(PLACE_GROUPS).map(([g,ps])=>`<optgroup label="${g}">${ps.map(p=>`<option>${p[0]}</option>`).join("")}</optgroup>`).join("");
-
-  const card = (y,who)=>{
-    const m = MEM.find(x=>x.year===y && x.who===who), c = who==="Rahi"?"r":"s";
-    if(!m) return `<button class="mem empty ${c}" data-y="${y}" data-w="${who}"><span class="who">${who}</span>+ Add ${who==="Rahi"?"your":"my"} best memory of ${y}</button>`;
-    return `<button class="mem ${c}" data-y="${y}" data-w="${who}"><span class="who">${who}</span><b>${esc(m.title)}</b>${m.text?`<span class="t">${esc(m.text)}</span>`:""}<span class="pl">${esc(m.spot?m.spot+", ":"")}${esc(m.place)}</span></button>`;
-  };
-  const renderYears = ()=>{
-    const row = y=>`<div class="yr" id="yr-${y}"><div class="y">${y}</div>${card(y,"Rahi")}${card(y,"Sameer")}</div>`;
-    $("#years").innerHTML = `<div class="era">The dating years</div><div class="years">${YEARS.filter(y=>y<2022).map(row).join("")}</div>
-      <div class="era">Married</div><div class="years">${YEARS.filter(y=>y>=2022).map(row).join("")}</div>`;
-  };
-  $("#years").addEventListener("click",e=>{ const b=e.target.closest(".mem"); if(b) openDlg(+b.dataset.y,b.dataset.w); });
-
-  /* dialog */
-  const dlg = $("#memDlg"); let cur = null;
-  const openDlg = (y,w)=>{
-    cur = {year:y,who:w};
-    const m = MEM.find(x=>x.year===y && x.who===w) || {};
-    $("#dlgTitle").textContent = `${w}'s best memory of ${y}`;
-    $("#fTitle").value = m.title||""; $("#fText").value = m.text||""; $("#fPlace").value = m.place||""; $("#fSpot").value = m.spot||"";
-    $("#fDel").hidden = !m.title;
-    try{ dlg.showModal(); }catch(e){ dlg.setAttribute("open",""); }
-  };
-  $("#fCancel").addEventListener("click",()=>dlg.close());
-  $("#fDel").addEventListener("click",()=>{ MEM = MEM.filter(x=>!(x.year===cur.year && x.who===cur.who)); dlg.close(); save(); });
-  $("#memForm").addEventListener("submit",e=>{
-    e.preventDefault();
-    const m = {year:cur.year, who:cur.who, title:$("#fTitle").value.trim(), text:$("#fText").value.trim(), place:$("#fPlace").value, spot:$("#fSpot").value.trim()};
-    if(!m.title || !PL[m.place]) return;
-    MEM = MEM.filter(x=>!(x.year===m.year && x.who===m.who)); MEM.push(m);
-    dlg.close(); save();
-  });
-
-  const save = ()=>{ STATE.mem = MEM; renderYears(); drawMap(); persist(); };
-
-  /* map */
-  const el = $("#map"); let chart = null; let view = "India";
-  const VIEWS = {Mumbai:{center:[72.86,19.08],zoom:60},India:{center:[80,21],zoom:5},World:{center:[50,25],zoom:1.6}};
-  const drawMap = ()=>{
-    if(!chart) return;
-    const mem = who => MEM.filter(m=>m.who===who && PL[m.place]).map(m=>({name:m.title,value:[PL[m.place][2],PL[m.place][1],m.year],m}));
-    const story = STORY_PINS.map(n=>({name:n,value:[PL[n][2],PL[n][1]]}));
-    const ourq = MAPQ.filter(([k])=>STATE.mapq[k] && PL[STATE.mapq[k].place]).map(([k,q])=>{ const a=STATE.mapq[k]; return {name:q,value:[PL[a.place][2],PL[a.place][1]],q:{q,place:a.place,spot:a.spot,note:a.note}}; });
-    const v = VIEWS[view];
-    chart.setOption({
-      tooltip:{trigger:"item",backgroundColor:"#33162f",borderColor:"rgba(246,201,193,.3)",textStyle:{color:"#f8e9e6"},
-        formatter:p=> p.data.q ? `<b>${esc(p.data.q.q)}</b><br>${esc(p.data.q.spot?p.data.q.spot+", ":"")}${esc(p.data.q.place)}` : p.data.m ? `<b>${p.data.m.year} · ${esc(p.data.m.who)}</b><br>${esc(p.data.m.title)}<br><span style="opacity:.7">${esc(p.data.m.place)}</span>` : esc(p.name)},
-      geo:{map:"world",roam:true,center:v.center,zoom:v.zoom,scaleLimit:{min:1,max:200},label:{show:false},
-        itemStyle:{areaColor:"#3a1636",borderColor:"rgba(246,201,193,.35)",borderWidth:.6},
-        emphasis:{label:{show:false},itemStyle:{areaColor:"#4d1d47"}}},
-      series:[
-        {type:"scatter",coordinateSystem:"geo",data:story,symbolSize:8,itemStyle:{color:"#8a6a88"},z:1},
-        {type:"effectScatter",coordinateSystem:"geo",data:mem("Rahi"),symbolSize:14,rippleEffect:{scale:3},itemStyle:{color:"#e2364b"},z:3},
-        {type:"effectScatter",coordinateSystem:"geo",data:mem("Sameer"),symbolSize:14,rippleEffect:{scale:3},itemStyle:{color:"#f6c9c1"},z:2},
-        {type:"scatter",coordinateSystem:"geo",data:ourq,symbol:"pin",symbolSize:30,itemStyle:{color:"#ffffff"},z:4}
-      ]
-    },true);
-  };
-  const setView = v=>{ view=v; ["Mumbai","India","World"].forEach(k=>$("#v"+k).setAttribute("aria-pressed",k===v)); drawMap(); };
-  ["Mumbai","India","World"].forEach(k=>$("#v"+k).addEventListener("click",()=>setView(k)));
-  if(window.echarts && echarts.getMap && echarts.getMap("world")){
-    chart = echarts.init(el);
-    chart.on("click",p=>{ if(p.data&&p.data.m){ const t=document.getElementById("yr-"+p.data.m.year); if(t) t.scrollIntoView({block:"center"}); } });
-    const mapRO = new ResizeObserver(()=>chart.resize()); mapRO.observe(el);
-  }else{
-    el.innerHTML = '<p id="mapFail">The map couldn’t load right now. Your memories are still saved below.</p>';
-    el.style.height = "auto"; document.querySelector(".mapbar").hidden = true;
-  }
-  redrawMap = drawMap;
-  renderYears(); drawMap();
-}
-
-/* little answers */
-{
-  const renderQ = ()=>{
-    $("#qa").innerHTML = QA.map(([k,q])=>{
-      const a = STATE.qa[k]||{};
-      const cell = w=> a[w] ? `<span class="ans ${w==="Rahi"?"r":"s"}"><i>${w}</i>${escH(a[w])}</span>` : `<span class="ans empty ${w==="Rahi"?"r":"s"}"><i>${w}</i>+ answer</span>`;
-      return `<div class="qrow"><p class="qq">${q}…</p><div class="qans"><button data-k="${k}" data-w="Rahi">${cell("Rahi")}</button><button data-k="${k}" data-w="Sameer">${cell("Sameer")}</button></div></div>`;
-    }).join("");
-    $("#mapqa").innerHTML = MAPQ.map(([k,q])=>{
-      const a = STATE.mapq[k];
-      return `<button class="mq${a?"":" empty"}" data-k="${k}"><span class="k">${q}</span>${a?`<b>${escH(a.spot?a.spot+", ":"")}${escH(a.place)}</b>${a.note?`<span class="t">${escH(a.note)}</span>`:""}`:`<span>+ Pick the place</span>`}</button>`;
-    }).join("");
-  };
-  $("#qa").addEventListener("click",async e=>{
-    const b=e.target.closest("button[data-k]"); if(!b) return; const {k,w}=b.dataset;
-    const q = QA.find(x=>x[0]===k)[1]; const a = STATE.qa[k]||{};
-    const r = await ask({title:`${q}…`,hint:`${w}'s answer. A few words is perfect.`,l2:"Answer",v2:a[w]||"",del:!!a[w]});
-    if(!r) return; STATE.qa[k] = Object.assign({},a); if(r==="delete") delete STATE.qa[k][w]; else STATE.qa[k][w]=r.v2;
-    renderQ(); persist();
-  });
-  $("#mapqa").addEventListener("click",async e=>{
-    const b=e.target.closest(".mq"); if(!b) return; const k=b.dataset.k; const q=MAPQ.find(x=>x[0]===k)[1]; const a=STATE.mapq[k]||{};
-    const r = await ask({title:q,place:true,v3:a.place,l1:"Exact spot (optional)",v1:a.spot,l2:"The story (optional)",v2:a.note,del:!!a.place});
-    if(!r) return; if(r==="delete") delete STATE.mapq[k]; else STATE.mapq[k]={place:r.v3,spot:r.v1,note:r.v2};
-    renderQ(); redrawMap(); persist();
-  });
-  renderQ();
-}
-
-/* us in numbers */
-{
-  const now = new Date();
-  const N = [
-    [now.getFullYear()-2011,"years since a borrowed notebook"],
-    [Math.floor((now-new Date("2016-08-23T00:00:00+05:30"))/(365.25*864e5)),"years of us"],
-    [Math.floor((now-new Date("2022-11-26T00:00:00+05:30"))/(365.25*864e5)),"years married"],
-    [7,"countries explored together: Maldives, Malaysia, Singapore, Germany, France, Switzerland, Austria"],
-    [1,"birthday on the Eiffel Tower, at sunset"],
-    ["Every","December in Goa"],
-    [2,"songs written for you (so far)"],
-    [7,"births promised: Sata Janmanchi"],
-    ["1","Foreverthing"],
-    ["∞","reasons to keep going"]
-  ];
-  $("#nums").innerHTML = N.map(([n,l])=>`<div class="num"><b>${n}</b><span>${l}</span></div>`).join("");
-}
-
-/* then vs now */
-{
-  const DEF = [
-    {then:"Making up a reason about notebooks just to talk to you.",now:"No reason needed. Ever."},
-    {then:"Rare calls that the universe seemed to arrange.",now:"Yours is the first voice I hear every morning."},
-    {then:"Meeting at Shivaji Park and pretending it was only a photoshoot.",now:"Home is wherever you are."},
-    {then:"Foreverthing was a nickname.",now:"Now it's a promise."}
-  ];
-  if(!Array.isArray(STATE.thenNow)) STATE.thenNow = DEF.slice();
-  const render = ()=>{
-    $("#tn").innerHTML = STATE.thenNow.map((p,i)=>`<button class="tn" data-i="${i}"><div><span class="k">Then</span><p>${escH(p.then)}</p></div><div><span class="k now">Now</span><p>${escH(p.now)}</p></div></button>`).join("");
-  };
-  const edit = async i=>{
-    const p = STATE.thenNow[i]||{};
-    const r = await ask({title:i==null?"Add a then vs now":"Edit then vs now",l1:"Then",v1:p.then,l2:"Now",v2:p.now,del:i!=null});
-    if(!r) return;
-    if(r==="delete") STATE.thenNow.splice(i,1);
-    else if(i==null) STATE.thenNow.push({then:r.v1,now:r.v2});
-    else STATE.thenNow[i] = {then:r.v1,now:r.v2};
-    render(); persist();
-  };
-  $("#tn").addEventListener("click",e=>{ const b=e.target.closest(".tn"); if(b) edit(+b.dataset.i); });
-  $("#tnAdd").addEventListener("click",()=>edit(null));
-  render();
-}
-
-/* open-when letters */
-{
-  const L = [["miss","you miss me"],["stress","work gets too much"],["fight","we've had a fight"],["sleep","you can't sleep"],["laugh","you need a laugh"],["proud","you're proud of yourself"],["low","you feel low"],["anni","it's our 5th anniversary"]];
-  const render = ()=>{
-    $("#letters").innerHTML = L.map(([k,t])=>{
-      const has = !!STATE.letters[k];
-      return `<button class="env2${has?"":" blank"}" data-k="${k}"><span class="flap"></span><span class="k">Open when</span><b>${t}</b><span class="st2">${has?"Tap to open":"Sameer, write this one"}</span></button>`;
-    }).join("");
-  };
-  const write = async k=>{
-    const t = L.find(x=>x[0]===k)[1];
-    const r = await ask({title:`Open when ${t}`,hint:"Written by Sameer, for Rahi.",l2:"Your letter",v2:STATE.letters[k]||"",del:!!STATE.letters[k]});
-    if(!r) return;
-    if(r==="delete") delete STATE.letters[k]; else STATE.letters[k] = r.v2;
-    render(); persist();
-  };
-  const rd = $("#readDlg");
-  $("#letters").addEventListener("click",e=>{
-    const b=e.target.closest(".env2"); if(!b) return; const k=b.dataset.k;
-    if(!STATE.letters[k]){ write(k); return; }
-    $("#rTitle").textContent = "Open when " + L.find(x=>x[0]===k)[1];
-    $("#rBody").textContent = STATE.letters[k];
-    $("#rEdit").onclick = ()=>{ rd.close(); write(k); };
-    try{ rd.showModal(); }catch(e){ rd.setAttribute("open",""); }
-  });
-  $("#rClose").addEventListener("click",()=>rd.close());
-  render();
-}
-
-/* love coupons */
-{
-  const C = [
-    ["Breakfast in bed","Made by me, served with a song."],
-    ["You pick the movie","No arguments. No sighing. Promise."],
-    ["A day planned by you","I follow, wherever, whatever."],
-    ["A long ride together","Just us on the bike, destination: anywhere."],
-    ["A song about anything","You choose the topic, I write the song."],
-    ["You win this argument","Instantly. No questions asked."],
-    ["A surprise date","Planned by me. You just show up."],
-    ["Chores off","A full day of rest. I've got everything."],
-    ["Next trip: my turn","I plan everything for once. You just pack."]
-  ];
-  const render = ()=>{
-    $("#coupons").innerHTML = C.map(([t,d],i)=>{
-      const r = STATE.redeemed[i];
-      return `<div class="cp${r?" used":""}"><div class="cpL"><span class="k">Love coupon</span><b>${t}</b><p>${d}</p></div><div class="cpR">${r?`<span class="stamp">Redeemed<br>${fmtDate(r)}</span>`:`<button class="btn fill rd" data-i="${i}">Redeem</button>`}</div></div>`;
-    }).join("");
-  };
-  $("#coupons").addEventListener("click",e=>{
-    const b=e.target.closest(".rd"); if(!b) return;
-    if(b.dataset.sure){ STATE.redeemed[b.dataset.i] = new Date().toISOString(); render(); persist(); }
-    else { b.dataset.sure="1"; b.textContent="Sure? Tap again"; }
-  });
-  render();
-}
-
-/* date jar */
-{
-  const D = ["Sunset at Marine Drive with roasted bhutta","Go back to Shivaji Park, just the two of us","A morning walk at Sanjay Gandhi National Park","Cook a dish neither of us has ever tried","Recreate our very first date","Old photos, chai and stories night","A drive to Lonavala, no plan","A movie marathon, Rahi picks everything","Sameer plays only Rahi's song requests","Stargazing on the terrace","A street-food crawl through the city","Plan our next big trip on a map","Watch our engagement video together again","Write each other a letter and swap","Pick our next country over chai, with a world map","Find the best city view in Mumbai, like that night at the Twin Towers","A sunset somewhere new, even in our own city"];
-  let last = -1;
-  $("#jarBtn").addEventListener("click",()=>{
-    let i; do{ i = Math.floor(Math.random()*D.length); }while(i===last && D.length>1); last=i;
-    const j=$("#jar"); j.classList.remove("shake"); void j.offsetWidth; j.classList.add("shake");
-    $("#jarOut").textContent = D[i];
-  });
-}
-
-/* bucket list */
-{
-  const render = ()=>{
-    const B = STATE.bucket;
-    $("#bucket").innerHTML = B.length ? B.map((b,i)=>`<li class="${b.done?"done":""}"><label><input type="checkbox" data-i="${i}" ${b.done?"checked":""}><span>${escH(b.text)}</span></label><small>${escH(b.who)}${b.done?" · done "+fmtDate(b.done):""}</small><button class="x" data-i="${i}" aria-label="Remove">×</button></li>`).join("") : `<li class="emptyli">Nothing yet. Add the first dream.</li>`;
-    const d = B.filter(b=>b.done).length; $("#bCount").textContent = B.length ? `${d} of ${B.length} done` : "";
-  };
-  $("#bForm").addEventListener("submit",e=>{
-    e.preventDefault(); const t=$("#bText").value.trim(); if(!t) return;
-    STATE.bucket.push({text:t,who:$("#bWho").value,done:null}); $("#bText").value=""; render(); persist();
-  });
-  $("#bucket").addEventListener("change",e=>{ const i=e.target.dataset.i; if(i==null) return; STATE.bucket[i].done = e.target.checked ? new Date().toISOString() : null; render(); persist(); });
-  $("#bucket").addEventListener("click",e=>{ const x=e.target.closest(".x"); if(!x) return; if(x.dataset.sure){ STATE.bucket.splice(+x.dataset.i,1); render(); persist(); } else { x.dataset.sure="1"; x.textContent="Remove?"; } });
-  render();
-}
-
-/* promises + time capsule */
-{
-  const OPEN = new Date("2027-11-26T00:00:00+05:30"), isOpen = new Date() >= OPEN;
-  const renderP = ()=>{
-    $("#promises").innerHTML = ["Rahi","Sameer"].map(w=>{
-      const p = STATE.promises[w];
-      return `<button class="mem ${w==="Rahi"?"r":"s"}${p?"":" empty"}" data-w="${w}"><span class="who">${w} promises</span>${p?`<b>${escH(p)}</b>`:`+ Write ${w==="Rahi"?"your":"my"} promise for year five`}</button>`;
-    }).join("");
-  };
-  $("#promises").addEventListener("click",async e=>{
-    const b=e.target.closest(".mem"); if(!b) return; const w=b.dataset.w;
-    const r = await ask({title:`${w}'s promise for year five`,l2:"I promise…",v2:STATE.promises[w]||"",del:!!STATE.promises[w]});
-    if(!r) return; if(r==="delete") delete STATE.promises[w]; else STATE.promises[w]=r.v2; renderP(); persist();
-  });
-  const days = Math.ceil((OPEN-new Date())/864e5);
-  $("#capWhen").textContent = isOpen ? "It's time. Open them together." : `Sealed until 26 November 2027 · ${days} days to go`;
-  const renderC = ()=>{
-    $("#capsule").innerHTML = ["Rahi","Sameer"].map(w=>{
-      const c = STATE.capsule[w];
-      if(isOpen && c) return `<div class="mem ${w==="Rahi"?"r":"s"}"><span class="who">From ${w}, sealed ${fmtDate(c.at)}</span><span class="t" style="white-space:pre-wrap">${escH(c.text)}</span></div>`;
-      if(c) return `<div class="mem ${w==="Rahi"?"r":"s"} sealed"><span class="who">${w}</span><b>Sealed</b><span class="pl">on ${fmtDate(c.at)} · no peeking</span></div>`;
-      return isOpen ? `<div class="mem empty">${w} didn't write one.</div>` : `<button class="mem empty ${w==="Rahi"?"r":"s"}" data-w="${w}"><span class="who">${w}</span>+ Write a note for 2027</button>`;
-    }).join("");
-  };
-  $("#capsule").addEventListener("click",async e=>{
-    const b=e.target.closest("button.mem"); if(!b) return; const w=b.dataset.w;
-    const r = await ask({title:`${w}'s note to us in 2027`,hint:"Once sealed, it stays hidden until 26 November 2027. Even from you.",l2:"Dear us, one year from now…"});
-    if(!r || r==="delete") return; STATE.capsule[w] = {text:r.v2,at:new Date().toISOString()}; renderC(); persist();
-  });
-  renderP(); renderC();
-}
-
-/* reasons */
-let order = REASONS.map((_,i)=>i).sort(()=>Math.random()-.5), ri = 0;
-$("#reasonBtn").addEventListener("click",()=>{
-  $("#reason").textContent = REASONS[order[ri % order.length]];
-  ri++;
-  $("#reasonBtn").textContent = ri >= REASONS.length ? "And again, from the top" : "Tell me another";
-});
-
-/* finale */
-$("#reveal").textContent = CONFIG.reveal;
-const fin = $("#finale"); let showered = false;
-const finIO = new IntersectionObserver(es=>{
-  if(showered || !es[0].isIntersecting) return; showered = true;
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  for(let i=0;i<36;i++){
-    const p = document.createElement("i"); p.className="petal";
-    p.style.left = Math.random()*100+"%";
-    p.style.animationDuration = (4+Math.random()*4)+"s";
-    p.style.animationDelay = (Math.random()*2.5)+"s";
-    fin.appendChild(p);
-  }
-},{threshold:.4});
-finIO.observe(fin);
-
-/* photos */
+/* ---------- profiles ---------- */
 let PHOTOS = {};
-const setPhoto = (id,url)=>{
-  const ph = document.querySelector(`.ph[data-id="${id}"]`); if(!ph) return;
-  let img = ph.querySelector("img"); if(!img){ img = document.createElement("img"); img.alt = ""; ph.insertBefore(img, ph.querySelector(".up")); }
-  img.src = url; ph.querySelector(".up span").textContent = "Change photo";
-};
-window.__applyPhotos = map=>{ PHOTOS = map||{}; Object.entries(PHOTOS).forEach(([id,u])=>setPhoto(id,u)); renderProfiles(); };
-$("#timeline").addEventListener("change",async e=>{
-  const inp = e.target.closest("input[type=file]"); if(!inp || !inp.files[0]) return;
-  const ph = inp.closest(".ph"); ph.classList.add("busy"); ph.querySelector(".up span").textContent = "Uploading…";
-  try{ const url = await window.FB.uploadPhoto(inp.dataset.id, inp.files[0]); PHOTOS[inp.dataset.id]=url; setPhoto(inp.dataset.id,url); }
-  catch(err){ ph.querySelector(".up span").textContent = "Couldn't upload. Try again"; }
-  ph.classList.remove("busy"); inp.value = "";
-});
-
-/* profiles */
-const PF = [["full","Full name"],["nick","Nickname"],["bday","Birthday"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"]];
-const ME = window.ME;
-const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"};
-["Rahi","Sameer"].forEach(w=>{ STATE.profiles[w] = STATE.profiles[w]||{}; if(!STATE.profiles[w].full) STATE.profiles[w].full = FULL[w]; });
-function renderProfiles(){
-  $("#profiles").innerHTML = ["Rahi","Sameer"].map(w=>{
+const PF = [["full","Full name"],["nick","Nickname"],["bday","Birthday","date"],["food","Favourite food"],["dest","Dream destination"],["song","Favourite song"],["about","Me, in one line","textarea"]];
+const renderProfiles = ()=>{
+  $("#profiles").innerHTML = WHO.map(w=>{
     const p = STATE.profiles[w]||{}, ph = PHOTOS["profile-"+w], mine = w===ME;
-    const rows = PF.filter(([k])=>k!=="nick" && k!=="full" && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${escH(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
-    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${escH(p.full||w)}</h3>${p.nick?`<div class="nk">${escH(p.nick)}</div>`:""}</div></div>
-      ${p.about?`<p class="about">${escH(p.about)}</p>`:""}${rows?`<dl>${rows}</dl>`:""}
+    const rows = PF.filter(([k])=>!["full","nick","about"].includes(k) && p[k]).map(([k,l])=>`<dt>${l}</dt><dd>${esc(k==="bday"?new Date(p[k]+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"}):p[k])}</dd>`).join("");
+    const inner = `<div class="hd"><div class="av${w==="Rahi"?" r":""}">${ph?`<img src="${ph}" alt="">`:w[0]}</div><div><h3>${esc(p.full||w)}</h3>${p.nick?`<div class="nk">${esc(p.nick)}</div>`:""}</div></div>
+      ${p.about?`<p class="about">${esc(p.about)}</p>`:""}${rows?`<dl>${rows}</dl>`:""}
       ${mine?`<span class="ed">${rows||p.about?"Edit my profile":"+ Fill in my profile"}</span>`:(rows||p.about?"":`<span class="muted" style="font-size:14px">${w} hasn't filled this in yet.</span>`)}`;
     return mine ? `<button class="pf mine" id="myPf">${inner}</button>` : `<div class="pf">${inner}</div>`;
   }).join("");
-}
-const pDlg = $("#pDlg");
-$("#profiles").addEventListener("click",e=>{
-  if(!e.target.closest("#myPf")) return;
-  const p = STATE.profiles[ME]||{};
-  $("#pTitle").textContent = `${ME}'s profile`;
-  [...PF,["about"]].forEach(([k])=>$("#p_"+k).value = p[k]||"");
-  try{ pDlg.showModal(); }catch(err){ pDlg.setAttribute("open",""); }
-});
-$("#pCancel").addEventListener("click",()=>pDlg.close());
-$("#pPhoto").addEventListener("change",async e=>{
-  const f = e.target.files[0]; if(!f) return;
-  try{ const url = await window.FB.uploadPhoto("profile-"+ME, f); PHOTOS["profile-"+ME]=url; renderProfiles(); }catch(err){ setNote("Couldn't upload that photo. Try again."); }
-  e.target.value = "";
-});
-$("#pForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  const p = {}; [...PF,["about"]].forEach(([k])=>{ const v=$("#p_"+k).value.trim(); if(v) p[k]=v; });
-  STATE.profiles[ME] = p; pDlg.close(); renderProfiles(); persist();
-});
-renderProfiles();
-
-/* notebook */
-const renderJ = ()=>{
-  const J = STATE.journal.slice().sort((a,b)=>b.at.localeCompare(a.at));
-  $("#journal").innerHTML = J.length ? J.map(j=>`<article class="je${j.who==="Rahi"?" r":""}"><div class="meta"><span><b>${escH(j.who)}</b> · ${fmtDate(j.at)}</span>${j.who===ME?`<button class="del" data-id="${escH(j.id)}">Delete</button>`:""}</div>${j.title?`<h3>${escH(j.title)}</h3>`:""}<p>${escH(j.text)}</p></article>`).join("")
-    : `<p class="muted">The first page is waiting.</p>`;
 };
-$("#jForm").addEventListener("submit",e=>{
-  e.preventDefault(); const t = $("#jText").value.trim(); if(!t) return;
-  STATE.journal.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),at:new Date().toISOString(),who:ME,title:$("#jTitle").value.trim(),text:t});
-  $("#jTitle").value = ""; $("#jText").value = ""; renderJ(); persist();
+$("#profiles").addEventListener("click",async e=>{
+  if(!e.target.closest("#myPf")) return;
+  const r = await form("My profile", PF, STATE.profiles[ME], {req:["full"], hint:"To add or change your photo, tap the round picture on your card."});
+  if(!r) return; STATE.profiles[ME] = Object.assign({},STATE.profiles[ME],r); renderProfiles(); renderComing(); persist();
 });
-$("#journal").addEventListener("click",e=>{
-  const b = e.target.closest(".del"); if(!b) return;
-  if(!b.dataset.sure){ b.dataset.sure="1"; b.textContent="Tap again to delete"; return; }
-  STATE.journal = STATE.journal.filter(j=>j.id!==b.dataset.id); renderJ(); persist();
+/* profile photo: long-press-free way, a hidden input opened from the avatar */
+const pfPhoto = document.createElement("input"); pfPhoto.type="file"; pfPhoto.accept="image/*"; pfPhoto.hidden=true; document.body.appendChild(pfPhoto);
+$("#profiles").addEventListener("click",e=>{ if(e.target.closest("#myPf .av")){ e.stopImmediatePropagation(); pfPhoto.click(); } },true);
+pfPhoto.addEventListener("change",async()=>{ const f=pfPhoto.files[0]; if(!f) return; toast("Uploading photo…",0);
+  try{ const u=await window.FB.uploadPhoto("profile-"+ME,f); PHOTOS["profile-"+ME]=u; renderProfiles(); toast("Photo saved ♥"); }catch(err){ toast("Couldn't upload that photo. Try again.",4000); } pfPhoto.value=""; });
+
+/* ---------- timeline ---------- */
+const camera = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>';
+const safeUrl = u=>/^https:\/\//.test(u||"") ? u : "";
+const renderTimeline = ()=>{
+  $("#timeline").innerHTML = sortCh().map(c=>`
+  <article class="ch${c.big?' big':''}" id="ch-${esc(c.id)}">
+    <div><div class="when">${esc(c.when||c.date||"")}</div><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p>
+      ${c.linkLabel&&safeUrl(c.linkUrl)?`<a class="btn" target="_blank" rel="noopener" style="margin-top:16px;text-decoration:none" href="${esc(c.linkUrl)}">${esc(c.linkLabel)}</a>`:""}
+      <div><button class="ebtn ed-only chEdit" data-ch="${esc(c.id)}">Edit this chapter</button></div></div>
+    <div class="ph" data-id="${esc(c.id)}"><div class="ph-empty"><div>${camera}${esc(c.title)}</div></div>
+      ${PHOTOS[c.id]?`<img src="${PHOTOS[c.id]}" alt="">`:""}
+      <label class="up"><span>${PHOTOS[c.id]?"Change photo":"Add photo"}</span><input type="file" accept="image/*" data-id="${esc(c.id)}"></label></div>
+  </article>`).join("") || `<p class="muted">No chapters yet. Tap Remember to add the first one.</p>`;
+};
+$("#timeline").addEventListener("click",e=>{ const b=e.target.closest("[data-ch]"); if(b){ curKey="chapters"; editItem(b.dataset.ch); } });
+$("#timeline").addEventListener("change",async e=>{
+  const inp = e.target.closest("input[type=file]"); if(!inp||!inp.files[0]) return;
+  const ph = inp.closest(".ph"); ph.classList.add("busy"); ph.querySelector(".up span").textContent = "Uploading…";
+  try{ PHOTOS[inp.dataset.id] = await window.FB.uploadPhoto(inp.dataset.id, inp.files[0]); renderTimeline(); toast("Photo saved ♥"); }
+  catch(err){ ph.querySelector(".up span").textContent = "Couldn't upload. Try again"; ph.classList.remove("busy"); }
 });
-renderJ();
+
+/* ---------- songs ---------- */
+const playIco = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const ytId = h=>(String(h||"").match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/)||[])[1];
+const renderVideos = ()=>{
+  $("#vids").innerHTML = C.videos.map(v=>{ const id = ytId(v.url); return `
+  <div class="vid${v.main?' main':''}">
+    ${id?`<button class="yt" data-v="${id}" aria-label="Play ${esc(v.title)}" style="background-image:url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)"><span class="play">${playIco}</span></button>`:""}
+    <div><div class="k">${esc(v.k)}</div><h3>${esc(v.title)}</h3></div>
+    <p>${esc(v.text)}</p>${safeUrl(v.url)?`<a class="go" href="${esc(v.url)}" target="_blank" rel="noopener">Open on YouTube →</a>`:""}
+  </div>`; }).join("");
+};
+$("#vids").addEventListener("click",e=>{ const b=e.target.closest(".yt"); if(!b||b.querySelector("iframe")) return;
+  b.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>`; });
+$("#finalPlay").addEventListener("click",()=>{ const b=document.querySelector(".vid.main .yt")||document.querySelector(".yt"); if(b) setTimeout(()=>b.click(),400); });
+
+/* ---------- letter + finale ---------- */
+const renderLetter = ()=>{
+  $("#letterBody").innerHTML = String(C.letter||"").split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("");
+  $("#reveal").textContent = C.finale||"";
+};
+$("#letterEdit").addEventListener("click",async()=>{
+  const r = await form("The letter",[["letter","Letter (leave an empty line between paragraphs)","textarea"],["finale","Last line of the page"]],{letter:C.letter,finale:C.finale});
+  if(!r) return; C.letter=r.letter; C.finale=r.finale; renderLetter(); persist();
+});
+
+/* ---------- numbers ---------- */
+const renderNums = ()=>{
+  const auto = [[new Date().getFullYear()-MET,"years since a borrowed notebook"],[yrsSince(TOGETHER),"years of us"],[yrsSince(MARRIED),"years married"]];
+  $("#nums").innerHTML = [...auto, ...C.numbers.map(n=>[n.n,n.label])].map(([n,l])=>`<div class="num"><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("");
+};
+
+/* ---------- memories + map ---------- */
+const YEARS = []; for(let y=2016;y<=new Date().getFullYear();y++) YEARS.push(y);
+const memCard = (y,w)=>{
+  const m = STATE.mem.find(x=>x.year===y&&x.who===w), c = w==="Rahi"?"r":"s", mine = w===ME, tag = mine?"button":"div";
+  if(!m) return mine ? `<button class="mem empty ${c}" data-y="${y}"><span class="who">${w}</span>+ My best memory of ${y}</button>` : `<div class="mem empty ${c}"><span class="who">${w}</span>Not written yet</div>`;
+  return `<${tag} class="mem ${c}"${mine?` data-y="${y}"`:""}><span class="who">${w}</span><b>${esc(m.title)}</b>${m.text?`<span class="t">${esc(m.text)}</span>`:""}${m.place?`<span class="pl">${esc(m.spot?m.spot+", ":"")}${esc(m.place)}</span>`:""}</${tag}>`;
+};
+const renderYears = ()=>{
+  const row = y=>`<div class="yr" id="yr-${y}"><div class="y">${y}</div>${memCard(y,"Rahi")}${memCard(y,"Sameer")}</div>`;
+  $("#years").innerHTML = `<div class="era">The dating years</div><div class="years">${YEARS.filter(y=>y<2022).map(row).join("")}</div><div class="era">Married</div><div class="years">${YEARS.filter(y=>y>=2022).map(row).join("")}</div>`;
+};
+const MEMF = [["title","The memory, in a few words"],["text","Tell the story","textarea"],["place","Where was it?","place"],["spot","Exact spot (optional)"]];
+$("#years").addEventListener("click",async e=>{
+  const b = e.target.closest(".mem[data-y]"); if(!b) return; const y=+b.dataset.y;
+  const i = STATE.mem.findIndex(x=>x.year===y&&x.who===ME), m = STATE.mem[i]||{};
+  const r = await form(`My best memory of ${y}`, MEMF, m, {del:i>=0});
+  if(!r) return; if(i>=0) STATE.mem.splice(i,1); if(r!=="delete") STATE.mem.push(Object.assign({year:y,who:ME},r));
+  renderYears(); drawMap(); persist();
+});
+let chart = null, view = "India";
+const VIEWS = {Mumbai:{center:[72.86,19.08],zoom:60},India:{center:[80,21],zoom:5},World:{center:[50,25],zoom:1.6}};
+const drawMap = ()=>{
+  if(!chart) return; const P = PL(), at = n=>P[n]?[P[n].lng,P[n].lat]:null;
+  const mem = w=>STATE.mem.filter(m=>m.who===w&&at(m.place)).map(m=>({name:m.title,value:[...at(m.place),m.year],m}));
+  const story = C.chapters.filter(c=>at(c.place)).map(c=>({name:c.title,value:at(c.place),c}));
+  const ourq = C.mapqs.filter(q=>STATE.mapq[q.id]&&at(STATE.mapq[q.id].place)).map(q=>{ const a=STATE.mapq[q.id]; return {name:q.q,value:at(a.place),q:{q:q.q,place:a.place,spot:a.spot}}; });
+  const v = VIEWS[view];
+  chart.setOption({
+    tooltip:{trigger:"item",backgroundColor:"#33162f",borderColor:"rgba(246,201,193,.3)",textStyle:{color:"#f8e9e6"},
+      formatter:p=>{ const d=p.data; if(d.q) return `<b>${esc(d.q.q)}</b><br>${esc(d.q.spot?d.q.spot+", ":"")}${esc(d.q.place)}`; if(d.m) return `<b>${d.m.year} · ${esc(d.m.who)}</b><br>${esc(d.m.title)}<br><span style="opacity:.7">${esc(d.m.place)}</span>`; if(d.c) return `<b>${esc(d.c.title)}</b><br><span style="opacity:.7">${esc(d.c.place)}</span>`; return esc(p.name); }},
+    geo:{map:"world",roam:true,center:v.center,zoom:v.zoom,scaleLimit:{min:1,max:200},label:{show:false},itemStyle:{areaColor:"#3a1636",borderColor:"rgba(246,201,193,.35)",borderWidth:.6},emphasis:{label:{show:false},itemStyle:{areaColor:"#4d1d47"}}},
+    series:[
+      {type:"scatter",coordinateSystem:"geo",data:story,symbolSize:9,itemStyle:{color:"#8a6a88"},z:1},
+      {type:"effectScatter",coordinateSystem:"geo",data:mem("Rahi"),symbolSize:14,rippleEffect:{scale:3},itemStyle:{color:"#e2364b"},z:3},
+      {type:"effectScatter",coordinateSystem:"geo",data:mem("Sameer"),symbolSize:14,rippleEffect:{scale:3},itemStyle:{color:"#f6c9c1"},z:2},
+      {type:"scatter",coordinateSystem:"geo",data:ourq,symbol:"pin",symbolSize:30,itemStyle:{color:"#ffffff"},z:4}
+    ]},true);
+};
+const setView = k=>{ view=k; ["Mumbai","India","World"].forEach(x=>$("#v"+x).setAttribute("aria-pressed",x===k)); drawMap(); };
+["Mumbai","India","World"].forEach(k=>$("#v"+k).addEventListener("click",()=>setView(k)));
+if(window.echarts && echarts.getMap && echarts.getMap("world")){
+  chart = echarts.init($("#map"));
+  chart.on("click",p=>{ const d=p.data||{}; const t = d.m ? document.getElementById("yr-"+d.m.year) : d.c ? document.getElementById("ch-"+d.c.id) : null; if(t) t.scrollIntoView({block:"center"}); });
+  const mapRO = new ResizeObserver(()=>chart.resize()); mapRO.observe($("#map"));
+}else{ $("#map").innerHTML = '<p id="mapFail">The map couldn’t load right now. Everything is still saved.</p>'; $("#map").style.height="auto"; document.querySelector(".mapbar").hidden=true; }
+
+/* ---------- little things ---------- */
+const renderQA = ()=>{
+  $("#qa").innerHTML = C.questions.map(({id,q})=>{
+    const a = STATE.qa[id]||{};
+    const cell = w=>{ const mine=w===ME, c=w==="Rahi"?"r":"s"; const inner = a[w] ? `<i>${w}</i>${esc(a[w])}` : `<i>${w}</i>${mine?"+ answer":"not yet"}`; return mine ? `<button data-k="${esc(id)}"><span class="ans ${c}${a[w]?"":" empty"}">${inner}</span></button>` : `<div><span class="ans ${c}${a[w]?"":" empty"}">${inner}</span></div>`; };
+    return `<div class="qrow"><p class="qq">${esc(q)}…</p><div class="qans">${cell("Rahi")}${cell("Sameer")}</div></div>`;
+  }).join("");
+  $("#mapqa").innerHTML = C.mapqs.map(({id,q})=>{ const a=STATE.mapq[id];
+    return `<button class="mq${a?"":" empty"}" data-k="${esc(id)}"><span class="k">${esc(q)}</span>${a?`<b>${esc(a.spot?a.spot+", ":"")}${esc(a.place)}</b>${a.note?`<span class="t">${esc(a.note)}</span>`:""}`:`<span>+ Pick the place</span>`}</button>`; }).join("");
+};
+$("#qa").addEventListener("click",async e=>{
+  const b=e.target.closest("button[data-k]"); if(!b) return; const id=b.dataset.k, q=C.questions.find(x=>x.id===id), a=STATE.qa[id]||{};
+  const r = await form(q.q+"…",[["v","My answer","textarea"]],{v:a[ME]},{del:!!a[ME]});
+  if(!r) return; STATE.qa[id]=Object.assign({},a); if(r==="delete") delete STATE.qa[id][ME]; else STATE.qa[id][ME]=r.v; renderQA(); persist();
+});
+$("#mapqa").addEventListener("click",async e=>{
+  const b=e.target.closest(".mq"); if(!b) return; const id=b.dataset.k, q=C.mapqs.find(x=>x.id===id), a=STATE.mapq[id];
+  const r = await form(q.q,[["place","Where?","place"],["spot","Exact spot (optional)"],["note","The story (optional)","textarea"]],a||{},{del:!!a,hint:"Not in the list? Tap Edit at the top, then “Edit places list”."});
+  if(!r) return; if(r==="delete") delete STATE.mapq[id]; else STATE.mapq[id]=r; renderQA(); drawMap(); persist();
+});
+
+/* ---------- album ---------- */
+const renderAlbum = ()=>{
+  const G = STATE.gallery.slice().sort((a,b)=>b.at.localeCompare(a.at));
+  $("#albumGrid").innerHTML = G.length ? G.map(g=>`<button class="al" data-g="${esc(g.id)}" aria-label="${esc(g.caption||"Photo")}">${PHOTOS[g.id]?`<img src="${PHOTOS[g.id]}" alt="" loading="lazy">`:""}${g.caption?`<span>${esc(g.caption)}</span>`:""}</button>`).join("") : `<p class="muted">No photos yet. Add the first one.</p>`;
+};
+let albumLoaded = false;
+const loadAlbum = async()=>{ if(albumLoaded) return; albumLoaded = true; const ids = STATE.gallery.map(g=>g.id).filter(id=>!PHOTOS[id]); if(!ids.length) return; Object.assign(PHOTOS, await window.FB.getPhotos(ids)); renderAlbum(); };
+const alIO = new IntersectionObserver(es=>{ if(es[0].isIntersecting){ loadAlbum().catch(()=>{}); alIO.disconnect(); } },{rootMargin:"400px"}); alIO.observe($("#album"));
+$("#alUp").addEventListener("change",async e=>{
+  const files=[...e.target.files]; if(!files.length) return; let ok=0;
+  for(const [i,f] of files.entries()){
+    $("#alUpTxt").textContent = `Uploading ${i+1} of ${files.length}…`;
+    try{ const id="g-"+uid(); PHOTOS[id]=await window.FB.uploadPhoto(id,f); STATE.gallery.push({id,caption:"",who:ME,at:new Date().toISOString()}); ok++; }catch(err){}
+  }
+  $("#alUpTxt").textContent = "+ Add photos"; e.target.value=""; renderAlbum(); persist();
+  if(ok<files.length) toast(`${files.length-ok} photo(s) couldn't upload.`,4000);
+});
+const lb = $("#lbDlg"); let lbId=null;
+$("#albumGrid").addEventListener("click",e=>{
+  const b=e.target.closest(".al"); if(!b) return; const g=STATE.gallery.find(x=>x.id===b.dataset.g); if(!g) return; lbId=g.id;
+  $("#lbImg").src = PHOTOS[g.id]||""; $("#lbCap").textContent = g.caption||""; $("#lbMeta").textContent = `Added by ${g.who} · ${fmtDate(g.at)}`;
+  $("#lbDel").hidden = $("#lbEdit").hidden = g.who!==ME; $("#lbDel").textContent="Delete"; delete $("#lbDel").dataset.sure; openDlg(lb);
+});
+$("#lbClose").addEventListener("click",()=>lb.close());
+$("#lbEdit").addEventListener("click",async()=>{ const g=STATE.gallery.find(x=>x.id===lbId); lb.close(); const r=await form("Caption",[["caption","Caption"]],g,{req:[]}); if(r){ g.caption=r.caption; renderAlbum(); persist(); } });
+$("#lbDel").addEventListener("click",async()=>{ const b=$("#lbDel"); if(!b.dataset.sure){ b.dataset.sure="1"; b.textContent="Tap again to delete"; return; }
+  lb.close(); STATE.gallery = STATE.gallery.filter(x=>x.id!==lbId); delete PHOTOS[lbId]; renderAlbum(); persist(); window.FB.deletePhoto(lbId).catch(()=>{}); });
+
+/* ---------- then vs now ---------- */
+const renderTN = ()=>{ $("#tn").innerHTML = C.thenNow.map(p=>`<div class="tn"><div><span class="k">Then</span><p>${esc(p.then)}</p></div><div><span class="k now">Now</span><p>${esc(p.now)}</p></div></div>`).join(""); };
+
+/* ---------- games ---------- */
+const startQuiz = ()=>{
+  const box=$("#quiz"), Q=C.quiz.filter(q=>q.q&&q.o1&&q.o2); let qi=0, score=0;
+  if(!Q.length){ box.innerHTML=`<div class="k">How well do you remember us?</div><p class="muted">No questions yet.</p>`; return; }
+  const end=()=>{ const msg = score===Q.length?"Perfect. You remember everything, Foreverthing.":score>=Q.length-2?"So close! Our story clearly lives in your heart.":"Doesn't matter. We'll keep making memories to remember.";
+    box.innerHTML=`<div class="k">How well do you remember us?</div><div class="q">${score} out of ${Q.length}</div><p class="fb">${msg}</p><div class="row"><button class="btn fill" id="qAgain">Play again</button></div>`;
+    $("#qAgain").addEventListener("click",startQuiz); };
+  const show=()=>{ const it=Q[qi], opts=[it.o1,it.o2,it.o3,it.o4].map((o,i)=>[o,i+1]).filter(x=>x[0]);
+    box.innerHTML=`<div class="k">How well do you remember us? · ${qi+1} of ${Q.length}</div><div class="prog"><i style="width:${qi/Q.length*100}%"></i></div><div class="q">${esc(it.q)}</div>
+      <div class="opts">${opts.map(([o,n])=>`<button class="opt" data-i="${n}">${esc(o)}</button>`).join("")}</div><p class="fb" aria-live="polite"></p><div class="row"><button class="btn" id="qNext" hidden>Next</button></div>`;
+    box.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{ const right=b.dataset.i===String(it.a); if(right) score++;
+      box.querySelectorAll(".opt").forEach(x=>{ x.disabled=true; if(x.dataset.i===String(it.a)) x.classList.add("ok"); }); if(!right) b.classList.add("no");
+      box.querySelector(".fb").textContent = right?"Yes! ♥":"Not quite. Now you'll never forget it.";
+      const n=$("#qNext"); n.hidden=false; n.textContent=qi===Q.length-1?"See score":"Next"; n.addEventListener("click",()=>{ qi++; qi<Q.length?show():end(); }); })); };
+  show();
+};
+const startLikely = ()=>{
+  const box=$("#likely"), L=C.likely.map(x=>x.t).filter(Boolean); let li=0, agree=0, picks={}, order=[];
+  const P=["Rahi","Sameer","Both of us"];
+  const start=()=>{ order=L.map((_,i)=>i).sort(()=>Math.random()-.5).slice(0,8); li=0; agree=0; ask("Rahi"); };
+  const intro=()=>{ box.innerHTML=`<div class="k">Who's more likely to…</div><div class="q">Answer secretly, then see if we agree.</div><p class="fb">Rahi picks first, then passes the phone to Sameer. No peeking!</p><div class="row"><button class="btn fill" id="lStart">Let's play</button></div>`; $("#lStart").addEventListener("click",start); };
+  const ask=who=>{ const t=L[order[li]]; box.innerHTML=`<div class="k">Who's more likely to… · ${li+1} of ${order.length}</div><div class="prog"><i style="width:${li/order.length*100}%"></i></div><p class="turn">${who}'s turn${who==="Sameer"?" (Rahi, look away!)":""}</p><div class="q">…${esc(t)}?</div><div class="who">${P.map(p=>`<button class="opt" data-p="${p}">${p}</button>`).join("")}</div>`;
+    box.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{ picks[who]=b.dataset.p; who==="Rahi"?handoff():reveal(t); })); };
+  const handoff=()=>{ box.innerHTML=`<div class="k">Who's more likely to…</div><div class="q">Locked in. Pass the phone to Sameer.</div><div class="row"><button class="btn fill" id="lGo">I'm Sameer, show me</button></div>`; $("#lGo").addEventListener("click",()=>ask("Sameer")); };
+  const reveal=t=>{ const same=picks.Rahi===picks.Sameer; if(same) agree++;
+    box.innerHTML=`<div class="k">Who's more likely to… · ${li+1} of ${order.length}</div><div class="q">…${esc(t)}?</div><p>Rahi said <b>${picks.Rahi}</b>. Sameer said <b>${picks.Sameer}</b>.</p><p class="fb">${same?"Same answer. Of course. ♥":"Ooh, we disagree. Time to argue it out!"}</p><div class="row"><button class="btn fill" id="lNext">${li===order.length-1?"See result":"Next one"}</button></div>`;
+    $("#lNext").addEventListener("click",()=>{ li++; li<order.length?ask("Rahi"):done(); }); };
+  const done=()=>{ const msg=agree>=order.length*.75?"Two minds, one Foreverthing.":agree>=order.length*.4?"Different enough to keep things interesting.":"Opposites attract. Clearly.";
+    box.innerHTML=`<div class="k">Who's more likely to…</div><div class="q">We agreed on ${agree} of ${order.length}</div><p class="fb">${msg}</p><div class="row"><button class="btn fill" id="lAgain">New round</button></div>`; $("#lAgain").addEventListener("click",start); };
+  L.length ? intro() : box.innerHTML=`<div class="k">Who's more likely to…</div><p class="muted">No questions yet.</p>`;
+};
+
+/* ---------- open-when letters ---------- */
+const renderLetters = ()=>{
+  $("#letters").innerHTML = C.openWhen.map(({id,label})=>{ const has=!!STATE.letters[id];
+    return `<button class="env2${has?"":" blank"}" data-k="${esc(id)}"><span class="flap"></span><span class="k">Open when</span><b>${esc(label)}</b><span class="st2">${has?"Tap to open":ME==="Sameer"?"Sameer, write this one":"Not written yet"}</span></button>`; }).join("");
+};
+const writeLetter = async id=>{ const ow=C.openWhen.find(x=>x.id===id);
+  const r=await form("Open when "+ow.label,[["v","Your letter","textarea"]],{v:STATE.letters[id]},{del:!!STATE.letters[id],hint:"Written by Sameer, for Rahi."});
+  if(!r) return; if(r==="delete") delete STATE.letters[id]; else STATE.letters[id]=r.v; renderLetters(); persist(); };
+$("#letters").addEventListener("click",e=>{ const b=e.target.closest(".env2"); if(!b) return; const id=b.dataset.k;
+  if(!STATE.letters[id]){ if(ME==="Sameer") writeLetter(id); return; }
+  $("#rdTitle").textContent="Open when "+C.openWhen.find(x=>x.id===id).label; $("#rdBody").textContent=STATE.letters[id];
+  $("#rdEdit").hidden = ME!=="Sameer"; $("#rdEdit").onclick=()=>{ $("#readDlg").close(); writeLetter(id); }; openDlg($("#readDlg")); });
+$("#rdClose").addEventListener("click",()=>$("#readDlg").close());
+
+/* ---------- reasons ---------- */
+let rOrder=[], ri=0;
+$("#reasonBtn").addEventListener("click",()=>{ const R=C.reasons.map(r=>r.t).filter(Boolean); if(!R.length) return;
+  if(ri%R.length===0||rOrder.length!==R.length) rOrder=R.map((_,i)=>i).sort(()=>Math.random()-.5);
+  $("#reason").textContent=R[rOrder[ri%R.length]]; ri++; $("#reasonBtn").textContent=ri>=R.length?"And again, from the top":"Tell me another"; });
+
+/* ---------- coupons + date jar ---------- */
+const renderCoupons = ()=>{
+  $("#coupons").innerHTML = C.coupons.map(c=>{ const r=STATE.redeemed[c.id];
+    return `<div class="cp${r?" used":""}"><div class="cpL"><span class="k">Love coupon</span><b>${esc(c.title)}</b><p>${esc(c.text)}</p></div><div class="cpR">${r?`<span class="stamp">Redeemed<br>${fmtDate(r)}</span>`:`<button class="btn fill rd" data-i="${esc(c.id)}">Redeem</button>`}</div></div>`; }).join("");
+};
+$("#coupons").addEventListener("click",e=>{ const b=e.target.closest(".rd"); if(!b) return;
+  if(b.dataset.sure){ STATE.redeemed[b.dataset.i]=new Date().toISOString(); renderCoupons(); persist(); } else { b.dataset.sure="1"; b.textContent="Sure? Tap again"; } });
+let lastJar=-1;
+$("#jarBtn").addEventListener("click",()=>{ const D=C.dates.map(d=>d.t).filter(Boolean); if(!D.length) return; let i; do{ i=Math.floor(Math.random()*D.length); }while(i===lastJar&&D.length>1); lastJar=i;
+  const j=$("#jar"); j.classList.remove("shake"); void j.offsetWidth; j.classList.add("shake"); $("#jarOut").textContent=D[i]; });
+
+/* ---------- bucket, promises, capsule ---------- */
+const renderBucket = ()=>{ const B=STATE.bucket;
+  $("#bucket").innerHTML = B.length ? B.map((b,i)=>`<li class="${b.done?"done":""}"><label><input type="checkbox" data-i="${i}" ${b.done?"checked":""}><span>${esc(b.text)}</span></label><small>${esc(b.who)}${b.done?" · done "+fmtDate(b.done):""}</small><button class="x" data-i="${i}" aria-label="Remove">×</button></li>`).join("") : `<li class="emptyli">Nothing yet. Add the first dream.</li>`;
+  const d=B.filter(b=>b.done).length; $("#bCount").textContent = B.length?`${d} of ${B.length} done`:""; };
+$("#bForm").addEventListener("submit",e=>{ e.preventDefault(); const t=$("#bText").value.trim(); if(!t) return; STATE.bucket.push({text:t,who:$("#bWho").value,done:null}); $("#bText").value=""; renderBucket(); persist(); });
+$("#bucket").addEventListener("change",e=>{ const i=e.target.dataset.i; if(i==null) return; STATE.bucket[i].done=e.target.checked?new Date().toISOString():null; renderBucket(); persist(); });
+$("#bucket").addEventListener("click",e=>{ const x=e.target.closest(".x"); if(!x) return; if(x.dataset.sure){ STATE.bucket.splice(+x.dataset.i,1); renderBucket(); persist(); } else { x.dataset.sure="1"; x.textContent="Remove?"; } });
+const nextAnni = ()=>{ const n=new Date(); let y=n.getFullYear(); if(n>=new Date(y,10,26)) y++; return y; };
+const CAP_YEAR = nextAnni(), OPEN = new Date(`${CAP_YEAR}-11-26T00:00:00+05:30`);
+const renderNext = ()=>{
+  $("#promises").innerHTML = WHO.map(w=>{ const p=STATE.promises[w], mine=w===ME, c=w==="Rahi"?"r":"s";
+    const inner = `<span class="who">${w} promises</span>${p?`<b>${esc(p)}</b>`:mine?"+ Write my promise for the year ahead":"Not written yet"}`;
+    return mine?`<button class="mem ${c}${p?"":" empty"}" data-w="${w}">${inner}</button>`:`<div class="mem ${c}${p?"":" empty"}">${inner}</div>`; }).join("");
+  const isOpen = new Date()>=OPEN, days=Math.ceil((OPEN-new Date())/864e5);
+  $("#capWhen").textContent = `Notes to us, sealed until 26 November ${CAP_YEAR} · ${days} days to go. Anything sealed in an earlier year opens here when its day comes.`;
+  const cap = STATE.capsule;
+  $("#capsule").innerHTML = WHO.map(w=>{ const c=cap[w], mine=w===ME, cl=w==="Rahi"?"r":"s";
+    if(c && new Date()>=new Date(c.opens||`${CAP_YEAR}-11-26`)) return `<div class="mem ${cl}"><span class="who">From ${w}, sealed ${fmtDate(c.at)}</span><span class="t" style="white-space:pre-wrap">${esc(c.text)}</span></div>`;
+    if(c) return `<div class="mem ${cl} sealed"><span class="who">${w}</span><b>Sealed</b><span class="pl">on ${fmtDate(c.at)} · no peeking</span></div>`;
+    return mine?`<button class="mem empty ${cl}" data-w="${w}"><span class="who">${w}</span>+ Write a note for ${CAP_YEAR}</button>`:`<div class="mem empty ${cl}"><span class="who">${w}</span>Not written yet</div>`; }).join("");
+};
+$("#promises").addEventListener("click",async e=>{ if(!e.target.closest("button.mem")) return;
+  const r=await form("My promise for the year ahead",[["v","I promise…","textarea"]],{v:STATE.promises[ME]},{del:!!STATE.promises[ME]});
+  if(!r) return; if(r==="delete") delete STATE.promises[ME]; else STATE.promises[ME]=r.v; renderNext(); persist(); });
+$("#capsule").addEventListener("click",async e=>{ if(!e.target.closest("button.mem")) return;
+  const r=await form(`My note to us in ${CAP_YEAR}`,[["v","Dear us, one year from now…","textarea"]],{},{hint:`Once sealed, it stays hidden until 26 November ${CAP_YEAR}.`});
+  if(!r||r==="delete") return; STATE.capsule[ME]={text:r.v,at:new Date().toISOString(),opens:`${CAP_YEAR}-11-26`}; renderNext(); persist(); });
+
+/* ---------- notebook ---------- */
+const renderJ = ()=>{ const J=STATE.journal.slice().sort((a,b)=>b.at.localeCompare(a.at));
+  $("#journal").innerHTML = J.length ? J.map(j=>`<article class="je${j.who==="Rahi"?" r":""}"><div class="meta"><span><b>${esc(j.who)}</b> · ${fmtDate(j.at)}</span>${j.who===ME?`<button class="del" data-id="${esc(j.id)}">Delete</button>`:""}</div>${j.title?`<h3>${esc(j.title)}</h3>`:""}<p>${esc(j.text)}</p></article>`).join("") : `<p class="muted">The first page is waiting.</p>`; };
+$("#jForm").addEventListener("submit",e=>{ e.preventDefault(); const t=$("#jText").value.trim(); if(!t) return;
+  STATE.journal.push({id:uid(),at:new Date().toISOString(),who:ME,title:$("#jTitle").value.trim(),text:t}); $("#jTitle").value=""; $("#jText").value=""; renderJ(); persist(); });
+$("#journal").addEventListener("click",e=>{ const b=e.target.closest(".del"); if(!b) return; if(!b.dataset.sure){ b.dataset.sure="1"; b.textContent="Tap again to delete"; return; }
+  STATE.journal=STATE.journal.filter(j=>j.id!==b.dataset.id); renderJ(); persist(); });
+
+/* ---------- Remember: type anything, it gets sorted ---------- */
+const TYPES = [["chapter","A chapter in our story"],["memory","My best memory of a year"],["journal","A notebook entry"],["reason","A reason I love you"],["bucket","A bucket-list dream"],["date","A date idea"]];
+const SHOW = {chapter:["title","text","year","month","place"],memory:["title","text","year","place"],journal:["title","text"],reason:["text"],bucket:["title"],date:["title"]};
+const MON = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+const ALIAS = {"eiffel":"Eiffel Tower, Paris","twin tower":"Petronas Twin Towers, KL","petronas":"Petronas Twin Towers, KL","flyer":"Singapore Flyer","national park":"Sanjay Gandhi National Park","sgnp":"Sanjay Gandhi National Park","borivali":"Sanjay Gandhi National Park","shivaji park":"Shivaji Park, Dadar","dadar":"Shivaji Park, Dadar","sikkim":"Gangtok, Sikkim","gangtok":"Gangtok, Sikkim","kuala lumpur":"Kuala Lumpur, Malaysia","malaysia":"Kuala Lumpur, Malaysia","rajasthan":"Jaipur","mumbai":"Mumbai (elsewhere)","bombay":"Mumbai (elsewhere)"};
+const localSort = txt=>{
+  const s = txt.trim().replace(/\s+/g," "), low = s.toLowerCase();
+  const ym = low.match(/\b(19[89]\d|20[0-4]\d)\b/), year = ym?+ym[1]:null;
+  let month = null; const mm = low.match(/\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\b/); if(mm) month = MON.indexOf(mm[1].slice(0,3))+1;
+  let place = null, best = 0;
+  C.places.forEach(p=>{ [p.name, p.name.split(",")[0]].forEach(n=>{ const k=n.toLowerCase(); if(k.length>2 && low.includes(k) && k.length>best){ best=k.length; place=p.name; } }); });
+  Object.entries(ALIAS).forEach(([k,v])=>{ if(low.includes(k) && k.length>best && C.places.some(p=>p.name===v)){ best=k.length; place=v; } });
+  let type = "journal";
+  if(/\b(bucket|someday|some day|one day|wish we|want to (go|visit|see|try|do)|dream of|before we turn)\b/.test(low)) type="bucket";
+  else if(/\b(date idea|we should try|let'?s try|next weekend|date night)\b/.test(low)) type="date";
+  else if(/^(i love (you|how|that|the way)|love (how|that|the way)|you always|you make|you are|you're|reason)/.test(low)) type="reason";
+  else if(year && year<new Date().getFullYear()+1 && /\b(first|engag|married|wedding|trip|travel|birthday|anniversary|moved|propos|holiday|vacation|honeymoon|went to|visited)\b/.test(low)) type="chapter";
+  else if(year) type="memory";
+  const DATE_LEAD = /^(in |on |back in |during |around )?((jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s*)?((19|20)\d\d)?[,:\-–]?\s*/i;
+  const body = (year||month) ? s.replace(DATE_LEAD,"") : s;
+  let first = body.split(/[.!?]\s|\n/)[0];
+  let words = first.split(" "); let title = words.slice(0,8).join(" ") + (words.length>8?"…":"");
+  title = title.charAt(0).toUpperCase()+title.slice(1);
+  const text = body.split(/([.!?]\s+)/).map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join("");
+  return {type,title,text,year,month,place};
+};
+let rRes=null, rNew=null;
+const rDlg = $("#rDlg");
+$("#remBtn").addEventListener("click",()=>{ $("#rStep1").hidden=false; $("#rStep2").hidden=true; openDlg(rDlg); setTimeout(()=>$("#rText").focus(),60); });
+$("#rCancel").addEventListener("click",()=>rDlg.close());
+$("#rBack").addEventListener("click",()=>{ $("#rStep1").hidden=false; $("#rStep2").hidden=true; });
+const rFieldsHTML = ()=>{
+  const r = rRes, yrs=[]; for(let y=new Date().getFullYear()+5;y>=2005;y--) yrs.push([String(y),String(y)]);
+  let popts = placeOptions(r.place);
+  if(rNew) popts = `<option value="__new" selected>${esc(rNew.name)} (new place, will be added)</option>` + popts.replace(" selected","");
+  $("#rFields").innerHTML = [
+    fieldHTML(["type","Where should it go?","select",TYPES],r.type,"rf_"),
+    fieldHTML(["title","Title"],r.title,"rf_"),
+    fieldHTML(["text","The story","textarea"],r.text,"rf_"),
+    fieldHTML(["year","Year","select",[["","Not sure"],...yrs]],r.year?String(r.year):"","rf_"),
+    fieldHTML(["month","Month","select",[["","Not sure"],...MONTHS.map((m,i)=>[String(i+1),m])]],r.month?String(r.month):"","rf_"),
+    `<label>Place<select id="rf_place">${popts}</select></label>`
+  ].join("");
+  const vis = ()=>{ const t=$("#rf_type").value; ["title","text","year","month","place"].forEach(k=>$("#rf_"+k).closest("label").hidden=!SHOW[t].includes(k));
+    const y=+$("#rf_year").value; $("#rNote").textContent = t==="memory" && y && STATE.mem.some(m=>m.year===y&&m.who===ME) ? `This replaces your current best memory of ${y}.` : t==="memory"&&!y ? "Pick the year for this memory." : ""; };
+  $("#rf_type").addEventListener("change",vis); $("#rf_year").addEventListener("change",vis); vis();
+};
+$("#rSort").addEventListener("click",async()=>{
+  const txt=$("#rText").value.trim(); if(!txt){ $("#rText").focus(); return; }
+  const btn=$("#rSort"); btn.disabled=true; btn.textContent="Sorting…";
+  let how="Quick sort"; rNew=null; rRes=null;
+  if(window.AI){ try{
+    const a = await window.AI.sort(txt,{me:ME,today:new Date().toISOString().slice(0,10),places:C.places.map(p=>p.name)});
+    if(a && TYPES.some(t=>t[0]===a.type)){ rRes={type:a.type,title:a.title||"",text:a.text||txt,year:a.year||null,month:a.month||null,place:null};
+      if(a.place){ const hit=C.places.find(p=>p.name.toLowerCase()===String(a.place).toLowerCase()); if(hit) rRes.place=hit.name; else if(typeof a.lat==="number"&&typeof a.lng==="number") rNew={name:String(a.place).slice(0,60),lat:a.lat,lng:a.lng}; }
+      how="Smart sort · typos fixed"; }
+  }catch(e){ console.warn("AI sort failed",e); } }
+  if(!rRes) rRes = localSort(txt);
+  $("#rHow").textContent = how; rFieldsHTML();
+  btn.disabled=false; btn.textContent="Sort it"; $("#rStep1").hidden=true; $("#rStep2").hidden=false;
+});
+$("#rForm").addEventListener("submit",e=>{
+  e.preventDefault(); if($("#rStep2").hidden) return;
+  const g = k=>{ const el=$("#rf_"+k); return el?el.value.trim():""; };
+  const t=g("type"), title=g("title"), text=g("text"), year=g("year")?+g("year"):null, month=g("month")?+g("month"):null;
+  let place=g("place"); if(place==="__new"&&rNew){ if(!C.places.some(p=>p.name===rNew.name)) C.places.push({id:uid(),name:rNew.name,lat:rNew.lat,lng:rNew.lng,g:"Added by us"}); place=rNew.name; } else if(place==="__new") place="";
+  let where="#notebook";
+  if(t==="chapter"){ if(!title) return toast("Give it a title");
+    C.chapters.push({id:uid(),date:year?`${year}-${pad2(month||1)}`:"",when:[month?MONTHS[month-1]:"",year||""].filter(Boolean).join(" ")+(place?" · "+place:""),title,text,place,big:false,linkLabel:"",linkUrl:""}); where="#story"; }
+  else if(t==="memory"){ if(!year) return toast("Pick the year for this memory"); STATE.mem=STATE.mem.filter(m=>!(m.year===year&&m.who===ME)); STATE.mem.push({year,who:ME,title:title||text.slice(0,60),text,place,spot:""}); where="#yr-"+year; }
+  else if(t==="journal"){ if(!text&&!title) return; STATE.journal.push({id:uid(),at:new Date().toISOString(),who:ME,title,text:text||title}); where="#notebook"; }
+  else if(t==="reason"){ C.reasons.push({id:uid(),t:text||title}); where="#reasonBtn"; }
+  else if(t==="bucket"){ STATE.bucket.push({text:(text||title).slice(0,120),who:"Both of us",done:null}); where="#next"; }
+  else if(t==="date"){ C.dates.push({id:uid(),t:title||text}); where="#gifts"; }
+  rDlg.close(); $("#rText").value=""; renderAll(); persist(); toast("Remembered ♥ · "+TYPES.find(x=>x[0]===t)[1]);
+  setTimeout(()=>{ const el=document.querySelector(where); if(el) el.scrollIntoView({block:"center"}); },300);
+});
+
+/* ---------- backup ---------- */
+$("#backupBtn").addEventListener("click",()=>{
+  const blob=new Blob([JSON.stringify(STATE,null,2)],{type:"application/json"}), a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download=`our-notebook-backup-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  toast("Backup downloaded (text only, photos stay in Firebase)",4000);
+});
+
+/* ---------- finale petals ---------- */
+const fin=$("#finale"); let showered=false;
+const finIO=new IntersectionObserver(es=>{ if(showered||!es[0].isIntersecting) return; showered=true; if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for(let i=0;i<36;i++){ const p=document.createElement("i"); p.className="petal"; p.style.left=Math.random()*100+"%"; p.style.animationDuration=(4+Math.random()*4)+"s"; p.style.animationDelay=(Math.random()*2.5)+"s"; fin.appendChild(p); } },{threshold:.4});
+finIO.observe(fin);
+
+/* ---------- render everything ---------- */
+function renderAll(){ renderHero(); renderComing(); renderProfiles(); renderTimeline(); drawSky(); renderVideos(); renderLetter(); renderNums(); renderYears(); drawMap(); renderQA(); renderAlbum(); renderTN(); startQuiz(); startLikely(); renderLetters(); renderCoupons(); renderBucket(); renderNext(); renderJ(); }
+renderAll();
+$("#verTxt").textContent = window.VERSION||"";
+window.__applyPhotos = map=>{ Object.assign(PHOTOS,map||{}); renderProfiles(); renderTimeline(); renderAlbum(); };
+window.__chapterIds = ()=>C.chapters.map(c=>c.id);
+if(seeded) persist();
 };
 </script>
 
@@ -1234,9 +1150,9 @@ renderJ();
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
-{
-/* ===== SETUP: paste your Firebase web config here ===== */
-const FIREBASE_CONFIG = {
+/* ================= setup ================= */
+window.VERSION = "v2.0";
+window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCoaeb4-3GQuV1gHo_511I-2t1O7MGY4QA",
   authDomain: "thesahijodi-61f8b.firebaseapp.com",
   projectId: "thesahijodi-61f8b",
@@ -1244,20 +1160,14 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "797547282315",
   appId: "1:797547282315:web:ad3c96df233e099626398e"
 };
-/* The only two people who can open the notebook (lowercase emails) */
-/* Our day: asked after sign-in */
+window.AI_MODEL = "gemini-2.5-flash";   /* used by the Remember box if Firebase AI Logic is turned on */
 const PASSCODE = "2611";
-const VERSION = "v1.2";
-const PEOPLE = {
-  "sampatwardhan100@gmail.com": "Sameer",
-  "rahigadkari1@gmail.com": "Rahi"
-};
-/* ====================================================== */
-
+const PEOPLE = {"sampatwardhan100@gmail.com":"Sameer","rahigadkari1@gmail.com":"Rahi"};
+/* ========================================= */
+{
 const q = s=>document.querySelector(s);
 const msg = t=>{ q("#lockMsg").textContent = t; };
-const nice = e=>{
-  const c = (e&&e.code)||"";
+const nice = e=>{ const c=(e&&e.code)||"";
   if(/wrong-password|invalid-credential|user-not-found|invalid-email/.test(c)) return "That email and password don't match.";
   if(/email-already-in-use/.test(c)) return "You already have an account. Tap “Already have an account? Sign in”.";
   if(/weak-password/.test(c)) return "Use at least 6 characters for the password.";
@@ -1265,108 +1175,85 @@ const nice = e=>{
   if(/too-many-requests/.test(c)) return "Too many tries. Wait a minute and try again.";
   if(/network/.test(c)) return "No internet connection.";
   if(/unauthorized-domain/.test(c)) return "Add this website's address to Firebase's authorised domains.";
-  if(/permission-denied/.test(c)) return "This account can't open the notebook.";
+  if(/permission-denied/.test(c)) return "This account can't open the notebook. Check the Firestore rules.";
   if(/popup-closed|cancelled-popup/.test(c)) return "";
-  return (e&&e.message)||"Something went wrong.";
-};
+  return (e&&e.message)||"Something went wrong."; };
 let booted = false;
 if(!window.firebase){ msg("Couldn't reach the sign-in service. Check your internet."); }
-else if(FIREBASE_CONFIG.apiKey.startsWith("PASTE")){ msg("Setup needed: paste your Firebase config into the page."); }
 else {
-  firebase.initializeApp(FIREBASE_CONFIG);
-  const auth = firebase.auth(), db = firebase.firestore();
-  const ref = db.collection("couples").doc("foreverthing");
-  let myEmail = "", lastJson = "";
-
-  q("#gBtn").addEventListener("click",()=>{
-    const pr = new firebase.auth.GoogleAuthProvider(); pr.setCustomParameters({prompt:"select_account"});
-    auth.signInWithPopup(pr).catch(e=>{ if(/popup-blocked|operation-not-supported/.test(e.code||"")) auth.signInWithRedirect(pr); else msg(nice(e)); });
-  });
-  let creating = false;
-  q("#eMode").addEventListener("click",()=>{
-    creating = !creating; msg("");
-    q("#ePass2").hidden = !creating; q("#ePass2").required = creating;
-    q("#eGo").textContent = creating ? "Create account" : "Sign in";
-    q("#eMode").textContent = creating ? "Already have an account? Sign in" : "New here? Create an account";
-    q("#eReset").hidden = creating;
-    q("#ePass").autocomplete = creating ? "new-password" : "current-password";
-  });
-  q("#eForm").addEventListener("submit",e=>{
-    e.preventDefault();
-    const m = q("#eMail").value.trim(), pw = q("#ePass").value;
+  firebase.initializeApp(window.FIREBASE_CONFIG);
+  const auth=firebase.auth(), db=firebase.firestore(), ref=db.collection("couples").doc("foreverthing");
+  let myEmail="", lastJson="";
+  q("#gBtn").addEventListener("click",()=>{ const pr=new firebase.auth.GoogleAuthProvider(); pr.setCustomParameters({prompt:"select_account"});
+    auth.signInWithPopup(pr).catch(e=>{ if(/popup-blocked|operation-not-supported/.test(e.code||"")) auth.signInWithRedirect(pr); else msg(nice(e)); }); });
+  let creating=false;
+  q("#eMode").addEventListener("click",()=>{ creating=!creating; msg(""); q("#ePass2").hidden=!creating; q("#ePass2").required=creating;
+    q("#eGo").textContent=creating?"Create account":"Sign in"; q("#eMode").textContent=creating?"Already have an account? Sign in":"New here? Create an account"; q("#eReset").hidden=creating; });
+  q("#eForm").addEventListener("submit",e=>{ e.preventDefault(); const m=q("#eMail").value.trim(), pw=q("#ePass").value;
     if(!creating){ msg("Signing in…"); auth.signInWithEmailAndPassword(m,pw).catch(err=>msg(nice(err))); return; }
     if(!PEOPLE[m.toLowerCase()]){ msg("This notebook is only for Rahi & Sameer. Use the email that was added to it."); return; }
-    if(pw.length < 6){ msg("Use at least 6 characters for the password."); return; }
-    if(pw !== q("#ePass2").value){ msg("The two passwords don't match."); return; }
-    msg("Creating your account…");
-    auth.createUserWithEmailAndPassword(m,pw).catch(err=>msg(nice(err)));
-  });
-  q("#eReset").addEventListener("click",()=>{ const m = q("#eMail").value.trim(); if(!m){ msg("Type your email above first."); return; } auth.sendPasswordResetEmail(m).then(()=>msg("Reset link sent to "+m)).catch(e=>msg(nice(e))); });
-  q("#outBtn").addEventListener("click",()=>auth.signOut());
-  q("#codeOut").addEventListener("click",()=>auth.signOut());
+    if(pw!==q("#ePass2").value){ msg("The two passwords don't match."); return; }
+    msg("Creating your account…"); auth.createUserWithEmailAndPassword(m,pw).catch(err=>msg(nice(err))); });
+  q("#eReset").addEventListener("click",()=>{ const m=q("#eMail").value.trim(); if(!m){ msg("Type your email above first."); return; } auth.sendPasswordResetEmail(m).then(()=>msg("Reset link sent to "+m)).catch(e=>msg(nice(e))); });
+  q("#outBtn").addEventListener("click",()=>auth.signOut()); q("#codeOut").addEventListener("click",()=>auth.signOut());
   q("#fresh").addEventListener("click",()=>location.reload());
 
-  const compress = file => new Promise((res,rej)=>{
-    const url = URL.createObjectURL(file), img = new Image();
-    img.onload = ()=>{
-      let max = 1400, out = "";
-      for(let quality=.82; quality>=.4; quality-=.1){
-        const k = Math.min(1, max/Math.max(img.width,img.height));
-        const c = document.createElement("canvas"); c.width = Math.round(img.width*k); c.height = Math.round(img.height*k);
-        c.getContext("2d").drawImage(img,0,0,c.width,c.height);
-        out = c.toDataURL("image/jpeg",quality);
-        if(out.length < 900000) break; max = Math.round(max*.85);
-      }
-      URL.revokeObjectURL(url); out.length < 1000000 ? res(out) : rej(new Error("too big"));
-    };
-    img.onerror = ()=>{ URL.revokeObjectURL(url); rej(new Error("not an image")); };
-    img.src = url;
-  });
-
+  const compress = file=>new Promise((res,rej)=>{ const url=URL.createObjectURL(file), img=new Image();
+    img.onload=()=>{ let max=1400, out="";
+      for(let qu=.82; qu>=.4; qu-=.1){ const k=Math.min(1,max/Math.max(img.width,img.height)), c=document.createElement("canvas"); c.width=Math.round(img.width*k); c.height=Math.round(img.height*k);
+        c.getContext("2d").drawImage(img,0,0,c.width,c.height); out=c.toDataURL("image/jpeg",qu); if(out.length<700000) break; max=Math.round(max*.85); }
+      URL.revokeObjectURL(url); out.length<1000000?res(out):rej(new Error("too big")); };
+    img.onerror=()=>{ URL.revokeObjectURL(url); rej(new Error("not an image")); }; img.src=url; });
+  const okImg = v=>typeof v==="string"&&v.startsWith("data:image/");
   window.FB = {
-    save: async state=>{ const j = JSON.stringify(state); await ref.set({json:j,at:Date.now(),by:myEmail}); lastJson = j; },
-    uploadPhoto: async (id,file)=>{ const data = await compress(file); await ref.collection("photos").doc(id).set({data,at:Date.now(),by:myEmail}); return data; },
-    loadPhotos: async ()=>{ const s = await ref.collection("photos").get(); const o = {}; s.forEach(d=>{ const v=d.data().data; if(typeof v==="string" && v.startsWith("data:image/")) o[d.id]=v; }); return o; }
+    save: async state=>{ const j=JSON.stringify(state); await ref.set({json:j,at:Date.now(),by:myEmail}); lastJson=j; },
+    uploadPhoto: async (id,file)=>{ const data=await compress(file); await ref.collection("photos").doc(id).set({data,at:Date.now(),by:myEmail}); return data; },
+    getPhotos: async ids=>{ const o={}; await Promise.all(ids.map(id=>ref.collection("photos").doc(id).get().then(d=>{ if(d.exists&&okImg(d.data().data)) o[id]=d.data().data; }).catch(()=>{}))); return o; },
+    deletePhoto: id=>ref.collection("photos").doc(id).delete()
   };
 
   auth.onAuthStateChanged(async u=>{
     if(!u){ if(booted) location.reload(); return; }
-    const em = (u.email||"").toLowerCase(), who = PEOPLE[em];
+    const em=(u.email||"").toLowerCase(), who=PEOPLE[em];
     if(!who){ msg("This notebook is only for Rahi & Sameer."); auth.signOut(); return; }
-    myEmail = em; window.ME = who; msg("Opening our notebook…");
-    try{
-      const d = await ref.get();
-      const j = d.exists && d.data().json;
-      if(j){ lastJson = j; q("#memdata").textContent = j; }
-    }catch(e){ msg(nice(e)); return; }
-    q("#loginBox").hidden = true; q("#codeBox").hidden = false;
-    q("#codeHi").textContent = who==="Rahi" ? "Hi, my Foreverthing" : "Hi, " + who;
+    myEmail=em; window.ME=who; msg("Opening our notebook…");
+    let loaded=null;
+    try{ const d=await ref.get(); const j=d.exists&&d.data().json; if(j){ lastJson=j; loaded=JSON.parse(j); } }catch(e){ msg(nice(e)); return; }
+    q("#loginBox").hidden=true; q("#codeBox").hidden=false;
+    q("#codeHi").textContent = who==="Rahi"?"Hi, my Foreverthing":"Hi, "+who;
     setTimeout(()=>q("#code").focus(),100);
-    await new Promise(res=>{
-      q("#codeBox").addEventListener("submit",e=>{
-        e.preventDefault();
-        if(q("#code").value.trim()===PASSCODE){ res(); return; }
-        const f=q("#codeBox"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); q("#code").value="";
-      });
-    });
-    q("#meName").textContent = "Hi, " + who;
-    q("#meBar").hidden = false;
-    q("#lock").classList.add("gone");
-    booted = true;
-    window.__boot();
-    window.FB.loadPhotos().then(window.__applyPhotos).catch(()=>{});
-    ref.onSnapshot(d=>{
-      if(!d.exists || d.metadata.hasPendingWrites) return;
-      const x = d.data();
-      if(x.json && x.json!==lastJson && x.by!==myEmail){
-        const other = PEOPLE[x.by]||"Someone";
-        q("#fresh").textContent = `${other} added something new · Tap to see it`;
-        q("#fresh").hidden = false;
-      }
-    });
+    await new Promise(res=>{ q("#codeBox").addEventListener("submit",e=>{ e.preventDefault();
+      if(q("#code").value.trim()===PASSCODE){ res(); return; }
+      const f=q("#codeBox"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); q("#code").value=""; }); });
+    q("#meName").textContent="Hi, "+who; q("#meBar").hidden=false; q("#remBtn").hidden=false;
+    q("#lock").classList.add("gone"); booted=true;
+    window.__boot(loaded);
+    window.FB.getPhotos([...window.__chapterIds(),"profile-Rahi","profile-Sameer"]).then(window.__applyPhotos).catch(()=>{});
+    ref.onSnapshot(d=>{ if(!d.exists||d.metadata.hasPendingWrites) return; const x=d.data();
+      if(x.json&&x.json!==lastJson&&x.by!==myEmail){ q("#fresh").textContent=`${PEOPLE[x.by]||"Someone"} added something new · Tap to see it`; q("#fresh").hidden=false; } });
   });
 }
 }
+</script>
+
+<!-- Smart sorting for the Remember box (Firebase AI Logic). If it isn't turned on, the page uses quick sorting instead. -->
+<script type="module">
+try{
+  const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js");
+  const { getAI, getGenerativeModel, GoogleAIBackend } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-ai.js");
+  const app = initializeApp(window.FIREBASE_CONFIG, "ai");
+  const model = getGenerativeModel(getAI(app,{backend:new GoogleAIBackend()}),{model:window.AI_MODEL,generationConfig:{responseMimeType:"application/json",temperature:0.2}});
+  window.AI = { sort: async (text,ctx)=>{
+    const prompt = `You sort notes for a private notebook shared by a married couple, Rahi and Sameer (together since 23 Aug 2016, married 26 Nov 2022). The note below was written by ${ctx.me}. Today is ${ctx.today}.
+Return only JSON: {"type": "chapter"|"memory"|"journal"|"reason"|"bucket"|"date", "title": string (max 8 words), "text": string, "year": number or null, "month": number 1-12 or null, "place": string or null, "lat": number or null, "lng": number or null}
+Types: chapter = a milestone or trip in their story; memory = a favourite moment from a particular past year; journal = an everyday note, or something about today; reason = why ${ctx.me} loves their partner; bucket = something they want to do in future; date = an idea for a date.
+"text": the note rewritten with spelling, typos and grammar fixed, keeping the writer's own voice and first person, and adding nothing new. "title": short and warm.
+"place": if the note names a place, use the exact matching name from this list when one fits: ${ctx.places.join("; ")}. Otherwise give the place's common name with its latitude and longitude. null if no place.
+Note: """${text}"""`;
+    const r = await model.generateContent(prompt);
+    return JSON.parse(r.response.text());
+  }};
+}catch(e){ console.info("Smart sorting unavailable, using quick sort.", e); }
 </script>
 </body>
 </html>
