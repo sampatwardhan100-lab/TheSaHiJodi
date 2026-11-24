@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v2.5 · 24 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v2.6 · 25 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -344,6 +344,9 @@ dialog .msbody form{padding:0}
 .chk2{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--soft);min-height:44px;cursor:pointer}
 .chk2 input{width:22px;height:22px;accent-color:var(--red)}
 @media(max-width:600px){dialog.sheet{width:100vw;height:100dvh;border-radius:0}.mebtn span{display:none}}
+.anniv{padding-top:clamp(72px,8vw,96px);background:radial-gradient(ellipse at 50% 0,#5a1a3a,var(--bg) 75%);text-align:center}
+.annivk{margin:0 0 6px;font-weight:700;color:var(--red);font-size:15px}
+.annivv{max-width:860px;margin:18px auto 0;grid-template-columns:minmax(0,1fr)!important;text-align:left}
 /* know me */
 .kybody{margin-top:16px}
 .kyprog{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;color:var(--soft)}
@@ -431,6 +434,15 @@ dialog .msbody form{padding:0}
 <button class="fresh" id="fresh" type="button" hidden></button>
 <button class="fab" id="remBtn" type="button" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Remember</button>
 <div class="toast" id="toast" hidden aria-live="polite"></div>
+
+<section class="band anniv" id="annivTop" hidden>
+  <div class="wrap">
+    <p class="annivk" id="annivK">Today is our day</p>
+    <h2 id="annivH">Happy anniversary, my Foreverthing</h2>
+    <p class="muted" id="annivNote"></p>
+    <div class="vids annivv" id="annivVid"></div>
+  </div>
+</section>
 
 <header class="hero band">
   <div>
@@ -646,6 +658,7 @@ dialog .msbody form{padding:0}
     <div>
       <p><b>Rahi &amp; Sameer · Our Notebook</b></p>
       <p>A private notebook for the two of us, started for our 4th anniversary. Only our two accounts can open it. Tap <b>Edit</b> at the top to change anything, or <b>Remember</b> to add something new.</p>
+      <p class="vh"><b>v2.6</b> · 25 Nov 2026: our wedding and engagement videos added; the wedding video plays at the very top on our anniversary.</p>
       <p class="vh"><b>v2.5</b> · 24 Nov 2026: Google Drive videos play inside the page, like YouTube ones (engagement, wedding).</p>
       <p class="vh"><b>v2.4</b> · 24 Nov 2026: My space, a private area for each of us (private notes, surprise ideas, account), and private notebook entries.</p>
       <p class="vh"><b>v2.3</b> · 24 Nov 2026: Instagram on our profiles.</p>
@@ -733,6 +746,16 @@ let seeded = false;
 if(!STATE.content){ STATE.content = clone(DEF); seeded = true; }
 const C = STATE.content;
 Object.keys(DEF).forEach(k=>{ if(C[k]===undefined) C[k] = clone(DEF[k]); });
+C._seeds = C._seeds||[];
+if(!C._seeds.includes("drive-videos-1")){
+  const has = u=>C.videos.some(v=>v.url===u);
+  const wed = {id:"vwed",title:"Our wedding",k:"26 November 2022",url:"https://drive.google.com/file/d/1kTSXth1E3GXIuzOB8E_4fAld5v0i95b_/view",text:"The day we became #TheSaHiJodi.",main:false,anniv:true};
+  const e1 = {id:"veng1",title:"Our engagement · part 1",k:"24 February 2022",url:"https://drive.google.com/file/d/1dDlALHgEu1WcXO0iucfRwcJoHtGduNyw/view",text:"The day we said yes to forever.",main:false};
+  const e2 = {id:"veng2",title:"Our engagement · part 2",k:"24 February 2022",url:"https://drive.google.com/file/d/1fyKsU9D5KInyyz9XzvJ4gVnIV2rJ6i-Q/view",text:"More from our engagement day.",main:false};
+  if(!has(wed.url)) C.videos.splice(Math.min(1,C.videos.length),0,wed);
+  [e1,e2].forEach(v=>{ if(!has(v.url)) C.videos.push(v); });
+  C._seeds.push("drive-videos-1"); seeded = true;
+}
 if(Array.isArray(STATE.thenNow)){ C.thenNow = STATE.thenNow.map(t=>Object.assign({id:uid()},t)); delete STATE.thenNow; }
 const FULL = {Rahi:"Rahi Patwardhan",Sameer:"Sameer Patwardhan"}, INSTA = {Rahi:"rahi.gadkari",Sameer:"sam.patwardhan"};
 WHO.forEach(w=>{ const p = STATE.profiles[w] = STATE.profiles[w]||{}; if(!p.full) p.full = FULL[w]; if(p.insta===undefined) p.insta = INSTA[w]; });
@@ -785,7 +808,7 @@ const form = (title,fields,vals={},o={})=>new Promise(res=>{
 /* ---------- list manager (edit mode) ---------- */
 const SCHEMAS = {
   chapters:{title:"Story chapters",sorted:true,sum:i=>`${i.date||"No date"} · ${i.title}`,fields:[["title","Title"],["date","Month & year (for the order)","month"],["when","Date line shown (e.g. “May 2016 · Shivaji Park”)"],["text","The story","textarea"],["place","Pin on the map","place"],["big","A big moment (red star)","check"],["linkLabel","Button text (optional)"],["linkUrl","Button link (optional)","url"]]},
-  videos:{title:"Our songs & videos",hint:"Paste a YouTube or Google Drive link. For a Drive video, set its sharing so both of us can open it.",sum:i=>`${i.title} · ${driveId(i.url)?"Google Drive":"YouTube"}`,fields:[["title","Title"],["k","Small label (e.g. Our wedding · 26 Nov 2022)"],["url","YouTube or Google Drive link","url"],["text","About it","textarea"],["main","Highlight this one","check"]],req:["title","url"]},
+  videos:{title:"Our songs & videos",hint:"Paste a YouTube or Google Drive link. For a Drive video, set its sharing so both of us can open it.",sum:i=>`${i.title} · ${driveId(i.url)?"Google Drive":"YouTube"}`,fields:[["title","Title"],["k","Small label (e.g. Our wedding · 26 Nov 2022)"],["url","YouTube or Google Drive link","url"],["text","About it","textarea"],["main","Highlight this one","check"],["anniv","Play at the top of the page on our anniversary (26 Nov)","check"]],req:["title","url"]},
   numbers:{title:"Us, in numbers",hint:"Years married, together and since 12th grade are counted automatically.",sum:i=>`${i.n} · ${i.label}`,fields:[["n","Number or word"],["label","What it counts"]]},
   places:{title:"Places list",hint:"For a new place: in Google Maps, long-press the spot and copy the two numbers it shows (latitude, longitude).",sum:i=>`${i.name} · ${i.g||""}`,fields:[["name","Name"],["lat","Latitude","num"],["lng","Longitude","num"],["g","Group","select",["Mumbai & around","India","Abroad","Added by us"]]],req:["name","lat","lng"]},
   questions:{title:"Little-things questions",sum:i=>i.q,fields:[["q","Question (we both answer it)"]]},
@@ -828,7 +851,7 @@ $("#mClose").addEventListener("click",()=>$("#mDlg").close());
 document.addEventListener("click",e=>{ const b=e.target.closest("[data-manage]"); if(b) manage(b.dataset.manage); });
 
 /* edit mode */
-$("#editBtn").addEventListener("click",()=>{ const on = document.body.classList.toggle("editing"); $("#editBtn").classList.toggle("on",on); $("#editBtn").setAttribute("aria-pressed",on); $("#editBtn").textContent = on?"Done editing":"Edit"; if(on) toast("Edit mode: look for the dashed buttons",3000); });
+$("#editBtn").addEventListener("click",()=>{ const on = document.body.classList.toggle("editing"); renderVideos(); $("#editBtn").classList.toggle("on",on); $("#editBtn").setAttribute("aria-pressed",on); $("#editBtn").textContent = on?"Done editing":"Edit"; if(on) toast("Edit mode: look for the dashed buttons",3000); });
 
 /* ---------- hero ---------- */
 const WORDS = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen","Twenty"];
@@ -942,20 +965,32 @@ $("#timeline").addEventListener("change",async e=>{
 const playIco = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 const driveId = h=>(String(h||"").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]{20,})/)||[])[1];
 const ytId = h=>(String(h||"").match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/)||[])[1];
-const renderVideos = ()=>{
-  $("#vids").innerHTML = C.videos.map(v=>{ const y = ytId(v.url), d = !y && driveId(v.url);
+const vidCard = (v,cls="")=>{ const y = ytId(v.url), d = !y && driveId(v.url);
     const thumb = y ? `https://i.ytimg.com/vi/${y}/hqdefault.jpg` : d ? `https://drive.google.com/thumbnail?id=${d}&sz=w800` : "";
     return `
-  <div class="vid${v.main?' main':''}">
+  <div class="vid${cls}">
     ${y||d?`<button class="yt" data-${y?"v":"d"}="${y||d}" aria-label="Play ${esc(v.title)}" style="background-image:url(${thumb})"><span class="play">${playIco}</span></button>`:""}
     <div><div class="k">${esc(v.k)}</div><h3>${esc(v.title)}</h3></div>
     <p>${esc(v.text)}</p>${safeUrl(v.url)?`<a class="go" href="${esc(v.url)}" target="_blank" rel="noopener">Open in ${d?"Google Drive":"YouTube"} →</a>`:""}
-  </div>`; }).join("");
+  </div>`; };
+const isAnniv = ()=>{ const n=new Date(); return n.getMonth()===10 && n.getDate()===26; };
+const renderVideos = ()=>{
+  $("#vids").innerHTML = C.videos.map(v=>vidCard(v,v.main?" main":"")).join("");
+  const A = C.videos.filter(v=>v.anniv), today = isAnniv(), editing = document.body.classList.contains("editing");
+  const show = A.length && (today || editing);
+  $("#annivTop").hidden = !show;
+  if(show){
+    const y = new Date().getFullYear()-2022;
+    $("#annivK").textContent = today ? `Today is our day · ${y} year${y===1?"":"s"}` : "Preview";
+    $("#annivH").textContent = today ? "Happy anniversary, my Foreverthing" : "Our anniversary video";
+    $("#annivNote").textContent = today ? `${word(y)} years ago today, we said yes for every birth.` : "This shows at the very top of the page only on 26 November. You're seeing it because Edit is on.";
+    $("#annivVid").innerHTML = A.map(v=>vidCard(v," main")).join("");
+  }
 };
-$("#vids").addEventListener("click",e=>{ const b=e.target.closest(".yt"); if(!b||b.querySelector("iframe")) return;
+document.addEventListener("click",e=>{ const b=e.target.closest(".yt"); if(!b||b.querySelector("iframe")) return;
   const src = b.dataset.v ? `https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0&playsinline=1` : `https://drive.google.com/file/d/${b.dataset.d}/preview`;
   b.innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video"></iframe>`; });
-$("#finalPlay").addEventListener("click",()=>{ const b=document.querySelector(".vid.main .yt")||document.querySelector(".yt"); if(b) setTimeout(()=>b.click(),400); });
+$("#finalPlay").addEventListener("click",()=>{ const b=document.querySelector("#vids .vid.main .yt")||document.querySelector("#vids .yt"); if(b) setTimeout(()=>b.click(),400); });
 
 /* ---------- letter + finale ---------- */
 const renderLetter = ()=>{
@@ -1454,7 +1489,7 @@ if(seeded) persist();
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
 /* ================= setup ================= */
-window.VERSION = "v2.5";
+window.VERSION = "v2.6";
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCoaeb4-3GQuV1gHo_511I-2t1O7MGY4QA",
   authDomain: "thesahijodi-61f8b.firebaseapp.com",
