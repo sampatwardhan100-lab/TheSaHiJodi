@@ -59,6 +59,7 @@ Replace `index.html` with the new version (Add file → Upload files). GitHub Pa
 
 ## Versions
 
+- **v2.6**: Our wedding and engagement videos; the wedding video plays at the top on our anniversary
 - **v2.5**: Google Drive videos play inside the page
 - **v2.4**: My space, a private area for each of us; private notebook entries
 - **v2.3**: Instagram on our profiles
