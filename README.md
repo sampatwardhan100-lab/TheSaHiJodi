@@ -14,6 +14,7 @@ Only our two accounts can sign in, and after signing in it asks for our day.
 - **Our songs & videos:** ForeverThing, Sata Janmanchi, our engagement and our wedding, from YouTube or Google Drive, playing inside the page
 - **Best memory of every year:** from 2016 onwards, pinned on a map
 - **Little things, in our words** and **our special places**
+- **Our invitations:** our engagement and wedding cards, and the animated wedding invite
 - **Our album:** any photo, any day
 - **Games:** our quiz, “who's more likely to…” and “how well do you know me?” with a scoreboard
 - **Open-when letters, reasons, love coupons and the date jar**
@@ -59,6 +60,7 @@ Replace `index.html` with the new version (Add file → Upload files). GitHub Pa
 
 ## Versions
 
+- **v2.7**: Our invitations, with the animated wedding invite
 - **v2.6**: Our wedding and engagement videos; the wedding video plays at the top on our anniversary
 - **v2.5**: Google Drive videos play inside the page
 - **v2.4**: My space, a private area for each of us; private notebook entries

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Rahi & Sameer · Our Notebook · v2.6 · 25 Nov 2026 -->
+<!-- Rahi & Sameer · Our Notebook · v2.7 · 25 Nov 2026 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -347,6 +347,20 @@ dialog .msbody form{padding:0}
 .anniv{padding-top:clamp(72px,8vw,96px);background:radial-gradient(ellipse at 50% 0,#5a1a3a,var(--bg) 75%);text-align:center}
 .annivk{margin:0 0 6px;font-weight:700;color:var(--red);font-size:15px}
 .annivv{max-width:860px;margin:18px auto 0;grid-template-columns:minmax(0,1fr)!important;text-align:left}
+/* invitations */
+.invs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:20px}
+.inv{display:grid;gap:12px;padding:16px;border-radius:22px;background:var(--card);border:1px solid var(--line)}
+.inv .k{font-size:13px;font-weight:700;color:var(--blush)}.inv h3{font-size:28px}
+.invm{position:relative;border-radius:16px;overflow:hidden;background:#f6efe6;min-height:220px;display:grid;place-items:center}
+.invm img,.invm video{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;background:#f6efe6}
+.invm button.open{position:absolute;inset:0;background:transparent;border:0;padding:0;cursor:zoom-in}
+.invm .ph-empty{position:static;color:#7a5a64;text-align:center;padding:24px;font-size:15px}
+.invbtns{display:flex;gap:8px;flex-wrap:wrap}
+.invbtns label,.invbtns button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:14px;cursor:pointer;position:relative}
+.invbtns input{position:absolute;width:1px;height:1px;opacity:0}
+.invbtns .on{background:var(--blush);color:#2a1127;border-color:var(--blush)}
+.annivinv{max-width:360px;margin:18px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.annivinv video{display:block;width:100%}
 /* know me */
 .kybody{margin-top:16px}
 .kyprog{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;color:var(--soft)}
@@ -440,6 +454,7 @@ dialog .msbody form{padding:0}
     <p class="annivk" id="annivK">Today is our day</p>
     <h2 id="annivH">Happy anniversary, my Foreverthing</h2>
     <p class="muted" id="annivNote"></p>
+    <div class="annivinv" id="annivInv" hidden></div>
     <div class="vids annivv" id="annivVid"></div>
   </div>
 </section>
@@ -494,6 +509,14 @@ dialog .msbody form{padding:0}
     <div class="sechead"><div><h2>How the universe wrote us</h2><p class="muted">Every star up there is one of these moments.</p></div>
       <button class="ebtn ed-only" data-manage="chapters">+ Add or edit chapters</button></div>
     <div class="tl" id="timeline"></div>
+  </div>
+</section>
+
+<section class="band" id="invites">
+  <div class="wrap">
+    <h2>Our invitations</h2>
+    <p class="muted">The cards that told everyone. Tap one to see it full size.</p>
+    <div class="invs" id="invGrid"></div>
   </div>
 </section>
 
@@ -658,6 +681,7 @@ dialog .msbody form{padding:0}
     <div>
       <p><b>Rahi &amp; Sameer · Our Notebook</b></p>
       <p>A private notebook for the two of us, started for our 4th anniversary. Only our two accounts can open it. Tap <b>Edit</b> at the top to change anything, or <b>Remember</b> to add something new.</p>
+      <p class="vh"><b>v2.7</b> · 25 Nov 2026: our invitations, with the animated wedding invite (also at the top on our anniversary).</p>
       <p class="vh"><b>v2.6</b> · 25 Nov 2026: our wedding and engagement videos added; the wedding video plays at the very top on our anniversary.</p>
       <p class="vh"><b>v2.5</b> · 24 Nov 2026: Google Drive videos play inside the page, like YouTube ones (engagement, wedding).</p>
       <p class="vh"><b>v2.4</b> · 24 Nov 2026: My space, a private area for each of us (private notes, surprise ideas, account), and private notebook entries.</p>
@@ -959,6 +983,32 @@ $("#timeline").addEventListener("change",async e=>{
   const ph = inp.closest(".ph"); ph.classList.add("busy"); ph.querySelector(".up span").textContent = "Uploading…";
   try{ PHOTOS[inp.dataset.id] = await window.FB.uploadPhoto(inp.dataset.id, inp.files[0]); renderTimeline(); toast("Photo saved ♥"); }
   catch(err){ ph.querySelector(".up span").textContent = "Couldn't upload. Try again"; ph.classList.remove("busy"); }
+});
+
+/* ---------- invitations ---------- */
+const INV = [{id:"eng",title:"Our engagement",k:"Thursday · 24 February 2022 · Thakur Hall, Dadar"},{id:"wed",title:"Our wedding",k:"शनिवार · 26 November 2022 · Dadar"}];
+const invView = {};
+const renderInv = ()=>{
+  $("#invGrid").innerHTML = INV.map(v=>{ const img=PHOTOS["inv-"+v.id+"-img"], vid=PHOTOS["inv-"+v.id+"-vid"], mode = invView[v.id] || (vid?"vid":"img");
+    const media = mode==="vid"&&vid ? `<video src="${vid}"${img?` poster="${img}"`:""} autoplay muted loop playsinline controls></video>`
+      : img ? `<img src="${img}" alt="${esc(v.title)} invitation"><button class="open" data-o="${v.id}" aria-label="Open full size"></button>`
+      : `<div class="ph-empty">${camera}Add the ${v.title.toLowerCase().replace("our ","")} invitation</div>`;
+    return `<div class="inv"><div><div class="k">${esc(v.k)}</div><h3>${esc(v.title)}</h3></div><div class="invm">${media}</div>
+      <div class="invbtns">${img&&vid?`<button data-m="vid" data-i="${v.id}" class="${mode==="vid"?"on":""}">Animated</button><button data-m="img" data-i="${v.id}" class="${mode!=="vid"?"on":""}">Card</button>`:""}
+        <label>${img?"Change card":"+ Add card"}<input type="file" accept="image/*" data-u="inv-${v.id}-img"></label>
+        <label>${vid?"Change animated":"+ Add animated version"}<input type="file" accept="video/mp4,video/*" data-u="inv-${v.id}-vid"></label></div></div>`; }).join("");
+  const wv = PHOTOS["inv-wed-vid"]; $("#annivInv").hidden = !wv; $("#annivInv").innerHTML = wv ? `<video src="${wv}" autoplay muted loop playsinline></video>` : "";
+};
+$("#invGrid").addEventListener("click",e=>{
+  const m=e.target.closest("[data-m]"); if(m){ invView[m.dataset.i]=m.dataset.m; renderInv(); return; }
+  const o=e.target.closest("[data-o]"); if(o){ const v=INV.find(x=>x.id===o.dataset.o); $("#lbImg").src=PHOTOS["inv-"+v.id+"-img"]; $("#lbCap").textContent=v.title+" invitation"; $("#lbMeta").textContent=v.k; $("#lbDel").hidden=$("#lbEdit").hidden=true; openDlg(lb); }
+});
+$("#invGrid").addEventListener("change",async e=>{
+  const inp=e.target.closest("input[data-u]"); if(!inp||!inp.files[0]) return; const id=inp.dataset.u, f=inp.files[0], isVid=id.endsWith("-vid");
+  toast("Uploading…",0);
+  try{ PHOTOS[id] = isVid ? await window.FB.uploadVideo(id,f) : await window.FB.uploadPhoto(id,f); invView[id.split("-")[1]] = isVid?"vid":"img"; renderInv(); toast("Saved ♥"); }
+  catch(err){ toast(String(err&&err.message)==="too big" ? "That video is too big. Use a short version under 700 KB." : "Couldn't upload. Try again.",5000); }
+  inp.value="";
 });
 
 /* ---------- songs ---------- */
@@ -1475,10 +1525,10 @@ const finIO=new IntersectionObserver(es=>{ if(showered||!es[0].isIntersecting) r
 finIO.observe(fin);
 
 /* ---------- render everything ---------- */
-function renderAll(){ renderHero(); renderComing(); renderProfiles(); renderFavs(); renderTimeline(); drawSky(); renderVideos(); renderLetter(); renderNums(); renderYears(); drawMap(); renderQA(); renderAlbum(); renderTN(); startQuiz(); startLikely(); renderKY(); renderLetters(); renderCoupons(); renderBucket(); renderNext(); renderJ(); }
+function renderAll(){ renderHero(); renderComing(); renderProfiles(); renderFavs(); renderTimeline(); drawSky(); renderInv(); renderVideos(); renderLetter(); renderNums(); renderYears(); drawMap(); renderQA(); renderAlbum(); renderTN(); startQuiz(); startLikely(); renderKY(); renderLetters(); renderCoupons(); renderBucket(); renderNext(); renderJ(); }
 renderAll(); renderMeBtn();
 $("#verTxt").textContent = window.VERSION||"";
-window.__applyPhotos = map=>{ Object.assign(PHOTOS,map||{}); renderMeBtn(); renderProfiles(); renderTimeline(); renderAlbum(); };
+window.__applyPhotos = map=>{ Object.assign(PHOTOS,map||{}); renderMeBtn(); renderInv(); renderProfiles(); renderTimeline(); renderAlbum(); };
 window.__chapterIds = ()=>C.chapters.map(c=>c.id);
 if(seeded) persist();
 };
@@ -1489,7 +1539,7 @@ if(seeded) persist();
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <script>
 /* ================= setup ================= */
-window.VERSION = "v2.6";
+window.VERSION = "v2.7";
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCoaeb4-3GQuV1gHo_511I-2t1O7MGY4QA",
   authDomain: "thesahijodi-61f8b.firebaseapp.com",
@@ -1542,11 +1592,13 @@ else {
         c.getContext("2d").drawImage(img,0,0,c.width,c.height); out=c.toDataURL("image/jpeg",qu); if(out.length<700000) break; max=Math.round(max*.85); }
       URL.revokeObjectURL(url); out.length<1000000?res(out):rej(new Error("too big")); };
     img.onerror=()=>{ URL.revokeObjectURL(url); rej(new Error("not an image")); }; img.src=url; });
-  const okImg = v=>typeof v==="string"&&v.startsWith("data:image/");
+  const okImg = v=>typeof v==="string"&&(v.startsWith("data:image/")||v.startsWith("data:video/mp4;"));
+  const readURL = f=>new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(f); });
   window.FB = {
     save: async state=>{ const j=JSON.stringify(state); await ref.set({json:j,at:Date.now(),by:myEmail}); lastJson=j; },
     uploadPhoto: async (id,file)=>{ const data=await compress(file); await ref.collection("photos").doc(id).set({data,at:Date.now(),by:myEmail}); return data; },
     getPhotos: async ids=>{ const o={}; await Promise.all(ids.map(id=>ref.collection("photos").doc(id).get().then(d=>{ if(d.exists&&okImg(d.data().data)) o[id]=d.data().data; }).catch(()=>{}))); return o; },
+    uploadVideo: async (id,file)=>{ if(file.size>700000) throw new Error("too big"); let data=await readURL(file); data=data.replace(/^data:[^;]*;/,"data:video/mp4;"); await ref.collection("photos").doc(id).set({data,at:Date.now(),by:myEmail}); return data; },
     deletePhoto: id=>ref.collection("photos").doc(id).delete(),
     savePriv: async p=>{ await privCol.doc(myEmail).set({json:JSON.stringify(p),at:Date.now()}); },
     isPrivate: async ()=>{ const other=Object.keys(PEOPLE).find(e=>e!==myEmail); try{ await privCol.doc(other).get(); return false; }catch(e){ return /permission/i.test((e&&(e.code||e.message))||""); } },
@@ -1573,7 +1625,7 @@ else {
     q("#meBar").hidden=false; q("#remBtn").hidden=false;
     q("#lock").classList.add("gone"); booted=true;
     window.__boot(loaded, priv);
-    window.FB.getPhotos([...window.__chapterIds(),"profile-Rahi","profile-Sameer"]).then(window.__applyPhotos).catch(()=>{});
+    window.FB.getPhotos([...window.__chapterIds(),"profile-Rahi","profile-Sameer","inv-eng-img","inv-eng-vid","inv-wed-img","inv-wed-vid"]).then(window.__applyPhotos).catch(()=>{});
     ref.onSnapshot(d=>{ if(!d.exists||d.metadata.hasPendingWrites) return; const x=d.data();
       if(x.json&&x.json!==lastJson&&x.by!==myEmail){ q("#fresh").textContent=`${PEOPLE[x.by]||"Someone"} added something new · Tap to see it`; q("#fresh").hidden=false; } });
   });
